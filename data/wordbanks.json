@@ -1,0 +1,6106 @@
+{
+  "nouns": [
+    {
+      "nl": "man",
+      "en": "man",
+      "g": "de",
+      "pl": "mannen",
+      "c": "p"
+    },
+    {
+      "nl": "vrouw",
+      "en": "woman",
+      "g": "de",
+      "pl": "vrouwen",
+      "c": "p"
+    },
+    {
+      "nl": "jongen",
+      "en": "boy",
+      "g": "de",
+      "pl": "jongens",
+      "c": "p"
+    },
+    {
+      "nl": "dag",
+      "en": "day",
+      "g": "de",
+      "pl": "dagen",
+      "c": "t"
+    },
+    {
+      "nl": "week",
+      "en": "week",
+      "g": "de",
+      "pl": "weken",
+      "c": "t"
+    },
+    {
+      "nl": "maand",
+      "en": "month",
+      "g": "de",
+      "pl": "maanden",
+      "c": "t"
+    },
+    {
+      "nl": "nacht",
+      "en": "night",
+      "g": "de",
+      "pl": "nachten",
+      "c": "t"
+    },
+    {
+      "nl": "avond",
+      "en": "evening",
+      "g": "de",
+      "pl": "avonden",
+      "c": "t"
+    },
+    {
+      "nl": "tafel",
+      "en": "table",
+      "g": "de",
+      "pl": "tafels",
+      "c": "t"
+    },
+    {
+      "nl": "stoel",
+      "en": "chair",
+      "g": "de",
+      "pl": "stoelen",
+      "c": "t"
+    },
+    {
+      "nl": "deur",
+      "en": "door",
+      "g": "de",
+      "pl": "deuren",
+      "c": "t"
+    },
+    {
+      "nl": "muur",
+      "en": "wall",
+      "g": "de",
+      "pl": "muren",
+      "c": "t"
+    },
+    {
+      "nl": "lamp",
+      "en": "lamp",
+      "g": "de",
+      "pl": "lampen",
+      "c": "t"
+    },
+    {
+      "nl": "kast",
+      "en": "cupboard",
+      "g": "de",
+      "pl": "kasten",
+      "c": "t"
+    },
+    {
+      "nl": "keuken",
+      "en": "kitchen",
+      "g": "de",
+      "pl": "keukens",
+      "c": "l"
+    },
+    {
+      "nl": "kamer",
+      "en": "room",
+      "g": "de",
+      "pl": "kamers",
+      "c": "l"
+    },
+    {
+      "nl": "tuin",
+      "en": "garden",
+      "g": "de",
+      "pl": "tuinen",
+      "c": "l"
+    },
+    {
+      "nl": "straat",
+      "en": "street",
+      "g": "de",
+      "pl": "straten",
+      "c": "l"
+    },
+    {
+      "nl": "stad",
+      "en": "city",
+      "g": "de",
+      "pl": "steden",
+      "c": "l"
+    },
+    {
+      "nl": "auto",
+      "en": "car",
+      "g": "de",
+      "pl": "auto's",
+      "c": "t"
+    },
+    {
+      "nl": "fiets",
+      "en": "bicycle",
+      "g": "de",
+      "pl": "fietsen",
+      "c": "t"
+    },
+    {
+      "nl": "trein",
+      "en": "train",
+      "g": "de",
+      "pl": "treinen",
+      "c": "t"
+    },
+    {
+      "nl": "bus",
+      "en": "bus",
+      "g": "de",
+      "pl": "bussen",
+      "c": "t"
+    },
+    {
+      "nl": "boot",
+      "en": "boat",
+      "g": "de",
+      "pl": "boten",
+      "c": "t"
+    },
+    {
+      "nl": "hond",
+      "en": "dog",
+      "g": "de",
+      "pl": "honden",
+      "c": "a"
+    },
+    {
+      "nl": "kat",
+      "en": "cat",
+      "g": "de",
+      "pl": "katten",
+      "c": "a"
+    },
+    {
+      "nl": "vogel",
+      "en": "bird",
+      "g": "de",
+      "pl": "vogels",
+      "c": "a"
+    },
+    {
+      "nl": "vis",
+      "en": "fish",
+      "g": "de",
+      "pl": "vissen",
+      "c": "a"
+    },
+    {
+      "nl": "koe",
+      "en": "cow",
+      "g": "de",
+      "pl": "koeien",
+      "c": "a"
+    },
+    {
+      "nl": "bloem",
+      "en": "flower",
+      "g": "de",
+      "pl": "bloemen",
+      "c": "t"
+    },
+    {
+      "nl": "boom",
+      "en": "tree",
+      "g": "de",
+      "pl": "bomen",
+      "c": "t"
+    },
+    {
+      "nl": "appel",
+      "en": "apple",
+      "g": "de",
+      "pl": "appels",
+      "c": "f"
+    },
+    {
+      "nl": "banaan",
+      "en": "banana",
+      "g": "de",
+      "pl": "bananen",
+      "c": "f"
+    },
+    {
+      "nl": "tomaat",
+      "en": "tomato",
+      "g": "de",
+      "pl": "tomaten",
+      "c": "f"
+    },
+    {
+      "nl": "kaas",
+      "en": "cheese",
+      "g": "de",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "koffie",
+      "en": "coffee",
+      "g": "de",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "thee",
+      "en": "tea",
+      "g": "de",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "wijn",
+      "en": "wine",
+      "g": "de",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "soep",
+      "en": "soup",
+      "g": "de",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "school",
+      "en": "school",
+      "g": "de",
+      "pl": "scholen",
+      "c": "l"
+    },
+    {
+      "nl": "winkel",
+      "en": "shop",
+      "g": "de",
+      "pl": "winkels",
+      "c": "l"
+    },
+    {
+      "nl": "markt",
+      "en": "market",
+      "g": "de",
+      "pl": "markten",
+      "c": "l"
+    },
+    {
+      "nl": "kerk",
+      "en": "church",
+      "g": "de",
+      "pl": "kerken",
+      "c": "l"
+    },
+    {
+      "nl": "brug",
+      "en": "bridge",
+      "g": "de",
+      "pl": "bruggen",
+      "c": "t"
+    },
+    {
+      "nl": "rivier",
+      "en": "river",
+      "g": "de",
+      "pl": "rivieren",
+      "c": "l"
+    },
+    {
+      "nl": "zee",
+      "en": "sea",
+      "g": "de",
+      "pl": "zeeën",
+      "c": "l"
+    },
+    {
+      "nl": "ster",
+      "en": "star",
+      "g": "de",
+      "pl": "sterren",
+      "c": "t"
+    },
+    {
+      "nl": "hand",
+      "en": "hand",
+      "g": "de",
+      "pl": "handen",
+      "c": "t"
+    },
+    {
+      "nl": "arm",
+      "en": "arm",
+      "g": "de",
+      "pl": "armen",
+      "c": "t"
+    },
+    {
+      "nl": "voet",
+      "en": "foot",
+      "g": "de",
+      "pl": "voeten",
+      "c": "t"
+    },
+    {
+      "nl": "neus",
+      "en": "nose",
+      "g": "de",
+      "pl": "neuzen",
+      "c": "t"
+    },
+    {
+      "nl": "mond",
+      "en": "mouth",
+      "g": "de",
+      "pl": "monden",
+      "c": "t"
+    },
+    {
+      "nl": "vinger",
+      "en": "finger",
+      "g": "de",
+      "pl": "vingers",
+      "c": "t"
+    },
+    {
+      "nl": "krant",
+      "en": "newspaper",
+      "g": "de",
+      "pl": "kranten",
+      "c": "t"
+    },
+    {
+      "nl": "brief",
+      "en": "letter",
+      "g": "de",
+      "pl": "brieven",
+      "c": "t"
+    },
+    {
+      "nl": "tas",
+      "en": "bag",
+      "g": "de",
+      "pl": "tassen",
+      "c": "t"
+    },
+    {
+      "nl": "jas",
+      "en": "coat",
+      "g": "de",
+      "pl": "jassen",
+      "c": "t"
+    },
+    {
+      "nl": "broek",
+      "en": "trousers",
+      "g": "de",
+      "pl": "broeken",
+      "c": "t"
+    },
+    {
+      "nl": "schoen",
+      "en": "shoe",
+      "g": "de",
+      "pl": "schoenen",
+      "c": "t"
+    },
+    {
+      "nl": "sok",
+      "en": "sock",
+      "g": "de",
+      "pl": "sokken",
+      "c": "t"
+    },
+    {
+      "nl": "trui",
+      "en": "sweater",
+      "g": "de",
+      "pl": "truien",
+      "c": "t"
+    },
+    {
+      "nl": "jurk",
+      "en": "dress",
+      "g": "de",
+      "pl": "jurken",
+      "c": "t"
+    },
+    {
+      "nl": "bril",
+      "en": "pair of glasses",
+      "g": "de",
+      "pl": "brillen",
+      "c": "t"
+    },
+    {
+      "nl": "telefoon",
+      "en": "telephone",
+      "g": "de",
+      "pl": "telefoons",
+      "c": "t"
+    },
+    {
+      "nl": "computer",
+      "en": "computer",
+      "g": "de",
+      "pl": "computers",
+      "c": "t"
+    },
+    {
+      "nl": "televisie",
+      "en": "television",
+      "g": "de",
+      "pl": "televisies",
+      "c": "t"
+    },
+    {
+      "nl": "klok",
+      "en": "clock",
+      "g": "de",
+      "pl": "klokken",
+      "c": "t"
+    },
+    {
+      "nl": "sleutel",
+      "en": "key",
+      "g": "de",
+      "pl": "sleutels",
+      "c": "t"
+    },
+    {
+      "nl": "fles",
+      "en": "bottle",
+      "g": "de",
+      "pl": "flessen",
+      "c": "t"
+    },
+    {
+      "nl": "lepel",
+      "en": "spoon",
+      "g": "de",
+      "pl": "lepels",
+      "c": "t"
+    },
+    {
+      "nl": "vork",
+      "en": "fork",
+      "g": "de",
+      "pl": "vorken",
+      "c": "t"
+    },
+    {
+      "nl": "pan",
+      "en": "pan",
+      "g": "de",
+      "pl": "pannen",
+      "c": "t"
+    },
+    {
+      "nl": "koelkast",
+      "en": "fridge",
+      "g": "de",
+      "pl": "koelkasten",
+      "c": "t"
+    },
+    {
+      "nl": "dokter",
+      "en": "doctor",
+      "g": "de",
+      "pl": "dokters",
+      "c": "p"
+    },
+    {
+      "nl": "leraar",
+      "en": "teacher",
+      "g": "de",
+      "pl": "leraren",
+      "c": "p"
+    },
+    {
+      "nl": "student",
+      "en": "student",
+      "g": "de",
+      "pl": "studenten",
+      "c": "p"
+    },
+    {
+      "nl": "vriend",
+      "en": "friend (m)",
+      "g": "de",
+      "pl": "vrienden",
+      "c": "p"
+    },
+    {
+      "nl": "vriendin",
+      "en": "friend (f)",
+      "g": "de",
+      "pl": "vriendinnen",
+      "c": "p"
+    },
+    {
+      "nl": "moeder",
+      "en": "mother",
+      "g": "de",
+      "pl": "moeders",
+      "c": "p"
+    },
+    {
+      "nl": "vader",
+      "en": "father",
+      "g": "de",
+      "pl": "vaders",
+      "c": "p"
+    },
+    {
+      "nl": "zus",
+      "en": "sister",
+      "g": "de",
+      "pl": "zussen",
+      "c": "p"
+    },
+    {
+      "nl": "broer",
+      "en": "brother",
+      "g": "de",
+      "pl": "broers",
+      "c": "p"
+    },
+    {
+      "nl": "naam",
+      "en": "name",
+      "g": "de",
+      "pl": "namen",
+      "c": "t"
+    },
+    {
+      "nl": "vraag",
+      "en": "question",
+      "g": "de",
+      "pl": "vragen",
+      "c": "t"
+    },
+    {
+      "nl": "taal",
+      "en": "language",
+      "g": "de",
+      "pl": "talen",
+      "c": "t"
+    },
+    {
+      "nl": "les",
+      "en": "lesson",
+      "g": "de",
+      "pl": "lessen",
+      "c": "t"
+    },
+    {
+      "nl": "film",
+      "en": "film",
+      "g": "de",
+      "pl": "films",
+      "c": "t"
+    },
+    {
+      "nl": "foto",
+      "en": "photo",
+      "g": "de",
+      "pl": "foto's",
+      "c": "t"
+    },
+    {
+      "nl": "reis",
+      "en": "journey",
+      "g": "de",
+      "pl": "reizen",
+      "c": "t"
+    },
+    {
+      "nl": "vakantie",
+      "en": "holiday",
+      "g": "de",
+      "pl": "vakanties",
+      "c": "t"
+    },
+    {
+      "nl": "kleur",
+      "en": "colour",
+      "g": "de",
+      "pl": "kleuren",
+      "c": "t"
+    },
+    {
+      "nl": "prijs",
+      "en": "price",
+      "g": "de",
+      "pl": "prijzen",
+      "c": "t"
+    },
+    {
+      "nl": "rekening",
+      "en": "bill",
+      "g": "de",
+      "pl": "rekeningen",
+      "c": "t"
+    },
+    {
+      "nl": "baan",
+      "en": "job",
+      "g": "de",
+      "pl": "banen",
+      "c": "t"
+    },
+    {
+      "nl": "buurman",
+      "en": "neighbour (m)",
+      "g": "de",
+      "pl": "buurmannen",
+      "c": "p"
+    },
+    {
+      "nl": "baby",
+      "en": "baby",
+      "g": "de",
+      "pl": "baby's",
+      "c": "p"
+    },
+    {
+      "nl": "huis",
+      "en": "house",
+      "g": "het",
+      "pl": "huizen",
+      "c": "l"
+    },
+    {
+      "nl": "boek",
+      "en": "book",
+      "g": "het",
+      "pl": "boeken",
+      "c": "t"
+    },
+    {
+      "nl": "kind",
+      "en": "child",
+      "g": "het",
+      "pl": "kinderen",
+      "c": "p"
+    },
+    {
+      "nl": "meisje",
+      "en": "girl",
+      "g": "het",
+      "pl": "meisjes",
+      "c": "p"
+    },
+    {
+      "nl": "water",
+      "en": "water",
+      "g": "het",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "brood",
+      "en": "bread",
+      "g": "het",
+      "pl": "broden",
+      "c": "f"
+    },
+    {
+      "nl": "glas",
+      "en": "glass",
+      "g": "het",
+      "pl": "glazen",
+      "c": "t"
+    },
+    {
+      "nl": "raam",
+      "en": "window",
+      "g": "het",
+      "pl": "ramen",
+      "c": "t"
+    },
+    {
+      "nl": "paard",
+      "en": "horse",
+      "g": "het",
+      "pl": "paarden",
+      "c": "a"
+    },
+    {
+      "nl": "ei",
+      "en": "egg",
+      "g": "het",
+      "pl": "eieren",
+      "c": "f"
+    },
+    {
+      "nl": "bed",
+      "en": "bed",
+      "g": "het",
+      "pl": "bedden",
+      "c": "t"
+    },
+    {
+      "nl": "feest",
+      "en": "party",
+      "g": "het",
+      "pl": "feesten",
+      "c": "t"
+    },
+    {
+      "nl": "land",
+      "en": "country",
+      "g": "het",
+      "pl": "landen",
+      "c": "l"
+    },
+    {
+      "nl": "jaar",
+      "en": "year",
+      "g": "het",
+      "pl": "jaren",
+      "c": "t"
+    },
+    {
+      "nl": "uur",
+      "en": "hour",
+      "g": "het",
+      "pl": "uren",
+      "c": "t"
+    },
+    {
+      "nl": "geld",
+      "en": "money",
+      "g": "het",
+      "pl": null,
+      "c": "t"
+    },
+    {
+      "nl": "oog",
+      "en": "eye",
+      "g": "het",
+      "pl": "ogen",
+      "c": "t"
+    },
+    {
+      "nl": "oor",
+      "en": "ear",
+      "g": "het",
+      "pl": "oren",
+      "c": "t"
+    },
+    {
+      "nl": "been",
+      "en": "leg",
+      "g": "het",
+      "pl": "benen",
+      "c": "t"
+    },
+    {
+      "nl": "hoofd",
+      "en": "head",
+      "g": "het",
+      "pl": "hoofden",
+      "c": "t"
+    },
+    {
+      "nl": "hart",
+      "en": "heart",
+      "g": "het",
+      "pl": "harten",
+      "c": "t"
+    },
+    {
+      "nl": "station",
+      "en": "station",
+      "g": "het",
+      "pl": "stations",
+      "c": "l"
+    },
+    {
+      "nl": "hotel",
+      "en": "hotel",
+      "g": "het",
+      "pl": "hotels",
+      "c": "l"
+    },
+    {
+      "nl": "restaurant",
+      "en": "restaurant",
+      "g": "het",
+      "pl": "restaurants",
+      "c": "l"
+    },
+    {
+      "nl": "museum",
+      "en": "museum",
+      "g": "het",
+      "pl": "musea",
+      "c": "l"
+    },
+    {
+      "nl": "ziekenhuis",
+      "en": "hospital",
+      "g": "het",
+      "pl": "ziekenhuizen",
+      "c": "l"
+    },
+    {
+      "nl": "strand",
+      "en": "beach",
+      "g": "het",
+      "pl": "stranden",
+      "c": "l"
+    },
+    {
+      "nl": "bos",
+      "en": "forest",
+      "g": "het",
+      "pl": "bossen",
+      "c": "l"
+    },
+    {
+      "nl": "dorp",
+      "en": "village",
+      "g": "het",
+      "pl": "dorpen",
+      "c": "l"
+    },
+    {
+      "nl": "plein",
+      "en": "square",
+      "g": "het",
+      "pl": "pleinen",
+      "c": "l"
+    },
+    {
+      "nl": "gebouw",
+      "en": "building",
+      "g": "het",
+      "pl": "gebouwen",
+      "c": "l"
+    },
+    {
+      "nl": "kantoor",
+      "en": "office",
+      "g": "het",
+      "pl": "kantoren",
+      "c": "l"
+    },
+    {
+      "nl": "idee",
+      "en": "idea",
+      "g": "het",
+      "pl": "ideeën",
+      "c": "t"
+    },
+    {
+      "nl": "probleem",
+      "en": "problem",
+      "g": "het",
+      "pl": "problemen",
+      "c": "t"
+    },
+    {
+      "nl": "antwoord",
+      "en": "answer",
+      "g": "het",
+      "pl": "antwoorden",
+      "c": "t"
+    },
+    {
+      "nl": "verhaal",
+      "en": "story",
+      "g": "het",
+      "pl": "verhalen",
+      "c": "t"
+    },
+    {
+      "nl": "woord",
+      "en": "word",
+      "g": "het",
+      "pl": "woorden",
+      "c": "t"
+    },
+    {
+      "nl": "nummer",
+      "en": "number",
+      "g": "het",
+      "pl": "nummers",
+      "c": "t"
+    },
+    {
+      "nl": "adres",
+      "en": "address",
+      "g": "het",
+      "pl": "adressen",
+      "c": "t"
+    },
+    {
+      "nl": "cadeau",
+      "en": "present/gift",
+      "g": "het",
+      "pl": "cadeaus",
+      "c": "t"
+    },
+    {
+      "nl": "dier",
+      "en": "animal",
+      "g": "het",
+      "pl": "dieren",
+      "c": "a"
+    },
+    {
+      "nl": "konijn",
+      "en": "rabbit",
+      "g": "het",
+      "pl": "konijnen",
+      "c": "a"
+    },
+    {
+      "nl": "schaap",
+      "en": "sheep",
+      "g": "het",
+      "pl": "schapen",
+      "c": "a"
+    },
+    {
+      "nl": "varken",
+      "en": "pig",
+      "g": "het",
+      "pl": "varkens",
+      "c": "a"
+    },
+    {
+      "nl": "bier",
+      "en": "beer",
+      "g": "het",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "ontbijt",
+      "en": "breakfast",
+      "g": "het",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "mes",
+      "en": "knife",
+      "g": "het",
+      "pl": "messen",
+      "c": "t"
+    },
+    {
+      "nl": "bord",
+      "en": "plate",
+      "g": "het",
+      "pl": "borden",
+      "c": "t"
+    },
+    {
+      "nl": "seizoen",
+      "en": "season",
+      "g": "het",
+      "pl": "seizoenen",
+      "c": "t"
+    },
+    {
+      "nl": "gezicht",
+      "en": "face",
+      "g": "het",
+      "pl": "gezichten",
+      "c": "t"
+    },
+    {
+      "nl": "eiland",
+      "en": "island",
+      "g": "het",
+      "pl": "eilanden",
+      "c": "l"
+    },
+    {
+      "nl": "vliegtuig",
+      "en": "aeroplane",
+      "g": "het",
+      "pl": "vliegtuigen",
+      "c": "t"
+    },
+    {
+      "nl": "schip",
+      "en": "ship",
+      "g": "het",
+      "pl": "schepen",
+      "c": "t"
+    },
+    {
+      "nl": "paspoort",
+      "en": "passport",
+      "g": "het",
+      "pl": "paspoorten",
+      "c": "t"
+    },
+    {
+      "nl": "gesprek",
+      "en": "conversation",
+      "g": "het",
+      "pl": "gesprekken",
+      "c": "t"
+    },
+    {
+      "nl": "examen",
+      "en": "exam",
+      "g": "het",
+      "pl": "examens",
+      "c": "t"
+    },
+    {
+      "nl": "potlood",
+      "en": "pencil",
+      "g": "het",
+      "pl": "potloden",
+      "c": "t"
+    },
+    {
+      "nl": "dak",
+      "en": "roof",
+      "g": "het",
+      "pl": "daken",
+      "c": "t"
+    },
+    {
+      "nl": "toilet",
+      "en": "toilet",
+      "g": "het",
+      "pl": "toiletten",
+      "c": "t"
+    },
+    {
+      "nl": "zwembad",
+      "en": "swimming pool",
+      "g": "het",
+      "pl": "zwembaden",
+      "c": "l"
+    },
+    {
+      "nl": "park",
+      "en": "park",
+      "g": "het",
+      "pl": "parken",
+      "c": "l"
+    },
+    {
+      "nl": "weekend",
+      "en": "weekend",
+      "g": "het",
+      "pl": "weekends",
+      "c": "t"
+    },
+    {
+      "nl": "fruit",
+      "en": "fruit",
+      "g": "het",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "vlees",
+      "en": "meat",
+      "g": "het",
+      "pl": null,
+      "c": "f"
+    },
+    {
+      "nl": "werk",
+      "en": "work",
+      "g": "het",
+      "pl": null,
+      "c": "t"
+    },
+    {
+      "nl": "weer",
+      "en": "weather",
+      "g": "het",
+      "pl": null,
+      "c": "t"
+    },
+    {
+      "nl": "haar",
+      "en": "hair",
+      "g": "het",
+      "pl": null,
+      "c": "t"
+    },
+    {
+      "nl": "ijs",
+      "en": "ice cream",
+      "g": "het",
+      "pl": null,
+      "c": "f"
+    }
+  ],
+  "adjectives": [
+    {
+      "b": "groot",
+      "e": "grote",
+      "en": "big",
+      "cats": "patlf"
+    },
+    {
+      "b": "klein",
+      "e": "kleine",
+      "en": "small",
+      "cats": "patlf"
+    },
+    {
+      "b": "nieuw",
+      "e": "nieuwe",
+      "en": "new",
+      "cats": "tl"
+    },
+    {
+      "b": "oud",
+      "e": "oude",
+      "en": "old",
+      "cats": "patl"
+    },
+    {
+      "b": "mooi",
+      "e": "mooie",
+      "en": "beautiful",
+      "cats": "patl"
+    },
+    {
+      "b": "lelijk",
+      "e": "lelijke",
+      "en": "ugly",
+      "cats": "tl"
+    },
+    {
+      "b": "duur",
+      "e": "dure",
+      "en": "expensive",
+      "cats": "tlf"
+    },
+    {
+      "b": "goedkoop",
+      "e": "goedkope",
+      "en": "cheap",
+      "cats": "tlf"
+    },
+    {
+      "b": "snel",
+      "e": "snelle",
+      "en": "fast",
+      "cats": "pat"
+    },
+    {
+      "b": "langzaam",
+      "e": "langzame",
+      "en": "slow",
+      "cats": "pat"
+    },
+    {
+      "b": "warm",
+      "e": "warme",
+      "en": "warm",
+      "cats": "tlf"
+    },
+    {
+      "b": "koud",
+      "e": "koude",
+      "en": "cold",
+      "cats": "tlf"
+    },
+    {
+      "b": "jong",
+      "e": "jonge",
+      "en": "young",
+      "cats": "pa"
+    },
+    {
+      "b": "lekker",
+      "e": "lekkere",
+      "en": "tasty",
+      "cats": "f"
+    },
+    {
+      "b": "vies",
+      "e": "vieze",
+      "en": "dirty/gross",
+      "cats": "tlf"
+    },
+    {
+      "b": "schoon",
+      "e": "schone",
+      "en": "clean",
+      "cats": "tl"
+    },
+    {
+      "b": "leuk",
+      "e": "leuke",
+      "en": "nice/fun",
+      "cats": "ptl"
+    },
+    {
+      "b": "druk",
+      "e": "drukke",
+      "en": "busy",
+      "cats": "pl"
+    },
+    {
+      "b": "rustig",
+      "e": "rustige",
+      "en": "quiet/calm",
+      "cats": "pal"
+    },
+    {
+      "b": "vrolijk",
+      "e": "vrolijke",
+      "en": "cheerful",
+      "cats": "pa"
+    },
+    {
+      "b": "boos",
+      "e": "boze",
+      "en": "angry",
+      "cats": "pa"
+    },
+    {
+      "b": "aardig",
+      "e": "aardige",
+      "en": "kind",
+      "cats": "p"
+    },
+    {
+      "b": "dik",
+      "e": "dikke",
+      "en": "thick/fat",
+      "cats": "patf"
+    },
+    {
+      "b": "dun",
+      "e": "dunne",
+      "en": "thin",
+      "cats": "pat"
+    },
+    {
+      "b": "zwaar",
+      "e": "zware",
+      "en": "heavy",
+      "cats": "t"
+    },
+    {
+      "b": "licht",
+      "e": "lichte",
+      "en": "light",
+      "cats": "t"
+    },
+    {
+      "b": "rood",
+      "e": "rode",
+      "en": "red",
+      "cats": "tf"
+    },
+    {
+      "b": "groen",
+      "e": "groene",
+      "en": "green",
+      "cats": "tf"
+    },
+    {
+      "b": "geel",
+      "e": "gele",
+      "en": "yellow",
+      "cats": "tf"
+    },
+    {
+      "b": "blauw",
+      "e": "blauwe",
+      "en": "blue",
+      "cats": "t"
+    },
+    {
+      "b": "zwart",
+      "e": "zwarte",
+      "en": "black",
+      "cats": "ta"
+    },
+    {
+      "b": "wit",
+      "e": "witte",
+      "en": "white",
+      "cats": "taf"
+    }
+  ],
+  "verbs_present": [
+    {
+      "inf": "werken",
+      "stem": "werk",
+      "t": "werkt",
+      "en": "to work",
+      "compl": "in een winkel"
+    },
+    {
+      "inf": "maken",
+      "stem": "maak",
+      "t": "maakt",
+      "en": "to make",
+      "compl": "het eten"
+    },
+    {
+      "inf": "wonen",
+      "stem": "woon",
+      "t": "woont",
+      "en": "to live",
+      "compl": "in Amsterdam"
+    },
+    {
+      "inf": "spelen",
+      "stem": "speel",
+      "t": "speelt",
+      "en": "to play",
+      "compl": "in het park"
+    },
+    {
+      "inf": "koken",
+      "stem": "kook",
+      "t": "kookt",
+      "en": "to cook",
+      "compl": "vanavond"
+    },
+    {
+      "inf": "luisteren",
+      "stem": "luister",
+      "t": "luistert",
+      "en": "to listen",
+      "compl": "naar muziek"
+    },
+    {
+      "inf": "praten",
+      "stem": "praat",
+      "t": "praat",
+      "en": "to talk",
+      "compl": "met de buurman"
+    },
+    {
+      "inf": "wachten",
+      "stem": "wacht",
+      "t": "wacht",
+      "en": "to wait",
+      "compl": "op de bus"
+    },
+    {
+      "inf": "kopen",
+      "stem": "koop",
+      "t": "koopt",
+      "en": "to buy",
+      "compl": "een nieuwe jas"
+    },
+    {
+      "inf": "leren",
+      "stem": "leer",
+      "t": "leert",
+      "en": "to learn",
+      "compl": "Nederlands"
+    },
+    {
+      "inf": "betalen",
+      "stem": "betaal",
+      "t": "betaalt",
+      "en": "to pay",
+      "compl": "de rekening"
+    },
+    {
+      "inf": "bellen",
+      "stem": "bel",
+      "t": "belt",
+      "en": "to call",
+      "compl": "de dokter"
+    },
+    {
+      "inf": "halen",
+      "stem": "haal",
+      "t": "haalt",
+      "en": "to fetch",
+      "compl": "brood bij de bakker"
+    },
+    {
+      "inf": "horen",
+      "stem": "hoor",
+      "t": "hoort",
+      "en": "to hear",
+      "compl": "de muziek"
+    },
+    {
+      "inf": "kijken",
+      "stem": "kijk",
+      "t": "kijkt",
+      "en": "to watch",
+      "compl": "naar de film"
+    },
+    {
+      "inf": "vragen",
+      "stem": "vraag",
+      "t": "vraagt",
+      "en": "to ask",
+      "compl": "de weg"
+    },
+    {
+      "inf": "zwemmen",
+      "stem": "zwem",
+      "t": "zwemt",
+      "en": "to swim",
+      "compl": "in het zwembad"
+    },
+    {
+      "inf": "rennen",
+      "stem": "ren",
+      "t": "rent",
+      "en": "to run",
+      "compl": "door het park"
+    },
+    {
+      "inf": "dansen",
+      "stem": "dans",
+      "t": "danst",
+      "en": "to dance",
+      "compl": "op het feest"
+    },
+    {
+      "inf": "zingen",
+      "stem": "zing",
+      "t": "zingt",
+      "en": "to sing",
+      "compl": "een liedje"
+    },
+    {
+      "inf": "slapen",
+      "stem": "slaap",
+      "t": "slaapt",
+      "en": "to sleep",
+      "compl": "tot negen uur"
+    },
+    {
+      "inf": "drinken",
+      "stem": "drink",
+      "t": "drinkt",
+      "en": "to drink",
+      "compl": "koffie"
+    },
+    {
+      "inf": "eten",
+      "stem": "eet",
+      "t": "eet",
+      "en": "to eat",
+      "compl": "een boterham"
+    },
+    {
+      "inf": "lezen",
+      "stem": "lees",
+      "t": "leest",
+      "en": "to read",
+      "compl": "de krant"
+    },
+    {
+      "inf": "schrijven",
+      "stem": "schrijf",
+      "t": "schrijft",
+      "en": "to write",
+      "compl": "een brief"
+    },
+    {
+      "inf": "lopen",
+      "stem": "loop",
+      "t": "loopt",
+      "en": "to walk",
+      "compl": "naar het station"
+    },
+    {
+      "inf": "fietsen",
+      "stem": "fiets",
+      "t": "fietst",
+      "en": "to cycle",
+      "compl": "naar school"
+    },
+    {
+      "inf": "geven",
+      "stem": "geef",
+      "t": "geeft",
+      "en": "to give",
+      "compl": "een cadeau"
+    },
+    {
+      "inf": "reizen",
+      "stem": "reis",
+      "t": "reist",
+      "en": "to travel",
+      "compl": "door Europa"
+    },
+    {
+      "inf": "geloven",
+      "stem": "geloof",
+      "t": "gelooft",
+      "en": "to believe",
+      "compl": "het verhaal"
+    },
+    {
+      "inf": "gaan",
+      "stem": "ga",
+      "t": "gaat",
+      "en": "to go",
+      "compl": "naar de markt"
+    },
+    {
+      "inf": "staan",
+      "stem": "sta",
+      "t": "staat",
+      "en": "to stand",
+      "compl": "in de keuken"
+    },
+    {
+      "inf": "doen",
+      "stem": "doe",
+      "t": "doet",
+      "en": "to do",
+      "compl": "de afwas"
+    },
+    {
+      "inf": "zien",
+      "stem": "zie",
+      "t": "ziet",
+      "en": "to see",
+      "compl": "de zee"
+    },
+    {
+      "inf": "komen",
+      "stem": "kom",
+      "t": "komt",
+      "en": "to come",
+      "compl": "naar het feest"
+    }
+  ],
+  "verbs_perfect": [
+    {
+      "inf": "werken",
+      "part": "gewerkt",
+      "aux": "hebben",
+      "compl": "de hele dag",
+      "kof": true
+    },
+    {
+      "inf": "maken",
+      "part": "gemaakt",
+      "aux": "hebben",
+      "compl": "het eten",
+      "kof": true
+    },
+    {
+      "inf": "wonen",
+      "part": "gewoond",
+      "aux": "hebben",
+      "compl": "in Amsterdam",
+      "kof": true
+    },
+    {
+      "inf": "spelen",
+      "part": "gespeeld",
+      "aux": "hebben",
+      "compl": "in het park",
+      "kof": true
+    },
+    {
+      "inf": "koken",
+      "part": "gekookt",
+      "aux": "hebben",
+      "compl": "gisteren",
+      "kof": true
+    },
+    {
+      "inf": "luisteren",
+      "part": "geluisterd",
+      "aux": "hebben",
+      "compl": "naar de radio",
+      "kof": true
+    },
+    {
+      "inf": "praten",
+      "part": "gepraat",
+      "aux": "hebben",
+      "compl": "met de buren",
+      "kof": true
+    },
+    {
+      "inf": "wachten",
+      "part": "gewacht",
+      "aux": "hebben",
+      "compl": "op de trein",
+      "kof": true
+    },
+    {
+      "inf": "leren",
+      "part": "geleerd",
+      "aux": "hebben",
+      "compl": "Nederlands",
+      "kof": true
+    },
+    {
+      "inf": "betalen",
+      "part": "betaald",
+      "aux": "hebben",
+      "compl": "de rekening",
+      "kof": false
+    },
+    {
+      "inf": "bellen",
+      "part": "gebeld",
+      "aux": "hebben",
+      "compl": "de dokter",
+      "kof": true
+    },
+    {
+      "inf": "horen",
+      "part": "gehoord",
+      "aux": "hebben",
+      "compl": "het nieuws",
+      "kof": true
+    },
+    {
+      "inf": "dansen",
+      "part": "gedanst",
+      "aux": "hebben",
+      "compl": "op het feest",
+      "kof": true
+    },
+    {
+      "inf": "fietsen",
+      "part": "gefietst",
+      "aux": "hebben",
+      "compl": "een uur",
+      "kof": true
+    },
+    {
+      "inf": "reizen",
+      "part": "gereisd",
+      "aux": "hebben",
+      "compl": "door Europa",
+      "kof": true
+    },
+    {
+      "inf": "geloven",
+      "part": "geloofd",
+      "aux": "hebben",
+      "compl": "het verhaal",
+      "kof": false
+    },
+    {
+      "inf": "kopen",
+      "part": "gekocht",
+      "aux": "hebben",
+      "compl": "een jas",
+      "kof": false
+    },
+    {
+      "inf": "kijken",
+      "part": "gekeken",
+      "aux": "hebben",
+      "compl": "naar een film",
+      "kof": false
+    },
+    {
+      "inf": "vragen",
+      "part": "gevraagd",
+      "aux": "hebben",
+      "compl": "de weg",
+      "kof": false
+    },
+    {
+      "inf": "zeggen",
+      "part": "gezegd",
+      "aux": "hebben",
+      "compl": "niets",
+      "kof": false
+    },
+    {
+      "inf": "zwemmen",
+      "part": "gezwommen",
+      "aux": "hebben",
+      "compl": "in het zwembad",
+      "kof": false
+    },
+    {
+      "inf": "zingen",
+      "part": "gezongen",
+      "aux": "hebben",
+      "compl": "een liedje",
+      "kof": false
+    },
+    {
+      "inf": "slapen",
+      "part": "geslapen",
+      "aux": "hebben",
+      "compl": "tot tien uur",
+      "kof": false
+    },
+    {
+      "inf": "drinken",
+      "part": "gedronken",
+      "aux": "hebben",
+      "compl": "thee",
+      "kof": false
+    },
+    {
+      "inf": "eten",
+      "part": "gegeten",
+      "aux": "hebben",
+      "compl": "pizza",
+      "kof": false
+    },
+    {
+      "inf": "lezen",
+      "part": "gelezen",
+      "aux": "hebben",
+      "compl": "het boek",
+      "kof": false
+    },
+    {
+      "inf": "schrijven",
+      "part": "geschreven",
+      "aux": "hebben",
+      "compl": "een brief",
+      "kof": false
+    },
+    {
+      "inf": "lopen",
+      "part": "gelopen",
+      "aux": "hebben",
+      "compl": "een uur",
+      "kof": false
+    },
+    {
+      "inf": "geven",
+      "part": "gegeven",
+      "aux": "hebben",
+      "compl": "een cadeau",
+      "kof": false
+    },
+    {
+      "inf": "zien",
+      "part": "gezien",
+      "aux": "hebben",
+      "compl": "de film",
+      "kof": false
+    },
+    {
+      "inf": "doen",
+      "part": "gedaan",
+      "aux": "hebben",
+      "compl": "de afwas",
+      "kof": false
+    },
+    {
+      "inf": "gebruiken",
+      "part": "gebruikt",
+      "aux": "hebben",
+      "compl": "de computer",
+      "kof": false
+    },
+    {
+      "inf": "bestellen",
+      "part": "besteld",
+      "aux": "hebben",
+      "compl": "soep",
+      "kof": false
+    },
+    {
+      "inf": "proberen",
+      "part": "geprobeerd",
+      "aux": "hebben",
+      "compl": "het",
+      "kof": false
+    },
+    {
+      "inf": "gaan",
+      "part": "gegaan",
+      "aux": "zijn",
+      "compl": "naar huis",
+      "kof": false
+    },
+    {
+      "inf": "komen",
+      "part": "gekomen",
+      "aux": "zijn",
+      "compl": "te laat",
+      "kof": false
+    },
+    {
+      "inf": "blijven",
+      "part": "gebleven",
+      "aux": "zijn",
+      "compl": "thuis",
+      "kof": false
+    },
+    {
+      "inf": "beginnen",
+      "part": "begonnen",
+      "aux": "zijn",
+      "compl": "om negen uur",
+      "kof": false
+    },
+    {
+      "inf": "worden",
+      "part": "geworden",
+      "aux": "zijn",
+      "compl": "ziek",
+      "kof": false
+    },
+    {
+      "inf": "vertrekken",
+      "part": "vertrokken",
+      "aux": "zijn",
+      "compl": "om acht uur",
+      "kof": false
+    },
+    {
+      "inf": "verhuizen",
+      "part": "verhuisd",
+      "aux": "zijn",
+      "compl": "naar Utrecht",
+      "kof": false
+    },
+    {
+      "inf": "vallen",
+      "part": "gevallen",
+      "aux": "zijn",
+      "compl": "van de fiets",
+      "kof": false
+    },
+    {
+      "inf": "zijn",
+      "part": "geweest",
+      "aux": "zijn",
+      "compl": "in Parijs",
+      "kof": false
+    }
+  ],
+  "modals": [
+    {
+      "inf": "kunnen",
+      "en": "can / to be able to",
+      "ik": "kan",
+      "jij": "kunt",
+      "hij": "kan",
+      "pl": "kunnen"
+    },
+    {
+      "inf": "moeten",
+      "en": "must / to have to",
+      "ik": "moet",
+      "jij": "moet",
+      "hij": "moet",
+      "pl": "moeten"
+    },
+    {
+      "inf": "mogen",
+      "en": "may / to be allowed to",
+      "ik": "mag",
+      "jij": "mag",
+      "hij": "mag",
+      "pl": "mogen"
+    },
+    {
+      "inf": "willen",
+      "en": "to want",
+      "ik": "wil",
+      "jij": "wilt",
+      "hij": "wil",
+      "pl": "willen"
+    },
+    {
+      "inf": "zullen",
+      "en": "will / shall",
+      "ik": "zal",
+      "jij": "zult",
+      "hij": "zal",
+      "pl": "zullen"
+    }
+  ],
+  "separable_verbs": [
+    {
+      "inf": "opstaan",
+      "part": "op",
+      "stem": "sta",
+      "t": "staat",
+      "pp": "opgestaan",
+      "aux": "zijn",
+      "en": "to get up",
+      "compl": "om zeven uur"
+    },
+    {
+      "inf": "aankomen",
+      "part": "aan",
+      "stem": "kom",
+      "t": "komt",
+      "pp": "aangekomen",
+      "aux": "zijn",
+      "en": "to arrive",
+      "compl": "om drie uur"
+    },
+    {
+      "inf": "meenemen",
+      "part": "mee",
+      "stem": "neem",
+      "t": "neemt",
+      "pp": "meegenomen",
+      "aux": "hebben",
+      "en": "to take along",
+      "compl": "een paraplu"
+    },
+    {
+      "inf": "opbellen",
+      "part": "op",
+      "stem": "bel",
+      "t": "belt",
+      "pp": "opgebeld",
+      "aux": "hebben",
+      "en": "to phone",
+      "compl": "oma"
+    },
+    {
+      "inf": "uitnodigen",
+      "part": "uit",
+      "stem": "nodig",
+      "t": "nodigt",
+      "pp": "uitgenodigd",
+      "aux": "hebben",
+      "en": "to invite",
+      "compl": "de buren"
+    },
+    {
+      "inf": "aantrekken",
+      "part": "aan",
+      "stem": "trek",
+      "t": "trekt",
+      "pp": "aangetrokken",
+      "aux": "hebben",
+      "en": "to put on (clothes)",
+      "compl": "een warme trui"
+    },
+    {
+      "inf": "terugkomen",
+      "part": "terug",
+      "stem": "kom",
+      "t": "komt",
+      "pp": "teruggekomen",
+      "aux": "zijn",
+      "en": "to come back",
+      "compl": "morgen"
+    },
+    {
+      "inf": "weggaan",
+      "part": "weg",
+      "stem": "ga",
+      "t": "gaat",
+      "pp": "weggegaan",
+      "aux": "zijn",
+      "en": "to leave",
+      "compl": "vroeg"
+    },
+    {
+      "inf": "opruimen",
+      "part": "op",
+      "stem": "ruim",
+      "t": "ruimt",
+      "pp": "opgeruimd",
+      "aux": "hebben",
+      "en": "to tidy up",
+      "compl": "de kamer"
+    },
+    {
+      "inf": "afwassen",
+      "part": "af",
+      "stem": "was",
+      "t": "wast",
+      "pp": "afgewassen",
+      "aux": "hebben",
+      "en": "to do the dishes",
+      "compl": "na het eten"
+    },
+    {
+      "inf": "uitgaan",
+      "part": "uit",
+      "stem": "ga",
+      "t": "gaat",
+      "pp": "uitgegaan",
+      "aux": "zijn",
+      "en": "to go out",
+      "compl": "in het weekend"
+    },
+    {
+      "inf": "meedoen",
+      "part": "mee",
+      "stem": "doe",
+      "t": "doet",
+      "pp": "meegedaan",
+      "aux": "hebben",
+      "en": "to join in",
+      "compl": "met het spel"
+    },
+    {
+      "inf": "ophangen",
+      "part": "op",
+      "stem": "hang",
+      "t": "hangt",
+      "pp": "opgehangen",
+      "aux": "hebben",
+      "en": "to hang up",
+      "compl": "de jas"
+    },
+    {
+      "inf": "afmaken",
+      "part": "af",
+      "stem": "maak",
+      "t": "maakt",
+      "pp": "afgemaakt",
+      "aux": "hebben",
+      "en": "to finish",
+      "compl": "het werk"
+    },
+    {
+      "inf": "inpakken",
+      "part": "in",
+      "stem": "pak",
+      "t": "pakt",
+      "pp": "ingepakt",
+      "aux": "hebben",
+      "en": "to pack",
+      "compl": "de koffer"
+    },
+    {
+      "inf": "uitdoen",
+      "part": "uit",
+      "stem": "doe",
+      "t": "doet",
+      "pp": "uitgedaan",
+      "aux": "hebben",
+      "en": "to turn off",
+      "compl": "de lamp"
+    },
+    {
+      "inf": "aandoen",
+      "part": "aan",
+      "stem": "doe",
+      "t": "doet",
+      "pp": "aangedaan",
+      "aux": "hebben",
+      "en": "to turn on",
+      "compl": "het licht"
+    },
+    {
+      "inf": "terugbellen",
+      "part": "terug",
+      "stem": "bel",
+      "t": "belt",
+      "pp": "teruggebeld",
+      "aux": "hebben",
+      "en": "to call back",
+      "compl": "de klant"
+    },
+    {
+      "inf": "binnenkomen",
+      "part": "binnen",
+      "stem": "kom",
+      "t": "komt",
+      "pp": "binnengekomen",
+      "aux": "zijn",
+      "en": "to come in",
+      "compl": "om zes uur"
+    },
+    {
+      "inf": "oversteken",
+      "part": "over",
+      "stem": "steek",
+      "t": "steekt",
+      "pp": "overgestoken",
+      "aux": "zijn",
+      "en": "to cross",
+      "compl": "bij het stoplicht"
+    },
+    {
+      "inf": "meegaan",
+      "part": "mee",
+      "stem": "ga",
+      "t": "gaat",
+      "pp": "meegegaan",
+      "aux": "zijn",
+      "en": "to go along",
+      "compl": "naar de stad"
+    },
+    {
+      "inf": "schoonmaken",
+      "part": "schoon",
+      "stem": "maak",
+      "t": "maakt",
+      "pp": "schoongemaakt",
+      "aux": "hebben",
+      "en": "to clean",
+      "compl": "de keuken"
+    },
+    {
+      "inf": "ophalen",
+      "part": "op",
+      "stem": "haal",
+      "t": "haalt",
+      "pp": "opgehaald",
+      "aux": "hebben",
+      "en": "to pick up",
+      "compl": "de kinderen"
+    },
+    {
+      "inf": "invullen",
+      "part": "in",
+      "stem": "vul",
+      "t": "vult",
+      "pp": "ingevuld",
+      "aux": "hebben",
+      "en": "to fill in",
+      "compl": "het formulier"
+    },
+    {
+      "inf": "uitleggen",
+      "part": "uit",
+      "stem": "leg",
+      "t": "legt",
+      "pp": "uitgelegd",
+      "aux": "hebben",
+      "en": "to explain",
+      "compl": "de regels"
+    },
+    {
+      "inf": "voorstellen",
+      "part": "voor",
+      "stem": "stel",
+      "t": "stelt",
+      "pp": "voorgesteld",
+      "aux": "hebben",
+      "en": "to introduce",
+      "compl": "zijn collega"
+    },
+    {
+      "inf": "instappen",
+      "part": "in",
+      "stem": "stap",
+      "t": "stapt",
+      "pp": "ingestapt",
+      "aux": "zijn",
+      "en": "to get in",
+      "compl": "bij het station"
+    },
+    {
+      "inf": "uitstappen",
+      "part": "uit",
+      "stem": "stap",
+      "t": "stapt",
+      "pp": "uitgestapt",
+      "aux": "zijn",
+      "en": "to get out",
+      "compl": "bij de halte"
+    },
+    {
+      "inf": "opeten",
+      "part": "op",
+      "stem": "eet",
+      "t": "eet",
+      "pp": "opgegeten",
+      "aux": "hebben",
+      "en": "to eat up",
+      "compl": "de appel"
+    },
+    {
+      "inf": "neerzetten",
+      "part": "neer",
+      "stem": "zet",
+      "t": "zet",
+      "pp": "neergezet",
+      "aux": "hebben",
+      "en": "to put down",
+      "compl": "de tas"
+    }
+  ],
+  "comparatives": [
+    {
+      "b": "groot",
+      "c": "groter",
+      "s": "grootst",
+      "en": "big",
+      "ce": "grotere"
+    },
+    {
+      "b": "klein",
+      "c": "kleiner",
+      "s": "kleinst",
+      "en": "small",
+      "ce": "kleinere"
+    },
+    {
+      "b": "oud",
+      "c": "ouder",
+      "s": "oudst",
+      "en": "old",
+      "ce": "oudere"
+    },
+    {
+      "b": "jong",
+      "c": "jonger",
+      "s": "jongst",
+      "en": "young",
+      "ce": "jongere"
+    },
+    {
+      "b": "duur",
+      "c": "duurder",
+      "s": "duurst",
+      "en": "expensive",
+      "ce": "duurdere"
+    },
+    {
+      "b": "lekker",
+      "c": "lekkerder",
+      "s": "lekkerst",
+      "en": "tasty",
+      "ce": "lekkerdere"
+    },
+    {
+      "b": "ver",
+      "c": "verder",
+      "s": "verst",
+      "en": "far",
+      "ce": "verdere"
+    },
+    {
+      "b": "goed",
+      "c": "beter",
+      "s": "best",
+      "en": "good",
+      "ce": "betere"
+    },
+    {
+      "b": "veel",
+      "c": "meer",
+      "s": "meest",
+      "en": "much/many",
+      "ce": null
+    },
+    {
+      "b": "weinig",
+      "c": "minder",
+      "s": "minst",
+      "en": "little/few",
+      "ce": null
+    },
+    {
+      "b": "graag",
+      "c": "liever",
+      "s": "liefst",
+      "en": "gladly",
+      "ce": null
+    },
+    {
+      "b": "mooi",
+      "c": "mooier",
+      "s": "mooist",
+      "en": "beautiful",
+      "ce": "mooiere"
+    },
+    {
+      "b": "snel",
+      "c": "sneller",
+      "s": "snelst",
+      "en": "fast",
+      "ce": "snellere"
+    },
+    {
+      "b": "warm",
+      "c": "warmer",
+      "s": "warmst",
+      "en": "warm",
+      "ce": "warmere"
+    },
+    {
+      "b": "koud",
+      "c": "kouder",
+      "s": "koudst",
+      "en": "cold",
+      "ce": "koudere"
+    },
+    {
+      "b": "hoog",
+      "c": "hoger",
+      "s": "hoogst",
+      "en": "high",
+      "ce": "hogere"
+    },
+    {
+      "b": "laag",
+      "c": "lager",
+      "s": "laagst",
+      "en": "low",
+      "ce": "lagere"
+    },
+    {
+      "b": "zwaar",
+      "c": "zwaarder",
+      "s": "zwaarst",
+      "en": "heavy",
+      "ce": "zwaardere"
+    },
+    {
+      "b": "dik",
+      "c": "dikker",
+      "s": "dikst",
+      "en": "thick",
+      "ce": "dikkere"
+    },
+    {
+      "b": "goedkoop",
+      "c": "goedkoper",
+      "s": "goedkoopst",
+      "en": "cheap",
+      "ce": "goedkopere"
+    },
+    {
+      "b": "lang",
+      "c": "langer",
+      "s": "langst",
+      "en": "long",
+      "ce": "langere"
+    },
+    {
+      "b": "kort",
+      "c": "korter",
+      "s": "kortst",
+      "en": "short",
+      "ce": "kortere"
+    },
+    {
+      "b": "breed",
+      "c": "breder",
+      "s": "breedst",
+      "en": "wide",
+      "ce": "bredere"
+    },
+    {
+      "b": "smal",
+      "c": "smaller",
+      "s": "smalst",
+      "en": "narrow",
+      "ce": "smallere"
+    },
+    {
+      "b": "zacht",
+      "c": "zachter",
+      "s": "zachtst",
+      "en": "soft",
+      "ce": "zachtere"
+    },
+    {
+      "b": "hard",
+      "c": "harder",
+      "s": "hardst",
+      "en": "hard",
+      "ce": "hardere"
+    },
+    {
+      "b": "licht",
+      "c": "lichter",
+      "s": "lichtst",
+      "en": "light",
+      "ce": "lichtere"
+    },
+    {
+      "b": "donker",
+      "c": "donkerder",
+      "s": "donkerst",
+      "en": "dark",
+      "ce": "donkerdere"
+    },
+    {
+      "b": "vroeg",
+      "c": "vroeger",
+      "s": "vroegst",
+      "en": "early",
+      "ce": "vroegere"
+    },
+    {
+      "b": "laat",
+      "c": "later",
+      "s": "laatst",
+      "en": "late",
+      "ce": "latere"
+    }
+  ],
+  "subjects": [
+    {
+      "p": "ik",
+      "slot": "ik"
+    },
+    {
+      "p": "jij",
+      "slot": "t"
+    },
+    {
+      "p": "hij",
+      "slot": "t"
+    },
+    {
+      "p": "zij (she)",
+      "pron": "zij",
+      "slot": "t"
+    },
+    {
+      "p": "u",
+      "slot": "t"
+    },
+    {
+      "p": "wij",
+      "slot": "pl"
+    },
+    {
+      "p": "jullie",
+      "slot": "pl"
+    },
+    {
+      "p": "zij (they)",
+      "pron": "zij",
+      "slot": "pl"
+    }
+  ],
+  "aux_forms": {
+    "hebben": {
+      "ik": "heb",
+      "t": "heeft",
+      "jij": "hebt",
+      "pl": "hebben"
+    },
+    "zijn": {
+      "ik": "ben",
+      "t": "is",
+      "jij": "bent",
+      "pl": "zijn"
+    }
+  },
+  "word_order": {
+    "time_fronts": [
+      "Morgen",
+      "Vandaag",
+      "Straks",
+      "Volgende week",
+      "Om acht uur",
+      "In de zomer",
+      "Vanavond",
+      "Volgend jaar",
+      "Elke ochtend",
+      "Na het werk",
+      "In het weekend",
+      "Op zaterdag",
+      "Vanmiddag",
+      "Overmorgen"
+    ],
+    "clauses": [
+      {
+        "s": "ik",
+        "v": "ga",
+        "rest": "naar school"
+      },
+      {
+        "s": "wij",
+        "v": "eten",
+        "rest": "pizza"
+      },
+      {
+        "s": "hij",
+        "v": "werkt",
+        "rest": "thuis"
+      },
+      {
+        "s": "zij",
+        "v": "komt",
+        "rest": "naar het feest"
+      },
+      {
+        "s": "jullie",
+        "v": "spelen",
+        "rest": "voetbal"
+      },
+      {
+        "s": "ik",
+        "v": "lees",
+        "rest": "de krant"
+      },
+      {
+        "s": "wij",
+        "v": "gaan",
+        "rest": "naar de markt"
+      },
+      {
+        "s": "hij",
+        "v": "belt",
+        "rest": "zijn moeder"
+      },
+      {
+        "s": "zij",
+        "v": "drinkt",
+        "rest": "koffie"
+      },
+      {
+        "s": "ik",
+        "v": "werk",
+        "rest": "in de tuin"
+      },
+      {
+        "s": "ik",
+        "v": "fiets",
+        "rest": "naar het werk"
+      },
+      {
+        "s": "wij",
+        "v": "kijken",
+        "rest": "naar een film"
+      },
+      {
+        "s": "hij",
+        "v": "drinkt",
+        "rest": "thee"
+      },
+      {
+        "s": "zij",
+        "v": "leest",
+        "rest": "een boek"
+      },
+      {
+        "s": "jullie",
+        "v": "wachten",
+        "rest": "op de trein"
+      },
+      {
+        "s": "ik",
+        "v": "kook",
+        "rest": "voor de familie"
+      },
+      {
+        "s": "wij",
+        "v": "zwemmen",
+        "rest": "in het zwembad"
+      },
+      {
+        "s": "zij",
+        "v": "schrijft",
+        "rest": "een brief"
+      },
+      {
+        "s": "hij",
+        "v": "speelt",
+        "rest": "met de hond"
+      },
+      {
+        "s": "ik",
+        "v": "bel",
+        "rest": "mijn moeder"
+      },
+      {
+        "s": "ik",
+        "v": "werk",
+        "rest": "in de tuin"
+      },
+      {
+        "s": "hij",
+        "v": "eet",
+        "rest": "een boterham"
+      },
+      {
+        "s": "wij",
+        "v": "spelen",
+        "rest": "een spel"
+      },
+      {
+        "s": "zij",
+        "v": "wandelt",
+        "rest": "in het park"
+      },
+      {
+        "s": "jullie",
+        "v": "drinken",
+        "rest": "koffie"
+      },
+      {
+        "s": "ik",
+        "v": "lees",
+        "rest": "de krant"
+      },
+      {
+        "s": "hij",
+        "v": "koopt",
+        "rest": "brood"
+      },
+      {
+        "s": "wij",
+        "v": "bezoeken",
+        "rest": "het museum"
+      }
+    ],
+    "tmp": {
+      "time": [
+        "morgen",
+        "vandaag",
+        "zondag",
+        "volgende week",
+        "om negen uur",
+        "overmorgen",
+        "vanmiddag",
+        "in juli",
+        "vanavond",
+        "volgende maand"
+      ],
+      "manner": [
+        "met de trein",
+        "met de auto",
+        "met de bus",
+        "met de fiets",
+        "te voet",
+        "met het vliegtuig",
+        "alleen",
+        "samen"
+      ],
+      "place": [
+        "naar Amsterdam",
+        "naar Rotterdam",
+        "naar het strand",
+        "naar school",
+        "naar de markt",
+        "naar het park",
+        "naar huis",
+        "naar de bioscoop",
+        "naar de stad",
+        "naar het museum"
+      ]
+    },
+    "sub": {
+      "main": [
+        "Ik blijf thuis",
+        "Hij gaat niet mee",
+        "Wij eten later",
+        "Zij belt morgen niet",
+        "Ik ga vroeg naar bed",
+        "Hij drinkt geen koffie",
+        "Zij komt vanavond niet",
+        "Wij nemen de bus"
+      ],
+      "conj": [
+        "omdat",
+        "als",
+        "terwijl",
+        "hoewel"
+      ],
+      "pred": [
+        {
+          "txt": "ziek",
+          "v": "zijn"
+        },
+        {
+          "txt": "moe",
+          "v": "zijn"
+        },
+        {
+          "txt": "geen tijd",
+          "v": "hebben"
+        },
+        {
+          "txt": "geen geld",
+          "v": "hebben"
+        },
+        {
+          "txt": "honger",
+          "v": "hebben"
+        },
+        {
+          "txt": "druk",
+          "v": "zijn"
+        },
+        {
+          "txt": "dorst",
+          "v": "hebben"
+        },
+        {
+          "txt": "blij",
+          "v": "zijn"
+        },
+        {
+          "txt": "geen zin",
+          "v": "hebben"
+        },
+        {
+          "txt": "haast",
+          "v": "hebben"
+        },
+        {
+          "txt": "verkouden",
+          "v": "zijn"
+        },
+        {
+          "txt": "boos",
+          "v": "zijn"
+        }
+      ],
+      "subj": [
+        {
+          "p": "ik",
+          "zijn": "ben",
+          "hebben": "heb"
+        },
+        {
+          "p": "hij",
+          "zijn": "is",
+          "hebben": "heeft"
+        },
+        {
+          "p": "wij",
+          "zijn": "zijn",
+          "hebben": "hebben"
+        },
+        {
+          "p": "jij",
+          "zijn": "bent",
+          "hebben": "hebt"
+        },
+        {
+          "p": "jullie",
+          "zijn": "zijn",
+          "hebben": "hebben"
+        },
+        {
+          "p": "mijn broer",
+          "zijn": "is",
+          "hebben": "heeft"
+        }
+      ]
+    }
+  },
+  "negation": {
+    "days": [
+      "maandag",
+      "dinsdag",
+      "woensdag",
+      "donderdag",
+      "vrijdag",
+      "zaterdag",
+      "zondag"
+    ],
+    "subjects": [
+      {
+        "p": "Ik",
+        "w": "werk",
+        "g": "ga",
+        "v": "vind"
+      },
+      {
+        "p": "Hij",
+        "w": "werkt",
+        "g": "gaat",
+        "v": "vindt"
+      },
+      {
+        "p": "Zij",
+        "w": "werkt",
+        "g": "gaat",
+        "v": "vindt"
+      },
+      {
+        "p": "Wij",
+        "w": "werken",
+        "g": "gaan",
+        "v": "vinden"
+      },
+      {
+        "p": "Jullie",
+        "w": "werken",
+        "g": "gaan",
+        "v": "vinden"
+      },
+      {
+        "p": "De kinderen",
+        "w": "werken",
+        "g": "gaan",
+        "v": "vinden"
+      },
+      {
+        "p": "Mijn moeder",
+        "w": "werkt",
+        "g": "gaat",
+        "v": "vindt"
+      },
+      {
+        "p": "De buurman",
+        "w": "werkt",
+        "g": "gaat",
+        "v": "vindt"
+      }
+    ]
+  },
+  "pronouns": {
+    "possessives": [
+      {
+        "p": "ik",
+        "de": "mijn",
+        "het": "mijn"
+      },
+      {
+        "p": "jij",
+        "de": "jouw",
+        "het": "jouw"
+      },
+      {
+        "p": "hij",
+        "de": "zijn",
+        "het": "zijn"
+      },
+      {
+        "p": "zij (she)",
+        "de": "haar",
+        "het": "haar"
+      },
+      {
+        "p": "u",
+        "de": "uw",
+        "het": "uw"
+      },
+      {
+        "p": "wij",
+        "de": "onze",
+        "het": "ons"
+      },
+      {
+        "p": "jullie",
+        "de": "jullie",
+        "het": "jullie"
+      },
+      {
+        "p": "zij (they)",
+        "de": "hun",
+        "het": "hun"
+      }
+    ],
+    "object_pronouns": [
+      {
+        "p": "ik",
+        "o": "mij"
+      },
+      {
+        "p": "jij",
+        "o": "jou"
+      },
+      {
+        "p": "hij",
+        "o": "hem"
+      },
+      {
+        "p": "zij (she)",
+        "o": "haar"
+      },
+      {
+        "p": "u",
+        "o": "u"
+      },
+      {
+        "p": "wij",
+        "o": "ons"
+      },
+      {
+        "p": "jullie",
+        "o": "jullie"
+      },
+      {
+        "p": "zij (they)",
+        "o": "hen"
+      }
+    ],
+    "object_templates": [
+      "Ik zie {} morgen.",
+      "Ken je {} al?",
+      "De leraar helpt {} met de les.",
+      "Wij bellen {} vanavond.",
+      "Zij wacht op {} bij het station."
+    ]
+  },
+  "verbs_imperfectum": [
+    {
+      "inf": "werken",
+      "sg": "werkte",
+      "pl": "werkten",
+      "weak": true,
+      "fake": "werkde",
+      "en": "to work",
+      "compl": "de hele dag"
+    },
+    {
+      "inf": "maken",
+      "sg": "maakte",
+      "pl": "maakten",
+      "weak": true,
+      "fake": "maakde",
+      "en": "to make",
+      "compl": "het eten"
+    },
+    {
+      "inf": "wonen",
+      "sg": "woonde",
+      "pl": "woonden",
+      "weak": true,
+      "fake": "woonte",
+      "en": "to live",
+      "compl": "in Amsterdam"
+    },
+    {
+      "inf": "spelen",
+      "sg": "speelde",
+      "pl": "speelden",
+      "weak": true,
+      "fake": "speelte",
+      "en": "to play",
+      "compl": "in het park"
+    },
+    {
+      "inf": "koken",
+      "sg": "kookte",
+      "pl": "kookten",
+      "weak": true,
+      "fake": "kookde",
+      "en": "to cook",
+      "compl": "voor de familie"
+    },
+    {
+      "inf": "luisteren",
+      "sg": "luisterde",
+      "pl": "luisterden",
+      "weak": true,
+      "fake": "luisterte",
+      "en": "to listen",
+      "compl": "naar de radio"
+    },
+    {
+      "inf": "praten",
+      "sg": "praatte",
+      "pl": "praatten",
+      "weak": true,
+      "fake": "praatde",
+      "en": "to talk",
+      "compl": "met de buren"
+    },
+    {
+      "inf": "wachten",
+      "sg": "wachtte",
+      "pl": "wachtten",
+      "weak": true,
+      "fake": "wachtde",
+      "en": "to wait",
+      "compl": "op de bus"
+    },
+    {
+      "inf": "leren",
+      "sg": "leerde",
+      "pl": "leerden",
+      "weak": true,
+      "fake": "leerte",
+      "en": "to learn",
+      "compl": "Nederlands"
+    },
+    {
+      "inf": "betalen",
+      "sg": "betaalde",
+      "pl": "betaalden",
+      "weak": true,
+      "fake": "betaalte",
+      "en": "to pay",
+      "compl": "de rekening"
+    },
+    {
+      "inf": "bellen",
+      "sg": "belde",
+      "pl": "belden",
+      "weak": true,
+      "fake": "belte",
+      "en": "to call",
+      "compl": "de dokter"
+    },
+    {
+      "inf": "horen",
+      "sg": "hoorde",
+      "pl": "hoorden",
+      "weak": true,
+      "fake": "hoorte",
+      "en": "to hear",
+      "compl": "de muziek"
+    },
+    {
+      "inf": "dansen",
+      "sg": "danste",
+      "pl": "dansten",
+      "weak": true,
+      "fake": "dansde",
+      "en": "to dance",
+      "compl": "op het feest"
+    },
+    {
+      "inf": "fietsen",
+      "sg": "fietste",
+      "pl": "fietsten",
+      "weak": true,
+      "fake": "fietsde",
+      "en": "to cycle",
+      "compl": "naar school"
+    },
+    {
+      "inf": "reizen",
+      "sg": "reisde",
+      "pl": "reisden",
+      "weak": true,
+      "fake": "reiste",
+      "en": "to travel",
+      "compl": "door Europa"
+    },
+    {
+      "inf": "geloven",
+      "sg": "geloofde",
+      "pl": "geloofden",
+      "weak": true,
+      "fake": "geloofte",
+      "en": "to believe",
+      "compl": "het verhaal"
+    },
+    {
+      "inf": "gaan",
+      "sg": "ging",
+      "pl": "gingen",
+      "weak": false,
+      "fake": "gaade",
+      "en": "to go",
+      "compl": "naar de markt"
+    },
+    {
+      "inf": "komen",
+      "sg": "kwam",
+      "pl": "kwamen",
+      "weak": false,
+      "fake": "koomde",
+      "en": "to come",
+      "compl": "te laat"
+    },
+    {
+      "inf": "zien",
+      "sg": "zag",
+      "pl": "zagen",
+      "weak": false,
+      "fake": "ziede",
+      "en": "to see",
+      "compl": "de zee"
+    },
+    {
+      "inf": "doen",
+      "sg": "deed",
+      "pl": "deden",
+      "weak": false,
+      "fake": "doede",
+      "en": "to do",
+      "compl": "de afwas"
+    },
+    {
+      "inf": "eten",
+      "sg": "at",
+      "pl": "aten",
+      "weak": false,
+      "fake": "eette",
+      "en": "to eat",
+      "compl": "een boterham"
+    },
+    {
+      "inf": "drinken",
+      "sg": "dronk",
+      "pl": "dronken",
+      "weak": false,
+      "fake": "drinkte",
+      "en": "to drink",
+      "compl": "koffie"
+    },
+    {
+      "inf": "lezen",
+      "sg": "las",
+      "pl": "lazen",
+      "weak": false,
+      "fake": "leesde",
+      "en": "to read",
+      "compl": "de krant"
+    },
+    {
+      "inf": "schrijven",
+      "sg": "schreef",
+      "pl": "schreven",
+      "weak": false,
+      "fake": "schrijfde",
+      "en": "to write",
+      "compl": "een brief"
+    },
+    {
+      "inf": "lopen",
+      "sg": "liep",
+      "pl": "liepen",
+      "weak": false,
+      "fake": "loopte",
+      "en": "to walk",
+      "compl": "naar het station"
+    },
+    {
+      "inf": "geven",
+      "sg": "gaf",
+      "pl": "gaven",
+      "weak": false,
+      "fake": "geefde",
+      "en": "to give",
+      "compl": "een cadeau"
+    },
+    {
+      "inf": "slapen",
+      "sg": "sliep",
+      "pl": "sliepen",
+      "weak": false,
+      "fake": "slaapte",
+      "en": "to sleep",
+      "compl": "tot tien uur"
+    },
+    {
+      "inf": "zingen",
+      "sg": "zong",
+      "pl": "zongen",
+      "weak": false,
+      "fake": "zingde",
+      "en": "to sing",
+      "compl": "een liedje"
+    },
+    {
+      "inf": "zwemmen",
+      "sg": "zwom",
+      "pl": "zwommen",
+      "weak": false,
+      "fake": "zwemde",
+      "en": "to swim",
+      "compl": "in de zee"
+    },
+    {
+      "inf": "kopen",
+      "sg": "kocht",
+      "pl": "kochten",
+      "weak": false,
+      "fake": "koopte",
+      "en": "to buy",
+      "compl": "een nieuwe jas"
+    },
+    {
+      "inf": "zeggen",
+      "sg": "zei",
+      "pl": "zeiden",
+      "weak": false,
+      "fake": "zegte",
+      "en": "to say",
+      "compl": "niets"
+    },
+    {
+      "inf": "vragen",
+      "sg": "vroeg",
+      "pl": "vroegen",
+      "weak": false,
+      "fake": "vraagde",
+      "en": "to ask",
+      "compl": "de weg"
+    },
+    {
+      "inf": "staan",
+      "sg": "stond",
+      "pl": "stonden",
+      "weak": false,
+      "fake": "staat",
+      "en": "to stand",
+      "compl": "in de keuken"
+    },
+    {
+      "inf": "zijn",
+      "sg": "was",
+      "pl": "waren",
+      "weak": false,
+      "fake": "is",
+      "en": "to be",
+      "compl": "ziek"
+    },
+    {
+      "inf": "hebben",
+      "sg": "had",
+      "pl": "hadden",
+      "weak": false,
+      "fake": "heeft",
+      "en": "to have",
+      "compl": "geen tijd"
+    },
+    {
+      "inf": "kijken",
+      "sg": "keek",
+      "pl": "keken",
+      "weak": false,
+      "fake": "kijkte",
+      "en": "to watch",
+      "compl": "naar de film"
+    },
+    {
+      "inf": "vallen",
+      "sg": "viel",
+      "pl": "vielen",
+      "weak": false,
+      "fake": "valde",
+      "en": "to fall",
+      "compl": "van de fiets"
+    },
+    {
+      "inf": "beginnen",
+      "sg": "begon",
+      "pl": "begonnen",
+      "weak": false,
+      "fake": "beginde",
+      "en": "to begin",
+      "compl": "om negen uur"
+    },
+    {
+      "inf": "vertrekken",
+      "sg": "vertrok",
+      "pl": "vertrokken",
+      "weak": false,
+      "fake": "vertrekte",
+      "en": "to leave",
+      "compl": "om acht uur"
+    }
+  ],
+  "er": {
+    "existential": [
+      {
+        "q": "___ ligt een boek op de tafel.",
+        "en": "There is a book on the table."
+      },
+      {
+        "q": "___ zit een kat in de tuin.",
+        "en": "There is a cat in the garden."
+      },
+      {
+        "q": "___ staat een man voor de deur.",
+        "en": "There is a man at the door."
+      },
+      {
+        "q": "___ zijn veel mensen op het feest.",
+        "en": "There are many people at the party."
+      },
+      {
+        "q": "___ is geen melk meer.",
+        "en": "There is no milk left."
+      },
+      {
+        "q": "___ hangt een lamp boven de tafel.",
+        "en": "There is a lamp above the table."
+      },
+      {
+        "q": "___ wonen drie studenten in dit huis.",
+        "en": "Three students live in this house."
+      },
+      {
+        "q": "___ komt vanavond een vriend eten.",
+        "en": "A friend is coming for dinner tonight."
+      },
+      {
+        "q": "___ staat een fles op tafel.",
+        "en": "There is a bottle on the table."
+      },
+      {
+        "q": "___ liggen twee boeken op de stoel.",
+        "en": "There are two books on the chair."
+      },
+      {
+        "q": "___ zit iemand in de kamer.",
+        "en": "There is someone in the room."
+      },
+      {
+        "q": "___ hangen foto’s aan de muur.",
+        "en": "There are photos hanging on the wall."
+      },
+      {
+        "q": "___ speelt een kind in de tuin.",
+        "en": "A child is playing in the garden."
+      },
+      {
+        "q": "___ rijdt een bus door de straat.",
+        "en": "A bus is driving down the street."
+      },
+      {
+        "q": "___ was gisteren een feest.",
+        "en": "There was a party yesterday."
+      },
+      {
+        "q": "___ zijn nog kaartjes voor de film.",
+        "en": "There are still tickets for the film."
+      }
+    ],
+    "quantity": [
+      {
+        "q": "Hoeveel kinderen heb je? Ik heb ___ twee.",
+        "en": "I have two (of them)."
+      },
+      {
+        "q": "Hoeveel fietsen hebben jullie? Wij hebben ___ drie.",
+        "en": "We have three (of them)."
+      },
+      {
+        "q": "Wil je een koekje? Ja, ik wil ___ graag een.",
+        "en": "Yes, I would like one."
+      },
+      {
+        "q": "Hoeveel boeken lees je per jaar? Ik lees ___ twintig.",
+        "en": "I read twenty (of them)."
+      },
+      {
+        "q": "Heb je nog appels? Ja, ik heb ___ nog vier.",
+        "en": "Yes, I still have four."
+      },
+      {
+        "q": "Hoeveel katten heeft zij? Zij heeft ___ twee.",
+        "en": "She has two (of them)."
+      }
+    ],
+    "locative": [
+      {
+        "q": "Woon je in Amsterdam? Ja, ik woon ___ al tien jaar.",
+        "en": "I have lived there for ten years."
+      },
+      {
+        "q": "Werk je bij de bakker? Ja, ik werk ___ elke zaterdag.",
+        "en": "I work there every Saturday."
+      },
+      {
+        "q": "Ga je vaak naar dat café? Ja, ik kom ___ elke week.",
+        "en": "I go there every week."
+      },
+      {
+        "q": "Was je gisteren op school? Ja, ik was ___ de hele dag.",
+        "en": "I was there all day."
+      },
+      {
+        "q": "Ben je vaak in het park? Ja, ik kom ___ elke dag.",
+        "en": "I go there every day."
+      },
+      {
+        "q": "Werkt zij in het ziekenhuis? Ja, zij werkt ___ al jaren.",
+        "en": "She has worked there for years."
+      },
+      {
+        "q": "Was hij op het feest? Ja, hij was ___ tot middernacht.",
+        "en": "He was there until midnight."
+      },
+      {
+        "q": "Studeer je aan de universiteit? Ja, ik studeer ___.",
+        "en": "Yes, I study there."
+      },
+      {
+        "q": "Ga je naar de markt? Ja, ik koop ___ altijd groente.",
+        "en": "I always buy vegetables there."
+      },
+      {
+        "q": "Slaap je in het hotel? Ja, ik slaap ___ twee nachten.",
+        "en": "I am sleeping there for two nights."
+      }
+    ],
+    "prepositional": [
+      {
+        "prep": "aan",
+        "merged": "eraan",
+        "q": "Denk je aan de afspraak? Ja, ik denk ___.",
+        "en": "Yes, I am thinking of it."
+      },
+      {
+        "prep": "op",
+        "merged": "erop",
+        "q": "Wacht je op de bus? Ja, ik wacht ___.",
+        "en": "Yes, I am waiting for it."
+      },
+      {
+        "prep": "naar",
+        "merged": "ernaar",
+        "q": "Kijk je naar de film? Ja, ik kijk ___.",
+        "en": "Yes, I am watching it."
+      },
+      {
+        "prep": "over",
+        "merged": "erover",
+        "q": "Praten jullie over het nieuws? Ja, we praten ___.",
+        "en": "Yes, we are talking about it."
+      },
+      {
+        "prep": "van",
+        "merged": "ervan",
+        "q": "Houd je van kaas? Ja, ik houd ___.",
+        "en": "Yes, I love it."
+      },
+      {
+        "prep": "met",
+        "merged": "ermee",
+        "q": "Ben je klaar met het werk? Ja, ik ben ___ klaar.",
+        "en": "Yes, I am done with it."
+      },
+      {
+        "prep": "in",
+        "merged": "erin",
+        "q": "Geloof je in dit plan? Ja, ik geloof ___.",
+        "en": "Yes, I believe in it."
+      },
+      {
+        "prep": "bij",
+        "merged": "erbij",
+        "q": "Was je bij de les? Ja, ik was ___.",
+        "en": "Yes, I was there (at it)."
+      },
+      {
+        "prep": "voor",
+        "merged": "ervoor",
+        "q": "Betaal jij voor de koffie? Ja, ik betaal ___.",
+        "en": "Yes, I am paying for it."
+      },
+      {
+        "prep": "tegen",
+        "merged": "ertegen",
+        "q": "Ben je tegen het plan? Ja, ik ben ___.",
+        "en": "Yes, I am against it."
+      },
+      {
+        "prep": "aan",
+        "merged": "eraan",
+        "q": "Werk je aan het project? Ja, ik werk ___.",
+        "en": "Yes, I am working on it."
+      },
+      {
+        "prep": "op",
+        "merged": "erop",
+        "q": "Let je op de kinderen? Ja, ik let ___.",
+        "en": "Yes, I am watching them."
+      },
+      {
+        "prep": "naar",
+        "merged": "ernaar",
+        "q": "Zoek je naar je sleutels? Ja, ik zoek ___.",
+        "en": "Yes, I am looking for them."
+      },
+      {
+        "prep": "over",
+        "merged": "erover",
+        "q": "Denk je na over het aanbod? Ja, ik denk ___ na.",
+        "en": "Yes, I am thinking it over."
+      },
+      {
+        "prep": "van",
+        "merged": "ervan",
+        "q": "Geniet je van de vakantie? Ja, ik geniet ___.",
+        "en": "Yes, I am enjoying it."
+      },
+      {
+        "prep": "met",
+        "merged": "ermee",
+        "q": "Speelt het kind met de bal? Ja, het speelt ___.",
+        "en": "Yes, it is playing with it."
+      },
+      {
+        "prep": "in",
+        "merged": "erin",
+        "q": "Geloof je in spoken? Ja, ik geloof ___.",
+        "en": "Yes, I believe in them."
+      },
+      {
+        "prep": "bij",
+        "merged": "erbij",
+        "q": "Blijf je bij je mening? Ja, ik blijf ___.",
+        "en": "Yes, I am sticking to it."
+      },
+      {
+        "prep": "voor",
+        "merged": "ervoor",
+        "q": "Zorg jij voor de planten? Ja, ik zorg ___.",
+        "en": "Yes, I take care of them."
+      },
+      {
+        "prep": "tegen",
+        "merged": "ertegen",
+        "q": "Kun je tegen kritiek? Ja, ik kan ___.",
+        "en": "Yes, I can handle it."
+      }
+    ],
+    "existential_templates": [
+      {
+        "v": "ligt",
+        "end": "op de tafel",
+        "cats": "tf"
+      },
+      {
+        "v": "staat",
+        "end": "in de kamer",
+        "cats": "t"
+      },
+      {
+        "v": "zit",
+        "end": "in de tuin",
+        "cats": "a"
+      },
+      {
+        "v": "loopt",
+        "end": "door de straat",
+        "cats": "pa"
+      }
+    ]
+  },
+  "conjrel": {
+    "relative_thing_frames": [
+      "ik zoek",
+      "ik wil kopen",
+      "ik gisteren zag",
+      "ik wil hebben",
+      "ik gisteren kocht",
+      "ik niet kan vinden",
+      "ik zoek",
+      "ik nodig heb",
+      "ik van oma kreeg",
+      "op tafel lag",
+      "zo duur was",
+      "ik elke dag gebruik",
+      "hij mij gaf",
+      "ik heb gekocht"
+    ],
+    "relative_person_frames": [
+      "ik goed ken",
+      "hier woont",
+      "altijd vrolijk is",
+      "ik elke dag zie",
+      "bij ons woont",
+      "veel praat",
+      "naast mij woont",
+      "altijd vrolijk is",
+      "veel eet",
+      "ik gisteren zag",
+      "mij goed kent",
+      "graag buiten is",
+      "veel slaapt",
+      "bij het raam zit"
+    ],
+    "wat": [
+      {
+        "q": "Alles ___ hij zegt, is waar.",
+        "en": "Everything he says is true."
+      },
+      {
+        "q": "Er is iets ___ ik niet begrijp.",
+        "en": "There is something I do not understand."
+      },
+      {
+        "q": "Dat is het enige ___ ik weet.",
+        "en": "That is the only thing I know."
+      },
+      {
+        "q": "Niets ___ zij doet, is fout.",
+        "en": "Nothing she does is wrong."
+      },
+      {
+        "q": "Dat is precies ___ ik bedoel.",
+        "en": "That is exactly what I mean."
+      },
+      {
+        "q": "Er is niets ___ ik liever doe.",
+        "en": "There is nothing I would rather do."
+      },
+      {
+        "q": "Alles ___ zij kookt, is lekker.",
+        "en": "Everything she cooks is tasty."
+      },
+      {
+        "q": "Dat is iets ___ ik niet wist.",
+        "en": "That is something I did not know."
+      },
+      {
+        "q": "Het enige ___ hij wil, is slapen.",
+        "en": "The only thing he wants is to sleep."
+      },
+      {
+        "q": "Er is iets ___ ik je moet vertellen.",
+        "en": "There is something I have to tell you."
+      }
+    ],
+    "want_omdat": [
+      {
+        "main": "Ik blijf thuis",
+        "v2": "ik ben ziek",
+        "vf": "ik ziek ben"
+      },
+      {
+        "main": "Wij nemen de bus",
+        "v2": "het regent hard",
+        "vf": "het hard regent"
+      },
+      {
+        "main": "Zij leert Nederlands",
+        "v2": "zij woont in Utrecht",
+        "vf": "zij in Utrecht woont"
+      },
+      {
+        "main": "Hij is moe",
+        "v2": "hij slaapt slecht",
+        "vf": "hij slecht slaapt"
+      },
+      {
+        "main": "We eten thuis",
+        "v2": "het restaurant is vol",
+        "vf": "het restaurant vol is"
+      },
+      {
+        "main": "Zij draagt een jas",
+        "v2": "het is koud",
+        "vf": "het koud is"
+      },
+      {
+        "main": "Ik ga vroeg naar bed",
+        "v2": "ik ben moe",
+        "vf": "ik moe ben"
+      },
+      {
+        "main": "Hij leert elke dag",
+        "v2": "hij heeft morgen een examen",
+        "vf": "hij morgen een examen heeft"
+      },
+      {
+        "main": "Wij blijven binnen",
+        "v2": "het waait hard",
+        "vf": "het hard waait"
+      },
+      {
+        "main": "Zij is blij",
+        "v2": "zij heeft een nieuwe baan",
+        "vf": "zij een nieuwe baan heeft"
+      }
+    ],
+    "toen_als": [
+      {
+        "q": "___ ik klein was, woonde ik in Utrecht.",
+        "a": "Toen",
+        "en": "When I was little, I lived in Utrecht."
+      },
+      {
+        "q": "___ het morgen regent, blijven wij thuis.",
+        "a": "Als",
+        "en": "If it rains tomorrow, we will stay home."
+      },
+      {
+        "q": "___ wij in Parijs waren, bezochten we het museum.",
+        "a": "Toen",
+        "en": "When we were in Paris, we visited the museum."
+      },
+      {
+        "q": "___ ik moe ben, ga ik vroeg naar bed.",
+        "a": "Als",
+        "en": "When I am tired, I go to bed early."
+      },
+      {
+        "q": "___ zij binnenkwam, stond iedereen op.",
+        "a": "Toen",
+        "en": "When she came in, everyone stood up."
+      },
+      {
+        "q": "___ je tijd hebt, kun je me bellen.",
+        "a": "Als",
+        "en": "If you have time, you can call me."
+      },
+      {
+        "q": "___ de les klaar was, gingen we naar huis.",
+        "a": "Toen",
+        "en": "When the lesson was over, we went home."
+      },
+      {
+        "q": "___ je honger hebt, kun je een boterham pakken.",
+        "a": "Als",
+        "en": "If you are hungry, you can grab a sandwich."
+      },
+      {
+        "q": "___ ik in Amsterdam woonde, fietste ik overal.",
+        "a": "Toen",
+        "en": "When I lived in Amsterdam, I cycled everywhere."
+      },
+      {
+        "q": "___ het sneeuwt, is de stad wit.",
+        "a": "Als",
+        "en": "When it snows, the city is white."
+      },
+      {
+        "q": "___ hij jong was, speelde hij voetbal.",
+        "a": "Toen",
+        "en": "When he was young, he played football."
+      },
+      {
+        "q": "___ we klaar zijn, gaan we koffie drinken.",
+        "a": "Als",
+        "en": "When we are done, we will go for coffee."
+      }
+    ],
+    "relative_plural_frames": [
+      "ik zoek",
+      "wij nodig hebben",
+      "ik gisteren zag",
+      "ik goed ken",
+      "hier net nog waren",
+      "wij missen",
+      "ik heb gezien",
+      "ik nodig heb"
+    ]
+  },
+  "omte": {
+    "purpose_mains": [
+      "Ik ga naar de winkel",
+      "Zij gaat naar school",
+      "Hij belt de dokter",
+      "Wij sparen geld",
+      "Ik gebruik een pen",
+      "Zij gaan naar het café",
+      "Hij gaat naar de keuken",
+      "Ik pak mijn telefoon",
+      "Ik ga naar de bakker",
+      "Zij pakt haar laptop",
+      "Hij gaat naar de bibliotheek",
+      "Wij gaan naar de markt",
+      "Ik blijf vanavond thuis",
+      "Zij belt haar vriendin",
+      "Hij opent zijn boek",
+      "Wij nemen de trein",
+      "Ik loop naar het park",
+      "Zij zoekt een rustige plek",
+      "Hij spaart elke maand",
+      "Wij huren een auto"
+    ],
+    "purpose_pairs": [
+      {
+        "obj": "brood",
+        "verb": "kopen"
+      },
+      {
+        "obj": "Nederlands",
+        "verb": "leren"
+      },
+      {
+        "obj": "een afspraak",
+        "verb": "maken"
+      },
+      {
+        "obj": "een auto",
+        "verb": "kopen"
+      },
+      {
+        "obj": "een brief",
+        "verb": "schrijven"
+      },
+      {
+        "obj": "koffie",
+        "verb": "drinken"
+      },
+      {
+        "obj": "een taart",
+        "verb": "bakken"
+      },
+      {
+        "obj": "de foto’s",
+        "verb": "bekijken"
+      },
+      {
+        "obj": "water",
+        "verb": "drinken"
+      },
+      {
+        "obj": "een liedje",
+        "verb": "zingen"
+      },
+      {
+        "obj": "de krant",
+        "verb": "lezen"
+      },
+      {
+        "obj": "oma",
+        "verb": "bellen"
+      },
+      {
+        "obj": "melk",
+        "verb": "kopen"
+      },
+      {
+        "obj": "een cadeau",
+        "verb": "kopen"
+      },
+      {
+        "obj": "de tafel",
+        "verb": "dekken"
+      },
+      {
+        "obj": "naar muziek",
+        "verb": "luisteren"
+      },
+      {
+        "obj": "een e-mail",
+        "verb": "sturen"
+      },
+      {
+        "obj": "de was",
+        "verb": "doen"
+      },
+      {
+        "obj": "een pizza",
+        "verb": "bestellen"
+      },
+      {
+        "obj": "kaartjes",
+        "verb": "bestellen"
+      },
+      {
+        "obj": "geld",
+        "verb": "pinnen"
+      },
+      {
+        "obj": "naar een film",
+        "verb": "kijken"
+      },
+      {
+        "obj": "groente",
+        "verb": "snijden"
+      },
+      {
+        "obj": "de bus",
+        "verb": "halen"
+      },
+      {
+        "obj": "soep",
+        "verb": "koken"
+      },
+      {
+        "obj": "een appel",
+        "verb": "eten"
+      },
+      {
+        "obj": "het feest",
+        "verb": "vieren"
+      },
+      {
+        "obj": "een kamer",
+        "verb": "huren"
+      },
+      {
+        "obj": "woorden",
+        "verb": "herhalen"
+      },
+      {
+        "obj": "de buren",
+        "verb": "bezoeken"
+      }
+    ],
+    "te_verbs": [
+      {
+        "inf": "proberen",
+        "ik": "probeer",
+        "hij": "probeert",
+        "wij": "proberen",
+        "neg": false
+      },
+      {
+        "inf": "vergeten",
+        "ik": "vergeet",
+        "hij": "vergeet",
+        "wij": "vergeten",
+        "neg": false
+      },
+      {
+        "inf": "hopen",
+        "ik": "hoop",
+        "hij": "hoopt",
+        "wij": "hopen",
+        "neg": false
+      },
+      {
+        "inf": "beginnen",
+        "ik": "begin",
+        "hij": "begint",
+        "wij": "beginnen",
+        "neg": false
+      },
+      {
+        "inf": "beloven",
+        "ik": "beloof",
+        "hij": "belooft",
+        "wij": "beloven",
+        "neg": false
+      },
+      {
+        "inf": "hoeven",
+        "ik": "hoef",
+        "hij": "hoeft",
+        "wij": "hoeven",
+        "neg": true
+      },
+      {
+        "inf": "durven",
+        "ik": "durf",
+        "hij": "durft",
+        "wij": "durven",
+        "neg": false
+      },
+      {
+        "inf": "weigeren",
+        "ik": "weiger",
+        "hij": "weigert",
+        "wij": "weigeren",
+        "neg": false
+      },
+      {
+        "inf": "besluiten",
+        "ik": "besluit",
+        "hij": "besluit",
+        "wij": "besluiten",
+        "neg": false
+      },
+      {
+        "inf": "leren",
+        "ik": "leer",
+        "hij": "leert",
+        "wij": "leren",
+        "neg": false
+      }
+    ]
+  },
+  "diminutives": [
+    {
+      "nl": "huis",
+      "dim": "huisje",
+      "fake": "huistje",
+      "rule": "je",
+      "en": "house",
+      "dimpl": "huisjes"
+    },
+    {
+      "nl": "boek",
+      "dim": "boekje",
+      "fake": "boektje",
+      "rule": "je",
+      "en": "book",
+      "dimpl": "boekjes"
+    },
+    {
+      "nl": "brood",
+      "dim": "broodje",
+      "fake": "broodtje",
+      "rule": "je",
+      "en": "bread",
+      "dimpl": "broodjes"
+    },
+    {
+      "nl": "kind",
+      "dim": "kindje",
+      "fake": "kindetje",
+      "rule": "je",
+      "en": "child",
+      "dimpl": "kindjes"
+    },
+    {
+      "nl": "hond",
+      "dim": "hondje",
+      "fake": "hondtje",
+      "rule": "je",
+      "en": "dog",
+      "dimpl": "hondjes"
+    },
+    {
+      "nl": "kat",
+      "dim": "katje",
+      "fake": "kattetje",
+      "rule": "je",
+      "en": "cat",
+      "dimpl": "katjes"
+    },
+    {
+      "nl": "brief",
+      "dim": "briefje",
+      "fake": "brieftje",
+      "rule": "je",
+      "en": "letter",
+      "dimpl": "briefjes"
+    },
+    {
+      "nl": "tas",
+      "dim": "tasje",
+      "fake": "tastje",
+      "rule": "je",
+      "en": "bag",
+      "dimpl": "tasjes"
+    },
+    {
+      "nl": "jas",
+      "dim": "jasje",
+      "fake": "jastje",
+      "rule": "je",
+      "en": "coat",
+      "dimpl": "jasjes"
+    },
+    {
+      "nl": "mes",
+      "dim": "mesje",
+      "fake": "messetje",
+      "rule": "je",
+      "en": "knife",
+      "dimpl": "mesjes"
+    },
+    {
+      "nl": "fles",
+      "dim": "flesje",
+      "fake": "flessetje",
+      "rule": "je",
+      "en": "bottle",
+      "dimpl": "flesjes"
+    },
+    {
+      "nl": "glas",
+      "dim": "glaasje",
+      "fake": "glasje",
+      "rule": "je",
+      "en": "glass",
+      "note": "The vowel is respelled to keep it long: glas, glaasje.",
+      "dimpl": "glaasjes"
+    },
+    {
+      "nl": "schip",
+      "dim": "scheepje",
+      "fake": "schipje",
+      "rule": "je",
+      "en": "ship",
+      "note": "The vowel changes: schip, scheepje.",
+      "dimpl": "scheepjes"
+    },
+    {
+      "nl": "stoel",
+      "dim": "stoeltje",
+      "fake": "stoelje",
+      "rule": "tje",
+      "en": "chair",
+      "dimpl": "stoeltjes"
+    },
+    {
+      "nl": "tafel",
+      "dim": "tafeltje",
+      "fake": "tafelje",
+      "rule": "tje",
+      "en": "table",
+      "dimpl": "tafeltjes"
+    },
+    {
+      "nl": "deur",
+      "dim": "deurtje",
+      "fake": "deurje",
+      "rule": "tje",
+      "en": "door",
+      "dimpl": "deurtjes"
+    },
+    {
+      "nl": "schoen",
+      "dim": "schoentje",
+      "fake": "schoenje",
+      "rule": "tje",
+      "en": "shoe",
+      "dimpl": "schoentjes"
+    },
+    {
+      "nl": "auto",
+      "dim": "autootje",
+      "fake": "autotje",
+      "rule": "tje",
+      "en": "car",
+      "note": "After a single vowel the vowel is doubled: auto, autootje.",
+      "dimpl": "autootjes"
+    },
+    {
+      "nl": "ei",
+      "dim": "eitje",
+      "fake": "eije",
+      "rule": "tje",
+      "en": "egg",
+      "dimpl": "eitjes"
+    },
+    {
+      "nl": "vrouw",
+      "dim": "vrouwtje",
+      "fake": "vrouwetje",
+      "rule": "tje",
+      "en": "woman",
+      "dimpl": "vrouwtjes"
+    },
+    {
+      "nl": "sleutel",
+      "dim": "sleuteltje",
+      "fake": "sleutelje",
+      "rule": "tje",
+      "en": "key",
+      "dimpl": "sleuteltjes"
+    },
+    {
+      "nl": "verhaal",
+      "dim": "verhaaltje",
+      "fake": "verhaalje",
+      "rule": "tje",
+      "en": "story",
+      "dimpl": "verhaaltjes"
+    },
+    {
+      "nl": "uur",
+      "dim": "uurtje",
+      "fake": "uurje",
+      "rule": "tje",
+      "en": "hour",
+      "dimpl": "uurtjes"
+    },
+    {
+      "nl": "man",
+      "dim": "mannetje",
+      "fake": "mantje",
+      "rule": "etje",
+      "en": "man",
+      "dimpl": "mannetjes"
+    },
+    {
+      "nl": "pan",
+      "dim": "pannetje",
+      "fake": "pantje",
+      "rule": "etje",
+      "en": "pan",
+      "dimpl": "pannetjes"
+    },
+    {
+      "nl": "ster",
+      "dim": "sterretje",
+      "fake": "stertje",
+      "rule": "etje",
+      "en": "star",
+      "dimpl": "sterretjes"
+    },
+    {
+      "nl": "zon",
+      "dim": "zonnetje",
+      "fake": "zontje",
+      "rule": "etje",
+      "en": "sun",
+      "dimpl": "zonnetjes"
+    },
+    {
+      "nl": "brug",
+      "dim": "bruggetje",
+      "fake": "brugje",
+      "rule": "etje",
+      "en": "bridge",
+      "dimpl": "bruggetjes"
+    },
+    {
+      "nl": "weg",
+      "dim": "weggetje",
+      "fake": "wegje",
+      "rule": "etje",
+      "en": "road",
+      "dimpl": "weggetjes"
+    },
+    {
+      "nl": "jongen",
+      "dim": "jongetje",
+      "fake": "jongentje",
+      "rule": "etje",
+      "en": "boy",
+      "note": "Irregular: the n disappears: jongen, jongetje.",
+      "dimpl": "jongetjes"
+    },
+    {
+      "nl": "boom",
+      "dim": "boompje",
+      "fake": "boomtje",
+      "rule": "pje",
+      "en": "tree",
+      "dimpl": "boompjes"
+    },
+    {
+      "nl": "raam",
+      "dim": "raampje",
+      "fake": "raamtje",
+      "rule": "pje",
+      "en": "window",
+      "dimpl": "raampjes"
+    },
+    {
+      "nl": "arm",
+      "dim": "armpje",
+      "fake": "armetje",
+      "rule": "pje",
+      "en": "arm",
+      "dimpl": "armpjes"
+    },
+    {
+      "nl": "film",
+      "dim": "filmpje",
+      "fake": "filmtje",
+      "rule": "pje",
+      "en": "film",
+      "dimpl": "filmpjes"
+    },
+    {
+      "nl": "naam",
+      "dim": "naampje",
+      "fake": "naamtje",
+      "rule": "pje",
+      "en": "name",
+      "dimpl": "naampjes"
+    },
+    {
+      "nl": "koning",
+      "dim": "koninkje",
+      "fake": "koningje",
+      "rule": "kje",
+      "en": "king",
+      "dimpl": "koninkjes"
+    },
+    {
+      "nl": "ketting",
+      "dim": "kettinkje",
+      "fake": "kettingje",
+      "rule": "kje",
+      "en": "necklace",
+      "dimpl": "kettinkjes"
+    },
+    {
+      "nl": "vogel",
+      "dim": "vogeltje",
+      "fake": "vogelje",
+      "rule": "tje",
+      "en": "bird",
+      "dimpl": "vogeltjes"
+    },
+    {
+      "nl": "vis",
+      "dim": "visje",
+      "fake": "vistje",
+      "rule": "je",
+      "en": "fish",
+      "dimpl": "visjes"
+    },
+    {
+      "nl": "koe",
+      "dim": "koetje",
+      "fake": "koeje",
+      "rule": "tje",
+      "en": "cow",
+      "dimpl": "koetjes"
+    },
+    {
+      "nl": "appel",
+      "dim": "appeltje",
+      "fake": "appelje",
+      "rule": "tje",
+      "en": "apple",
+      "dimpl": "appeltjes"
+    },
+    {
+      "nl": "banaan",
+      "dim": "banaantje",
+      "fake": "banaanje",
+      "rule": "tje",
+      "en": "banana",
+      "dimpl": "banaantjes"
+    },
+    {
+      "nl": "tomaat",
+      "dim": "tomaatje",
+      "fake": "tomaattje",
+      "rule": "je",
+      "en": "tomato",
+      "dimpl": "tomaatjes"
+    },
+    {
+      "nl": "school",
+      "dim": "schooltje",
+      "fake": "schoolje",
+      "rule": "tje",
+      "en": "school",
+      "dimpl": "schooltjes"
+    },
+    {
+      "nl": "winkel",
+      "dim": "winkeltje",
+      "fake": "winkelje",
+      "rule": "tje",
+      "en": "shop",
+      "dimpl": "winkeltjes"
+    },
+    {
+      "nl": "kerk",
+      "dim": "kerkje",
+      "fake": "kerktje",
+      "rule": "je",
+      "en": "church",
+      "dimpl": "kerkjes"
+    },
+    {
+      "nl": "hand",
+      "dim": "handje",
+      "fake": "handtje",
+      "rule": "je",
+      "en": "hand",
+      "dimpl": "handjes"
+    },
+    {
+      "nl": "voet",
+      "dim": "voetje",
+      "fake": "voettje",
+      "rule": "je",
+      "en": "foot",
+      "dimpl": "voetjes"
+    },
+    {
+      "nl": "neus",
+      "dim": "neusje",
+      "fake": "neustje",
+      "rule": "je",
+      "en": "nose",
+      "dimpl": "neusjes"
+    },
+    {
+      "nl": "mond",
+      "dim": "mondje",
+      "fake": "mondtje",
+      "rule": "je",
+      "en": "mouth",
+      "dimpl": "mondjes"
+    },
+    {
+      "nl": "vinger",
+      "dim": "vingertje",
+      "fake": "vingerje",
+      "rule": "tje",
+      "en": "finger",
+      "dimpl": "vingertjes"
+    },
+    {
+      "nl": "krant",
+      "dim": "krantje",
+      "fake": "kranttje",
+      "rule": "je",
+      "en": "newspaper",
+      "dimpl": "krantjes"
+    },
+    {
+      "nl": "broek",
+      "dim": "broekje",
+      "fake": "broektje",
+      "rule": "je",
+      "en": "trousers",
+      "dimpl": "broekjes"
+    },
+    {
+      "nl": "sok",
+      "dim": "sokje",
+      "fake": "soktje",
+      "rule": "je",
+      "en": "sock",
+      "dimpl": "sokjes"
+    },
+    {
+      "nl": "trui",
+      "dim": "truitje",
+      "fake": "truije",
+      "rule": "tje",
+      "en": "sweater",
+      "dimpl": "truitjes"
+    },
+    {
+      "nl": "jurk",
+      "dim": "jurkje",
+      "fake": "jurktje",
+      "rule": "je",
+      "en": "dress",
+      "dimpl": "jurkjes"
+    },
+    {
+      "nl": "bril",
+      "dim": "brilletje",
+      "fake": "briltje",
+      "rule": "etje",
+      "en": "pair of glasses",
+      "dimpl": "brilletjes"
+    },
+    {
+      "nl": "klok",
+      "dim": "klokje",
+      "fake": "kloktje",
+      "rule": "je",
+      "en": "clock",
+      "dimpl": "klokjes"
+    },
+    {
+      "nl": "lepel",
+      "dim": "lepeltje",
+      "fake": "lepelje",
+      "rule": "tje",
+      "en": "spoon",
+      "dimpl": "lepeltjes"
+    },
+    {
+      "nl": "vork",
+      "dim": "vorkje",
+      "fake": "vorktje",
+      "rule": "je",
+      "en": "fork",
+      "dimpl": "vorkjes"
+    },
+    {
+      "nl": "bed",
+      "dim": "bedje",
+      "fake": "bedetje",
+      "rule": "je",
+      "en": "bed",
+      "dimpl": "bedjes"
+    },
+    {
+      "nl": "paard",
+      "dim": "paardje",
+      "fake": "paardtje",
+      "rule": "je",
+      "en": "horse",
+      "dimpl": "paardjes"
+    },
+    {
+      "nl": "bord",
+      "dim": "bordje",
+      "fake": "bordtje",
+      "rule": "je",
+      "en": "plate",
+      "dimpl": "bordjes"
+    },
+    {
+      "nl": "dorp",
+      "dim": "dorpje",
+      "fake": "dorptje",
+      "rule": "je",
+      "en": "village",
+      "dimpl": "dorpjes"
+    },
+    {
+      "nl": "plein",
+      "dim": "pleintje",
+      "fake": "pleinje",
+      "rule": "tje",
+      "en": "square",
+      "dimpl": "pleintjes"
+    },
+    {
+      "nl": "dak",
+      "dim": "dakje",
+      "fake": "daktje",
+      "rule": "je",
+      "en": "roof",
+      "dimpl": "dakjes"
+    },
+    {
+      "nl": "konijn",
+      "dim": "konijntje",
+      "fake": "konijnje",
+      "rule": "tje",
+      "en": "rabbit",
+      "dimpl": "konijntjes"
+    },
+    {
+      "nl": "schaap",
+      "dim": "schaapje",
+      "fake": "schaaptje",
+      "rule": "je",
+      "en": "sheep",
+      "dimpl": "schaapjes"
+    },
+    {
+      "nl": "varken",
+      "dim": "varkentje",
+      "fake": "varkenje",
+      "rule": "tje",
+      "en": "pig",
+      "dimpl": "varkentjes"
+    },
+    {
+      "nl": "woord",
+      "dim": "woordje",
+      "fake": "woordtje",
+      "rule": "je",
+      "en": "word",
+      "dimpl": "woordjes"
+    },
+    {
+      "nl": "cadeau",
+      "dim": "cadeautje",
+      "fake": "cadeauje",
+      "rule": "tje",
+      "en": "present",
+      "dimpl": "cadeautjes"
+    },
+    {
+      "nl": "potlood",
+      "dim": "potloodje",
+      "fake": "potloodtje",
+      "rule": "je",
+      "en": "pencil",
+      "dimpl": "potloodjes"
+    },
+    {
+      "nl": "dier",
+      "dim": "diertje",
+      "fake": "dierje",
+      "rule": "tje",
+      "en": "animal",
+      "dimpl": "diertjes"
+    },
+    {
+      "nl": "oog",
+      "dim": "oogje",
+      "fake": "oogtje",
+      "rule": "je",
+      "en": "eye",
+      "dimpl": "oogjes"
+    },
+    {
+      "nl": "oor",
+      "dim": "oortje",
+      "fake": "oorje",
+      "rule": "tje",
+      "en": "ear",
+      "dimpl": "oortjes"
+    },
+    {
+      "nl": "been",
+      "dim": "beentje",
+      "fake": "beenje",
+      "rule": "tje",
+      "en": "leg",
+      "dimpl": "beentjes"
+    },
+    {
+      "nl": "boot",
+      "dim": "bootje",
+      "fake": "boottje",
+      "rule": "je",
+      "en": "boat",
+      "dimpl": "bootjes"
+    },
+    {
+      "nl": "trein",
+      "dim": "treintje",
+      "fake": "treinje",
+      "rule": "tje",
+      "en": "train",
+      "dimpl": "treintjes"
+    },
+    {
+      "nl": "bus",
+      "dim": "busje",
+      "fake": "bustje",
+      "rule": "je",
+      "en": "bus",
+      "dimpl": "busjes"
+    },
+    {
+      "nl": "kast",
+      "dim": "kastje",
+      "fake": "kasttje",
+      "rule": "je",
+      "en": "cupboard",
+      "dimpl": "kastjes"
+    },
+    {
+      "nl": "muur",
+      "dim": "muurtje",
+      "fake": "muurje",
+      "rule": "tje",
+      "en": "wall",
+      "dimpl": "muurtjes"
+    },
+    {
+      "nl": "lamp",
+      "dim": "lampje",
+      "fake": "lamptje",
+      "rule": "je",
+      "en": "lamp",
+      "dimpl": "lampjes"
+    },
+    {
+      "nl": "stad",
+      "dim": "stadje",
+      "fake": "stadtje",
+      "rule": "je",
+      "en": "city",
+      "dimpl": "stadjes"
+    },
+    {
+      "nl": "straat",
+      "dim": "straatje",
+      "fake": "straattje",
+      "rule": "je",
+      "en": "street",
+      "dimpl": "straatjes"
+    },
+    {
+      "nl": "tuin",
+      "dim": "tuintje",
+      "fake": "tuinje",
+      "rule": "tje",
+      "en": "garden",
+      "dimpl": "tuintjes"
+    },
+    {
+      "nl": "kamer",
+      "dim": "kamertje",
+      "fake": "kamerje",
+      "rule": "tje",
+      "en": "room",
+      "dimpl": "kamertjes"
+    },
+    {
+      "nl": "keuken",
+      "dim": "keukentje",
+      "fake": "keukenje",
+      "rule": "tje",
+      "en": "kitchen",
+      "dimpl": "keukentjes"
+    },
+    {
+      "nl": "feest",
+      "dim": "feestje",
+      "fake": "feesttje",
+      "rule": "je",
+      "en": "party",
+      "dimpl": "feestjes"
+    },
+    {
+      "nl": "bier",
+      "dim": "biertje",
+      "fake": "bierje",
+      "rule": "tje",
+      "en": "beer",
+      "dimpl": "biertjes"
+    },
+    {
+      "nl": "kop",
+      "dim": "kopje",
+      "fake": "koptje",
+      "rule": "je",
+      "en": "cup",
+      "dimpl": "kopjes"
+    },
+    {
+      "nl": "stuk",
+      "dim": "stukje",
+      "fake": "stuktje",
+      "rule": "je",
+      "en": "piece",
+      "dimpl": "stukjes"
+    },
+    {
+      "nl": "zak",
+      "dim": "zakje",
+      "fake": "zaktje",
+      "rule": "je",
+      "en": "bag",
+      "dimpl": "zakjes"
+    },
+    {
+      "nl": "doos",
+      "dim": "doosje",
+      "fake": "doostje",
+      "rule": "je",
+      "en": "box",
+      "dimpl": "doosjes"
+    },
+    {
+      "nl": "kaart",
+      "dim": "kaartje",
+      "fake": "kaarttje",
+      "rule": "je",
+      "en": "card/ticket",
+      "dimpl": "kaartjes"
+    },
+    {
+      "nl": "moment",
+      "dim": "momentje",
+      "fake": "momenttje",
+      "rule": "je",
+      "en": "moment",
+      "dimpl": "momentjes"
+    }
+  ],
+  "prepositions": [
+    {
+      "id": "op-tafel",
+      "q": "Het boek ligt ___ de tafel.",
+      "a": "op",
+      "w": [
+        "in",
+        "aan"
+      ],
+      "en": "The book is on the table.",
+      "why": "On a horizontal surface: op."
+    },
+    {
+      "id": "in-kast",
+      "q": "De borden staan ___ de kast.",
+      "a": "in",
+      "w": [
+        "op",
+        "onder"
+      ],
+      "en": "The plates are in the cupboard.",
+      "why": "Inside something: in."
+    },
+    {
+      "id": "aan-muur",
+      "q": "De foto hangt ___ de muur.",
+      "a": "aan",
+      "w": [
+        "op",
+        "in"
+      ],
+      "en": "The photo hangs on the wall.",
+      "why": "Attached to a vertical surface: aan."
+    },
+    {
+      "id": "onder-tafel",
+      "q": "De kat slaapt ___ de tafel.",
+      "a": "onder",
+      "w": [
+        "boven",
+        "op"
+      ],
+      "en": "The cat sleeps under the table.",
+      "why": "Below something: onder."
+    },
+    {
+      "id": "boven-tafel",
+      "q": "De lamp hangt ___ de tafel.",
+      "a": "boven",
+      "w": [
+        "onder",
+        "aan"
+      ],
+      "en": "The lamp hangs above the table.",
+      "why": "Higher than something, no contact: boven."
+    },
+    {
+      "id": "naast-stoel",
+      "q": "De tas staat ___ de stoel.",
+      "a": "naast",
+      "w": [
+        "tussen",
+        "aan"
+      ],
+      "en": "The bag is next to the chair.",
+      "why": "Beside something: naast."
+    },
+    {
+      "id": "tussen-huizen",
+      "q": "De fiets staat ___ de twee huizen.",
+      "a": "tussen",
+      "w": [
+        "naast",
+        "achter"
+      ],
+      "en": "The bicycle is between the two houses.",
+      "why": "Between two things: tussen."
+    },
+    {
+      "id": "achter-huis",
+      "q": "De tuin ligt ___ het huis.",
+      "a": "achter",
+      "w": [
+        "voor",
+        "onder"
+      ],
+      "en": "The garden is behind the house.",
+      "why": "Behind something: achter."
+    },
+    {
+      "id": "voor-deur",
+      "q": "De schoenen staan ___ de deur.",
+      "a": "voor",
+      "w": [
+        "achter",
+        "aan"
+      ],
+      "en": "The shoes are in front of the door.",
+      "why": "In front of something: voor."
+    },
+    {
+      "id": "bij-station",
+      "q": "Zij wonen ___ het station.",
+      "a": "bij",
+      "w": [
+        "aan",
+        "tegen"
+      ],
+      "en": "They live near the station.",
+      "why": "Near or at: bij."
+    },
+    {
+      "id": "aan-zee",
+      "q": "Het hotel ligt ___ zee.",
+      "a": "aan",
+      "w": [
+        "op",
+        "in"
+      ],
+      "en": "The hotel is at the seaside.",
+      "why": "Fixed combination: aan zee (at the seaside)."
+    },
+    {
+      "id": "in-stad",
+      "q": "Wij wonen ___ de stad.",
+      "a": "in",
+      "w": [
+        "op",
+        "aan"
+      ],
+      "en": "We live in the city.",
+      "why": "In a city or enclosed area: in."
+    },
+    {
+      "id": "op-markt",
+      "q": "Ik koop groente ___ de markt.",
+      "a": "op",
+      "w": [
+        "in",
+        "aan"
+      ],
+      "en": "I buy vegetables at the market.",
+      "why": "Fixed combination: op de markt."
+    },
+    {
+      "id": "naar-school",
+      "q": "De kinderen lopen ___ school.",
+      "a": "naar",
+      "w": [
+        "op",
+        "in"
+      ],
+      "en": "The children walk to school.",
+      "why": "Movement towards a place: naar."
+    },
+    {
+      "id": "op-school",
+      "q": "De kinderen zitten ___ school.",
+      "a": "op",
+      "w": [
+        "in",
+        "naar"
+      ],
+      "en": "The children are at school.",
+      "why": "Fixed combination: op school (at school)."
+    },
+    {
+      "id": "om-uur",
+      "q": "De les begint ___ negen uur.",
+      "a": "om",
+      "w": [
+        "op",
+        "in"
+      ],
+      "en": "The lesson starts at nine.",
+      "why": "Clock times take om: om negen uur."
+    },
+    {
+      "id": "op-dag",
+      "q": "___ maandag ga ik zwemmen.",
+      "a": "Op",
+      "w": [
+        "In",
+        "Om"
+      ],
+      "en": "On Monday I go swimming.",
+      "why": "Days take op: op maandag."
+    },
+    {
+      "id": "in-maand",
+      "q": "___ januari is het koud.",
+      "a": "In",
+      "w": [
+        "Op",
+        "Om"
+      ],
+      "en": "In January it is cold.",
+      "why": "Months take in: in januari."
+    },
+    {
+      "id": "in-seizoen",
+      "q": "___ de winter sneeuwt het.",
+      "a": "In",
+      "w": [
+        "Op",
+        "Om"
+      ],
+      "en": "In winter it snows.",
+      "why": "Seasons take in: in de winter."
+    },
+    {
+      "id": "in-jaar",
+      "q": "Zij is ___ 2010 geboren.",
+      "a": "in",
+      "w": [
+        "op",
+        "om"
+      ],
+      "en": "She was born in 2010.",
+      "why": "Years take in: in 2010."
+    },
+    {
+      "id": "op-datum",
+      "q": "Het feest is ___ 12 juli.",
+      "a": "op",
+      "w": [
+        "in",
+        "om"
+      ],
+      "en": "The party is on the 12th of July.",
+      "why": "Dates take op: op 12 juli."
+    },
+    {
+      "id": "om-half",
+      "q": "De trein vertrekt ___ half tien.",
+      "a": "om",
+      "w": [
+        "op",
+        "in"
+      ],
+      "en": "The train leaves at half past nine.",
+      "why": "Clock times take om: om half tien."
+    },
+    {
+      "id": "in-weekend",
+      "q": "___ het weekend slapen we uit.",
+      "a": "In",
+      "w": [
+        "Op",
+        "Om"
+      ],
+      "en": "At the weekend we sleep in.",
+      "why": "Fixed combination: in het weekend."
+    },
+    {
+      "id": "over-minuten",
+      "q": "De film begint ___ tien minuten.",
+      "a": "over",
+      "w": [
+        "in",
+        "na"
+      ],
+      "en": "The film starts in ten minutes.",
+      "why": "An amount of time from now takes over: over tien minuten."
+    },
+    {
+      "id": "na-les",
+      "q": "___ de les gaan we naar huis.",
+      "a": "Na",
+      "w": [
+        "Over",
+        "Uit"
+      ],
+      "en": "After the lesson we go home.",
+      "why": "After an event: na."
+    },
+    {
+      "id": "voor-ontbijt",
+      "q": "Ik douche ___ het ontbijt.",
+      "a": "voor",
+      "w": [
+        "na",
+        "om"
+      ],
+      "en": "I shower before breakfast.",
+      "why": "Before an event: voor."
+    },
+    {
+      "id": "sinds-jaar",
+      "q": "Hij woont hier ___ 2020.",
+      "a": "sinds",
+      "w": [
+        "van",
+        "voor"
+      ],
+      "en": "He has lived here since 2020.",
+      "why": "A starting point in the past: sinds."
+    },
+    {
+      "id": "tijdens-les",
+      "q": "___ de les mag je niet bellen.",
+      "a": "Tijdens",
+      "w": [
+        "Om",
+        "Sinds"
+      ],
+      "en": "During the lesson you may not phone.",
+      "why": "During an event: tijdens."
+    }
+  ],
+  "passive": {
+    "worden_form": [
+      {
+        "q": "De brief ___ nu geschreven.",
+        "a": "wordt",
+        "w": [
+          "worden",
+          "word"
+        ],
+        "en": "The letter is being written now.",
+        "why": "Singular subject: wordt. Passive = worden + past participle."
+      },
+      {
+        "q": "De huizen ___ volgend jaar gebouwd.",
+        "a": "worden",
+        "w": [
+          "wordt",
+          "word"
+        ],
+        "en": "The houses will be built next year.",
+        "why": "Plural subject: worden."
+      },
+      {
+        "q": "De rekening ___ door mijn vader betaald.",
+        "a": "wordt",
+        "w": [
+          "worden",
+          "word"
+        ],
+        "en": "The bill is paid by my father.",
+        "why": "Singular subject (de rekening): wordt."
+      },
+      {
+        "q": "Ik ___ morgen door de dokter gebeld.",
+        "a": "word",
+        "w": [
+          "wordt",
+          "worden"
+        ],
+        "en": "I will be called by the doctor tomorrow.",
+        "why": "With ik: word (no t), like every Dutch verb."
+      }
+    ],
+    "tense": [
+      {
+        "q": "Het huis ___ vorig jaar gebouwd.",
+        "a": "is",
+        "w": [
+          "wordt",
+          "heeft"
+        ],
+        "en": "The house was built last year.",
+        "why": "Finished action: perfect passive with zijn: is gebouwd. Never hebben in the passive."
+      },
+      {
+        "q": "Het eten ___ op dit moment gekookt.",
+        "a": "wordt",
+        "w": [
+          "is",
+          "heeft"
+        ],
+        "en": "The food is being cooked right now.",
+        "why": "Happening now: present passive with worden: wordt gekookt."
+      },
+      {
+        "q": "De ramen ___ gisteren gewassen.",
+        "a": "zijn",
+        "w": [
+          "worden",
+          "hebben"
+        ],
+        "en": "The windows were washed yesterday.",
+        "why": "Finished action, plural subject: zijn gewassen."
+      },
+      {
+        "q": "Het museum ___ in 1885 gebouwd.",
+        "a": "werd",
+        "w": [
+          "wordt",
+          "werden"
+        ],
+        "en": "The museum was built in 1885.",
+        "why": "Past passive (story about the past): werd + participle. Singular subject: werd."
+      },
+      {
+        "q": "De brieven ___ vroeger met de hand geschreven.",
+        "a": "werden",
+        "w": [
+          "werd",
+          "worden"
+        ],
+        "en": "Letters used to be written by hand.",
+        "why": "Past passive, plural subject: werden."
+      },
+      {
+        "q": "De tafel ___ al gedekt.",
+        "a": "is",
+        "w": [
+          "wordt",
+          "heeft"
+        ],
+        "en": "The table has already been set.",
+        "why": "Already done: perfect passive with zijn: is gedekt."
+      },
+      {
+        "q": "De kaartjes ___ op dit moment verkocht.",
+        "a": "worden",
+        "w": [
+          "zijn",
+          "hebben"
+        ],
+        "en": "The tickets are being sold right now.",
+        "why": "Happening now, plural subject: worden verkocht."
+      },
+      {
+        "q": "Het formulier ___ gisteren ingevuld.",
+        "a": "werd",
+        "w": [
+          "wordt",
+          "heeft"
+        ],
+        "en": "The form was filled in yesterday.",
+        "why": "Past passive: werd + participle. Never hebben in the passive."
+      },
+      {
+        "q": "De fiets ___ vorige week gestolen.",
+        "a": "is",
+        "w": [
+          "wordt",
+          "heeft"
+        ],
+        "en": "The bicycle was stolen last week.",
+        "why": "Finished event: perfect passive with zijn: is gestolen."
+      },
+      {
+        "q": "De soep ___ net opgewarmd.",
+        "a": "is",
+        "w": [
+          "wordt",
+          "heeft"
+        ],
+        "en": "The soup has just been heated up.",
+        "why": "Just finished (net): perfect passive with zijn."
+      }
+    ],
+    "door": [
+      {
+        "q": "Het boek is ___ de leraar geschreven.",
+        "a": "door",
+        "w": [
+          "van",
+          "bij"
+        ],
+        "en": "The book was written by the teacher.",
+        "why": "The doer in a passive sentence is introduced with door (by)."
+      },
+      {
+        "q": "De post wordt ___ de postbode bezorgd.",
+        "a": "door",
+        "w": [
+          "van",
+          "met"
+        ],
+        "en": "The mail is delivered by the postman.",
+        "why": "Who does it? door de postbode."
+      },
+      {
+        "q": "Het raam is ___ de kinderen gebroken.",
+        "a": "door",
+        "w": [
+          "van",
+          "bij"
+        ],
+        "en": "The window was broken by the children.",
+        "why": "The doer takes door, never van."
+      }
+    ],
+    "pairs_sg": [
+      {
+        "t": "De brief",
+        "part": "geschreven"
+      },
+      {
+        "t": "Het eten",
+        "part": "gekookt"
+      },
+      {
+        "t": "De rekening",
+        "part": "betaald"
+      },
+      {
+        "t": "Het huis",
+        "part": "gebouwd"
+      },
+      {
+        "t": "Het boek",
+        "part": "gelezen"
+      },
+      {
+        "t": "De foto",
+        "part": "gemaakt"
+      },
+      {
+        "t": "Het liedje",
+        "part": "gezongen"
+      },
+      {
+        "t": "De deur",
+        "part": "geopend"
+      },
+      {
+        "t": "De vraag",
+        "part": "gesteld"
+      },
+      {
+        "t": "De kamer",
+        "part": "opgeruimd"
+      },
+      {
+        "t": "De afwas",
+        "part": "gedaan"
+      },
+      {
+        "t": "De koffie",
+        "part": "gedronken"
+      },
+      {
+        "t": "De tafel",
+        "part": "gedekt"
+      },
+      {
+        "t": "Het raam",
+        "part": "gewassen"
+      },
+      {
+        "t": "De auto",
+        "part": "gerepareerd"
+      },
+      {
+        "t": "De taart",
+        "part": "gebakken"
+      },
+      {
+        "t": "Het pakket",
+        "part": "bezorgd"
+      },
+      {
+        "t": "De muur",
+        "part": "geverfd"
+      },
+      {
+        "t": "Het gras",
+        "part": "gemaaid"
+      },
+      {
+        "t": "De hond",
+        "part": "uitgelaten"
+      },
+      {
+        "t": "Het verhaal",
+        "part": "verteld"
+      },
+      {
+        "t": "De film",
+        "part": "bekeken"
+      },
+      {
+        "t": "De soep",
+        "part": "opgewarmd"
+      },
+      {
+        "t": "Het formulier",
+        "part": "ingevuld"
+      },
+      {
+        "t": "De fiets",
+        "part": "gestolen"
+      },
+      {
+        "t": "Het feest",
+        "part": "gevierd"
+      },
+      {
+        "t": "De keuken",
+        "part": "schoongemaakt"
+      },
+      {
+        "t": "De koffer",
+        "part": "ingepakt"
+      },
+      {
+        "t": "De pizza",
+        "part": "bezorgd"
+      },
+      {
+        "t": "Het bericht",
+        "part": "gestuurd"
+      },
+      {
+        "t": "De e-mail",
+        "part": "verstuurd"
+      },
+      {
+        "t": "De band",
+        "part": "geplakt"
+      },
+      {
+        "t": "Het bed",
+        "part": "opgemaakt"
+      },
+      {
+        "t": "De vloer",
+        "part": "geveegd"
+      },
+      {
+        "t": "De kip",
+        "part": "gebraden"
+      },
+      {
+        "t": "De groente",
+        "part": "gesneden"
+      },
+      {
+        "t": "De sla",
+        "part": "gewassen"
+      },
+      {
+        "t": "Het artikel",
+        "part": "geschreven"
+      },
+      {
+        "t": "Het lied",
+        "part": "opgenomen"
+      },
+      {
+        "t": "De afspraak",
+        "part": "gemaakt"
+      },
+      {
+        "t": "Het probleem",
+        "part": "opgelost"
+      },
+      {
+        "t": "De computer",
+        "part": "gerepareerd"
+      },
+      {
+        "t": "De kaars",
+        "part": "aangestoken"
+      },
+      {
+        "t": "Het cadeau",
+        "part": "ingepakt"
+      },
+      {
+        "t": "De tekst",
+        "part": "vertaald"
+      },
+      {
+        "t": "Het huiswerk",
+        "part": "gemaakt"
+      },
+      {
+        "t": "Het gazon",
+        "part": "gemaaid"
+      },
+      {
+        "t": "De wond",
+        "part": "verzorgd"
+      }
+    ],
+    "pairs_pl": [
+      {
+        "t": "De brieven",
+        "part": "geschreven"
+      },
+      {
+        "t": "De huizen",
+        "part": "gebouwd"
+      },
+      {
+        "t": "De boeken",
+        "part": "gelezen"
+      },
+      {
+        "t": "De foto’s",
+        "part": "gemaakt"
+      },
+      {
+        "t": "De ramen",
+        "part": "gewassen"
+      },
+      {
+        "t": "De bomen",
+        "part": "geplant"
+      },
+      {
+        "t": "De kaartjes",
+        "part": "gekocht"
+      },
+      {
+        "t": "De tafels",
+        "part": "gedekt"
+      },
+      {
+        "t": "De liedjes",
+        "part": "gezongen"
+      },
+      {
+        "t": "De vragen",
+        "part": "gesteld"
+      },
+      {
+        "t": "De pizza’s",
+        "part": "bezorgd"
+      },
+      {
+        "t": "De e-mails",
+        "part": "verstuurd"
+      },
+      {
+        "t": "De cadeaus",
+        "part": "ingepakt"
+      },
+      {
+        "t": "De muren",
+        "part": "geverfd"
+      },
+      {
+        "t": "De kamers",
+        "part": "opgeruimd"
+      },
+      {
+        "t": "De formulieren",
+        "part": "ingevuld"
+      },
+      {
+        "t": "De verhalen",
+        "part": "verteld"
+      },
+      {
+        "t": "De pakketten",
+        "part": "bezorgd"
+      },
+      {
+        "t": "De auto’s",
+        "part": "gerepareerd"
+      },
+      {
+        "t": "De teksten",
+        "part": "vertaald"
+      }
+    ],
+    "advs_present": [
+      "nu",
+      "op dit moment",
+      "vandaag",
+      "morgen",
+      "elke dag",
+      "vanavond",
+      "deze week",
+      "altijd"
+    ],
+    "advs_past": [
+      "gisteren",
+      "vorige week",
+      "in 1990",
+      "vroeger",
+      "toen",
+      "vanmorgen",
+      "vorig jaar",
+      "die dag"
+    ],
+    "agents": [
+      "de leraar",
+      "de kinderen",
+      "mijn vader",
+      "de buurman",
+      "de studenten",
+      "mijn moeder",
+      "de bakker",
+      "de politie",
+      "de kok",
+      "de buren",
+      "de monteur",
+      "de postbode",
+      "mijn zus",
+      "de tuinman"
+    ]
+  },
+  "common": {
+    "numerals": [
+      "twee",
+      "drie",
+      "vier",
+      "vijf",
+      "zes",
+      "zeven",
+      "acht",
+      "negen",
+      "tien",
+      "elf",
+      "twaalf",
+      "dertien",
+      "veertien",
+      "vijftien",
+      "zestien",
+      "zeventien",
+      "achttien",
+      "negentien",
+      "twintig",
+      "dertig",
+      "veertig"
+    ],
+    "present_fronts": [
+      "Vandaag",
+      "Nu",
+      "Elke dag",
+      "Vaak",
+      "Morgen",
+      "Soms",
+      "Meestal",
+      "Daarna",
+      "Elke week",
+      "Op maandag"
+    ],
+    "past_fronts": [
+      "Gisteren",
+      "Vorige week",
+      "Vanmorgen",
+      "Vorig jaar",
+      "Afgelopen zomer"
+    ],
+    "imperf_fronts": [
+      "Gisteren",
+      "Vroeger",
+      "Toen",
+      "Vorige week",
+      "Elke zomer",
+      "In 2010",
+      "Gisteravond",
+      "Gistermiddag",
+      "Vorige maand",
+      "Vorig jaar",
+      "Elke winter",
+      "Elke vrijdag",
+      "In 1995",
+      "In die tijd",
+      "Die dag",
+      "Die zomer"
+    ]
+  },
+  "dehet_frames": {
+    "article": [
+      {
+        "t": "___ {n}",
+        "cap": false
+      },
+      {
+        "t": "___ {n} is hier.",
+        "cap": true
+      },
+      {
+        "t": "Waar is ___ {n}?",
+        "cap": false
+      },
+      {
+        "t": "Ik kan ___ {n} niet vinden.",
+        "cap": false
+      },
+      {
+        "t": "Ik zie ___ {n}.",
+        "cap": false
+      },
+      {
+        "t": "Daar is ___ {n}.",
+        "cap": false
+      },
+      {
+        "t": "Hier is ___ {n}.",
+        "cap": false
+      },
+      {
+        "t": "Ik teken ___ {n}.",
+        "cap": false
+      },
+      {
+        "t": "Zie je ___ {n}?",
+        "cap": false
+      },
+      {
+        "t": "Wij zoeken ___ {n}.",
+        "cap": false
+      },
+      {
+        "t": "___ {n} is daar.",
+        "cap": true
+      },
+      {
+        "t": "Kijk naar ___ {n}!",
+        "cap": false
+      }
+    ],
+    "demonstrative": [
+      {
+        "t": "___ {n} is mooi.",
+        "kind": "this",
+        "de": "Deze",
+        "het": "Dit"
+      },
+      {
+        "t": "Ik wil ___ {n}.",
+        "kind": "this",
+        "de": "deze",
+        "het": "dit"
+      },
+      {
+        "t": "___ {n} is duur.",
+        "kind": "that",
+        "de": "Die",
+        "het": "Dat"
+      },
+      {
+        "t": "Ik zie ___ {n}.",
+        "kind": "this",
+        "de": "deze",
+        "het": "dit"
+      },
+      {
+        "t": "Zie je ___ {n}?",
+        "kind": "that",
+        "de": "die",
+        "het": "dat"
+      },
+      {
+        "t": "___ {n} ken ik niet.",
+        "kind": "that",
+        "de": "Die",
+        "het": "Dat"
+      },
+      {
+        "t": "Kijk naar ___ {n}!",
+        "kind": "this",
+        "de": "deze",
+        "het": "dit"
+      }
+    ]
+  },
+  "diminutive_frames": {
+    "form": [
+      "{nl} → het ___",
+      "Kijk, wat een klein ___! ({nl})",
+      "Het verkleinwoord van \"{nl}\" is ___.",
+      "Dat is een mooi ___. ({nl})",
+      "Maak het klein: {nl} → ___.",
+      "Zeg het met een verkleinwoord: {nl} → ___."
+    ],
+    "article": [
+      {
+        "t": "___ {dim}",
+        "cap": false
+      },
+      {
+        "t": "___ {dim} is klein.",
+        "cap": true
+      },
+      {
+        "t": "Ik zie ___ {dim}.",
+        "cap": false
+      },
+      {
+        "t": "___ {dim} is hier.",
+        "cap": true
+      },
+      {
+        "t": "Waar is ___ {dim}?",
+        "cap": false
+      }
+    ]
+  },
+  "prepositions_x": {
+    "lying": {
+      "objects": [
+        "De krant",
+        "Het boek",
+        "De telefoon",
+        "De sleutel",
+        "De brief",
+        "De pen",
+        "De bril",
+        "De tas",
+        "De portemonnee",
+        "De agenda",
+        "Het mes",
+        "De lepel",
+        "De vork",
+        "Het potlood",
+        "De foto",
+        "De trui",
+        "Het woordenboek",
+        "De handdoek",
+        "Het speelgoed",
+        "De afstandsbediening",
+        "Het tijdschrift",
+        "De laptop",
+        "De muts",
+        "De sjaal",
+        "De handschoen",
+        "Het kussen",
+        "De deken",
+        "De rekening",
+        "De kaart",
+        "De envelop",
+        "Het papier",
+        "De schaar",
+        "De liniaal",
+        "De borstel",
+        "De kam",
+        "Het notitieboek",
+        "De oplader",
+        "De koptelefoon",
+        "Het paspoort",
+        "De pinpas"
+      ],
+      "relations": [
+        {
+          "p": "op",
+          "en": "on",
+          "places": [
+            "de tafel",
+            "de stoel",
+            "het bed",
+            "de grond",
+            "de bank",
+            "het bureau"
+          ]
+        },
+        {
+          "p": "in",
+          "en": "in",
+          "places": [
+            "de kast",
+            "de tas",
+            "de doos",
+            "de la",
+            "de koelkast"
+          ]
+        },
+        {
+          "p": "onder",
+          "en": "under",
+          "places": [
+            "de tafel",
+            "het bed",
+            "de stoel",
+            "de bank"
+          ]
+        },
+        {
+          "p": "naast",
+          "en": "next to",
+          "places": [
+            "de lamp",
+            "de deur",
+            "de computer",
+            "het bed"
+          ]
+        },
+        {
+          "p": "voor",
+          "en": "in front of",
+          "places": [
+            "het raam",
+            "de deur",
+            "de televisie"
+          ]
+        },
+        {
+          "p": "achter",
+          "en": "behind",
+          "places": [
+            "de computer",
+            "de deur",
+            "de bank"
+          ]
+        },
+        {
+          "p": "bij",
+          "en": "near",
+          "places": [
+            "het raam",
+            "de deur",
+            "de lamp"
+          ]
+        },
+        {
+          "p": "tussen",
+          "en": "between",
+          "places": [
+            "de boeken",
+            "de kranten",
+            "de kussens"
+          ]
+        }
+      ]
+    },
+    "hanging": {
+      "objects": [
+        "De lamp",
+        "De foto",
+        "De klok",
+        "De spiegel",
+        "De jas",
+        "Het schilderij",
+        "De kalender",
+        "De poster",
+        "De handdoek",
+        "De vlag"
+      ],
+      "relations": [
+        {
+          "p": "aan",
+          "en": "on (attached to)",
+          "places": [
+            "de muur",
+            "de deur",
+            "de kapstok",
+            "de haak"
+          ]
+        },
+        {
+          "p": "boven",
+          "en": "above",
+          "places": [
+            "de tafel",
+            "het bed",
+            "de bank",
+            "de deur"
+          ]
+        },
+        {
+          "p": "naast",
+          "en": "next to",
+          "places": [
+            "het raam",
+            "de deur",
+            "de spiegel",
+            "de klok"
+          ]
+        }
+      ]
+    },
+    "begint": {
+      "events": [
+        "De les",
+        "De film",
+        "Het feest",
+        "De vergadering",
+        "De wedstrijd",
+        "Het concert",
+        "De cursus",
+        "De voorstelling",
+        "Het examen",
+        "De training",
+        "De bruiloft",
+        "Het optreden",
+        "De rondleiding",
+        "De pauze",
+        "Het college",
+        "De repetitie",
+        "De uitzending",
+        "De open dag",
+        "De workshop",
+        "Het toernooi",
+        "De presentatie",
+        "Het interview",
+        "De vlucht",
+        "Het programma"
+      ],
+      "om": [
+        "negen uur",
+        "half tien",
+        "kwart over drie",
+        "acht uur",
+        "elf uur",
+        "half een",
+        "tien uur",
+        "twaalf uur",
+        "kwart voor vijf",
+        "half acht",
+        "kwart over negen",
+        "één uur"
+      ],
+      "op": [
+        "maandag",
+        "dinsdag",
+        "woensdag",
+        "donderdag",
+        "vrijdag",
+        "zaterdag",
+        "zondag",
+        "12 juli",
+        "1 mei",
+        "25 december",
+        "30 april"
+      ],
+      "in": [
+        "januari",
+        "februari",
+        "maart",
+        "april",
+        "mei",
+        "juni",
+        "juli",
+        "augustus",
+        "september",
+        "oktober",
+        "november",
+        "december",
+        "de lente",
+        "de zomer",
+        "de herfst",
+        "de winter",
+        "2027",
+        "2030"
+      ]
+    },
+    "fronted": {
+      "activities": [
+        "ga ik zwemmen",
+        "ga ik naar de markt",
+        "bezoeken wij oma",
+        "eten we pannenkoeken",
+        "ga ik vroeg slapen",
+        "hebben we vrij",
+        "ga ik naar het strand",
+        "spelen de kinderen buiten",
+        "drinken we koffie bij oma",
+        "ga ik boodschappen doen",
+        "werk ik thuis",
+        "gaan wij wandelen",
+        "eet ik bij mijn ouders",
+        "sport hij in de sportschool",
+        "lees ik een boek",
+        "slapen we lang"
+      ],
+      "op": [
+        "maandag",
+        "dinsdag",
+        "woensdag",
+        "donderdag",
+        "vrijdag",
+        "zaterdag",
+        "zondag"
+      ],
+      "in": [
+        "januari",
+        "februari",
+        "maart",
+        "april",
+        "mei",
+        "juni",
+        "juli",
+        "augustus",
+        "september",
+        "oktober",
+        "november",
+        "december",
+        "de lente",
+        "de zomer",
+        "de herfst",
+        "de winter"
+      ],
+      "om": [
+        "negen uur",
+        "half tien",
+        "kwart over drie",
+        "acht uur",
+        "elf uur",
+        "half een",
+        "tien uur",
+        "twaalf uur",
+        "kwart voor vijf",
+        "half acht",
+        "kwart over negen",
+        "één uur"
+      ]
+    },
+    "living": {
+      "subjects": [
+        "Ik woon",
+        "Hij woont",
+        "Wij wonen",
+        "Mijn ouders wonen",
+        "Zij woont",
+        "Mijn broer woont",
+        "De studenten wonen",
+        "Mijn oma woont"
+      ],
+      "relations": [
+        {
+          "p": "in",
+          "en": "in",
+          "places": [
+            "Amsterdam",
+            "Utrecht",
+            "de stad",
+            "een klein dorp",
+            "Nederland",
+            "Rotterdam",
+            "Den Haag"
+          ]
+        },
+        {
+          "p": "bij",
+          "en": "near",
+          "places": [
+            "het station",
+            "het park",
+            "de kerk",
+            "de universiteit"
+          ]
+        },
+        {
+          "p": "aan",
+          "en": "on (at)",
+          "places": [
+            "zee",
+            "de rivier",
+            "het plein"
+          ]
+        }
+      ]
+    }
+  }
+}
