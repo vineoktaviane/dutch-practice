@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Stijl — Dutch Grammar Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F4EE;
+  --card:#FFFFFF;
+  --ink:#191919;
+  --blue:#1D4FC4;
+  --red:#D8341C;
+  --yellow:#F2B705;
+  --line:3px solid var(--ink);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.55}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+header{border-bottom:var(--line);background:var(--card)}
+.head-in{display:flex;align-items:stretch;gap:0}
+.logo-block{display:flex;flex-direction:column;border-right:var(--line)}
+.logo-block span{display:block;width:26px;flex:1}
+.lb1{background:var(--red)}.lb2{background:var(--yellow)}.lb3{background:var(--blue)}
+.head-txt{padding:22px 24px;flex:1}
+h1{font-family:'Archivo Black',sans-serif;font-size:clamp(1.5rem,4vw,2.3rem);letter-spacing:-0.5px;line-height:1.05;text-transform:uppercase}
+.head-sub{margin-top:6px;font-size:.95rem;color:#444}
+.head-count{font-weight:700;color:var(--blue)}
+.stat-box{border-left:var(--line);padding:22px 24px;display:flex;flex-direction:column;justify-content:center;min-width:170px}
+.stat-box .n{font-family:'Archivo Black',sans-serif;font-size:1.6rem}
+.stat-box .l{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#555}
+
+/* ---------- home grid ---------- */
+.home-intro{padding:28px 0 6px}
+.home-intro h2{font-family:'Archivo Black',sans-serif;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em}
+.home-intro p{color:#444;max-width:62ch;margin-top:4px;font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding:22px 0 40px}
+.tcard{background:var(--card);border:var(--line);display:flex;flex-direction:column;position:relative;box-shadow:6px 6px 0 var(--ink)}
+.tcard .tab{position:absolute;top:-3px;right:-3px;width:34px;height:34px;border:var(--line)}
+.tcard h3{font-family:'Archivo Black',sans-serif;font-size:1.05rem;padding:18px 20px 4px;text-transform:uppercase;letter-spacing:.02em;padding-right:52px}
+.tcard p{padding:0 20px;font-size:.9rem;color:#444;flex:1}
+.tcard .meta{padding:10px 20px 0;font-size:.8rem;color:#666}
+.tcard .meta b{color:var(--ink)}
+.tcard .acts{display:flex;border-top:var(--line);margin-top:14px}
+.tcard .acts button{flex:1;padding:12px;background:var(--card);border:none;font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}
+.tcard .acts button:first-child{border-right:var(--line)}
+.tcard .acts button:hover{background:var(--yellow)}
+.tcard .acts button.go{background:var(--ink);color:#fff}
+.tcard .acts button.go:hover{background:var(--blue)}
+.mixcard{background:var(--ink);color:#fff}
+.mixcard p{color:#ccc}
+.mixcard .meta{color:#aaa}.mixcard .meta b{color:#fff}
+.mixcard .acts button{background:var(--ink);color:#fff}
+.mixcard .acts button:hover{background:var(--blue)}
+
+/* ---------- topic view ---------- */
+.topbar{display:flex;align-items:center;gap:14px;padding:20px 0 0;flex-wrap:wrap}
+.backbtn{border:var(--line);background:var(--card);padding:8px 16px;font-weight:700;box-shadow:4px 4px 0 var(--ink)}
+.backbtn:hover{background:var(--yellow)}
+.topic-title{font-family:'Archivo Black',sans-serif;font-size:clamp(1.2rem,3vw,1.7rem);text-transform:uppercase}
+.tabs{display:flex;gap:0;margin-top:18px;border-bottom:var(--line)}
+.tabs button{padding:10px 22px;border:var(--line);border-bottom:none;background:var(--paper);font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:.05em;margin-right:-3px}
+.tabs button.on{background:var(--ink);color:#fff}
+.pane{padding:24px 0 50px}
+
+/* learn pane */
+.learn{max-width:760px}
+.learn section{background:var(--card);border:var(--line);padding:22px 24px;margin-bottom:20px;box-shadow:6px 6px 0 var(--ink)}
+.learn h4{font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:.95rem;letter-spacing:.05em;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.learn h4::before{content:"";width:14px;height:14px;border:var(--line);display:inline-block}
+.learn section.s-what h4::before{background:var(--blue)}
+.learn section.s-rules h4::before{background:var(--yellow)}
+.learn section.s-diff h4::before{background:var(--red)}
+.learn p{margin-bottom:10px;font-size:.96rem}
+.learn ul{padding-left:20px}
+.learn li{margin-bottom:9px;font-size:.95rem}
+.learn .nl{font-weight:700;color:var(--blue)}
+.learn .bad{color:var(--red);text-decoration:line-through}
+.learn table{border-collapse:collapse;margin:8px 0;width:100%;font-size:.92rem}
+.learn th,.learn td{border:2px solid var(--ink);padding:6px 10px;text-align:left}
+.learn th{background:var(--yellow);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.startrow{margin-top:4px}
+.bigbtn{border:var(--line);background:var(--ink);color:#fff;padding:14px 28px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;box-shadow:6px 6px 0 rgba(25,25,25,.35)}
+.bigbtn:hover{background:var(--blue)}
+
+/* quiz pane */
+.quiz{max-width:680px}
+.qmeta{display:flex;justify-content:space-between;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:#555;margin-bottom:12px;flex-wrap:wrap;gap:6px}
+.qcard{background:var(--card);border:var(--line);box-shadow:8px 8px 0 var(--ink)}
+.qtype{border-bottom:var(--line);padding:8px 20px;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;background:var(--yellow)}
+.qtext{padding:26px 24px 10px;font-size:1.25rem;font-weight:600;line-height:1.45}
+.qtext .blank{display:inline-block;min-width:70px;border-bottom:3px solid var(--ink);text-align:center}
+.qhint{padding:0 24px 8px;color:#666;font-size:.88rem}
+.opts{display:flex;flex-direction:column;gap:12px;padding:16px 24px 24px}
+.opts button{border:var(--line);background:var(--paper);padding:13px 16px;font-size:1.05rem;font-weight:600;text-align:left;box-shadow:4px 4px 0 var(--ink);transition:transform .05s}
+.opts button:hover{background:var(--yellow)}
+.opts button:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.opts button.correct{background:var(--blue);color:#fff}
+.opts button.wrong{background:var(--red);color:#fff}
+.opts button:disabled{cursor:default}
+.opts button.dim{opacity:.45}
+.feedback{margin:0 24px 24px;border:var(--line);padding:14px 16px;font-size:.93rem;background:var(--paper)}
+.feedback .verdict{font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:.85rem;letter-spacing:.05em;display:block;margin-bottom:6px}
+.feedback.ok .verdict{color:var(--blue)}
+.feedback.no .verdict{color:var(--red)}
+.nextrow{padding:0 24px 24px;display:flex;gap:12px}
+.nextrow .bigbtn{flex:1}
+.scorebar{display:flex;height:14px;border:var(--line);margin-top:18px;background:var(--card)}
+.scorebar .ok{background:var(--blue)}
+.scorebar .no{background:var(--red)}
+.session{margin-top:10px;font-size:.85rem;color:#555}
+
+footer{border-top:var(--line);background:var(--card);padding:16px 0;margin-top:20px}
+footer .wrap{display:flex;justify-content:space-between;font-size:.8rem;color:#555;flex-wrap:wrap;gap:8px}
+
+@media(max-width:640px){
+  .stat-box{display:none}
+  .qtext{font-size:1.1rem}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head-in">
+    <div class="logo-block" aria-hidden="true"><span class="lb1"></span><span class="lb2"></span><span class="lb3"></span></div>
+    <div class="head-txt">
+      <h1>Dutch Grammar Trainer</h1>
+      <div class="head-sub">11 grammar topics · plain-English rules · <span class="head-count" id="totalCount">…</span> unique practice questions</div>
+    </div>
+    <div class="stat-box">
+      <span class="n" id="hdrAnswered">0</span>
+      <span class="l">answered</span>
+      <span class="n" id="hdrAcc" style="margin-top:8px">–</span>
+      <span class="l">accuracy</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <span>Questions are generated from curated word banks — every noun gender, verb stem and participle is stored explicitly, not guessed.</span>
+    <span id="footTotals"></span>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* =====================================================
+   DATA — everything stored explicitly to avoid errors
+   ===================================================== */
+
+/* nouns: nl, en, g(ender), pl(ural, null = mass noun), c(ategory: p person, a animal, t thing, l place, f food) */
+const NOUNS = [
+ // de-words
+ {nl:"man",en:"man",g:"de",pl:"mannen",c:"p"},{nl:"vrouw",en:"woman",g:"de",pl:"vrouwen",c:"p"},
+ {nl:"jongen",en:"boy",g:"de",pl:"jongens",c:"p"},{nl:"dag",en:"day",g:"de",pl:"dagen",c:"t"},
+ {nl:"week",en:"week",g:"de",pl:"weken",c:"t"},{nl:"maand",en:"month",g:"de",pl:"maanden",c:"t"},
+ {nl:"nacht",en:"night",g:"de",pl:"nachten",c:"t"},{nl:"avond",en:"evening",g:"de",pl:"avonden",c:"t"},
+ {nl:"tafel",en:"table",g:"de",pl:"tafels",c:"t"},{nl:"stoel",en:"chair",g:"de",pl:"stoelen",c:"t"},
+ {nl:"deur",en:"door",g:"de",pl:"deuren",c:"t"},{nl:"muur",en:"wall",g:"de",pl:"muren",c:"t"},
+ {nl:"lamp",en:"lamp",g:"de",pl:"lampen",c:"t"},{nl:"kast",en:"cupboard",g:"de",pl:"kasten",c:"t"},
+ {nl:"keuken",en:"kitchen",g:"de",pl:"keukens",c:"l"},{nl:"kamer",en:"room",g:"de",pl:"kamers",c:"l"},
+ {nl:"tuin",en:"garden",g:"de",pl:"tuinen",c:"l"},{nl:"straat",en:"street",g:"de",pl:"straten",c:"l"},
+ {nl:"stad",en:"city",g:"de",pl:"steden",c:"l"},{nl:"auto",en:"car",g:"de",pl:"auto's",c:"t"},
+ {nl:"fiets",en:"bicycle",g:"de",pl:"fietsen",c:"t"},{nl:"trein",en:"train",g:"de",pl:"treinen",c:"t"},
+ {nl:"bus",en:"bus",g:"de",pl:"bussen",c:"t"},{nl:"boot",en:"boat",g:"de",pl:"boten",c:"t"},
+ {nl:"hond",en:"dog",g:"de",pl:"honden",c:"a"},{nl:"kat",en:"cat",g:"de",pl:"katten",c:"a"},
+ {nl:"vogel",en:"bird",g:"de",pl:"vogels",c:"a"},{nl:"vis",en:"fish",g:"de",pl:"vissen",c:"a"},
+ {nl:"koe",en:"cow",g:"de",pl:"koeien",c:"a"},{nl:"bloem",en:"flower",g:"de",pl:"bloemen",c:"t"},
+ {nl:"boom",en:"tree",g:"de",pl:"bomen",c:"t"},{nl:"appel",en:"apple",g:"de",pl:"appels",c:"f"},
+ {nl:"banaan",en:"banana",g:"de",pl:"bananen",c:"f"},{nl:"tomaat",en:"tomato",g:"de",pl:"tomaten",c:"f"},
+ {nl:"kaas",en:"cheese",g:"de",pl:null,c:"f"},{nl:"koffie",en:"coffee",g:"de",pl:null,c:"f"},
+ {nl:"thee",en:"tea",g:"de",pl:null,c:"f"},{nl:"wijn",en:"wine",g:"de",pl:null,c:"f"},
+ {nl:"soep",en:"soup",g:"de",pl:null,c:"f"},{nl:"school",en:"school",g:"de",pl:"scholen",c:"l"},
+ {nl:"winkel",en:"shop",g:"de",pl:"winkels",c:"l"},{nl:"markt",en:"market",g:"de",pl:"markten",c:"l"},
+ {nl:"kerk",en:"church",g:"de",pl:"kerken",c:"l"},{nl:"brug",en:"bridge",g:"de",pl:"bruggen",c:"t"},
+ {nl:"rivier",en:"river",g:"de",pl:"rivieren",c:"l"},{nl:"zee",en:"sea",g:"de",pl:"zeeën",c:"l"},
+ {nl:"ster",en:"star",g:"de",pl:"sterren",c:"t"},{nl:"hand",en:"hand",g:"de",pl:"handen",c:"t"},
+ {nl:"arm",en:"arm",g:"de",pl:"armen",c:"t"},{nl:"voet",en:"foot",g:"de",pl:"voeten",c:"t"},
+ {nl:"neus",en:"nose",g:"de",pl:"neuzen",c:"t"},{nl:"mond",en:"mouth",g:"de",pl:"monden",c:"t"},
+ {nl:"vinger",en:"finger",g:"de",pl:"vingers",c:"t"},{nl:"krant",en:"newspaper",g:"de",pl:"kranten",c:"t"},
+ {nl:"brief",en:"letter",g:"de",pl:"brieven",c:"t"},{nl:"tas",en:"bag",g:"de",pl:"tassen",c:"t"},
+ {nl:"jas",en:"coat",g:"de",pl:"jassen",c:"t"},{nl:"broek",en:"trousers",g:"de",pl:"broeken",c:"t"},
+ {nl:"schoen",en:"shoe",g:"de",pl:"schoenen",c:"t"},{nl:"sok",en:"sock",g:"de",pl:"sokken",c:"t"},
+ {nl:"trui",en:"sweater",g:"de",pl:"truien",c:"t"},{nl:"jurk",en:"dress",g:"de",pl:"jurken",c:"t"},
+ {nl:"bril",en:"pair of glasses",g:"de",pl:"brillen",c:"t"},{nl:"telefoon",en:"telephone",g:"de",pl:"telefoons",c:"t"},
+ {nl:"computer",en:"computer",g:"de",pl:"computers",c:"t"},{nl:"televisie",en:"television",g:"de",pl:"televisies",c:"t"},
+ {nl:"klok",en:"clock",g:"de",pl:"klokken",c:"t"},{nl:"sleutel",en:"key",g:"de",pl:"sleutels",c:"t"},
+ {nl:"fles",en:"bottle",g:"de",pl:"flessen",c:"t"},{nl:"lepel",en:"spoon",g:"de",pl:"lepels",c:"t"},
+ {nl:"vork",en:"fork",g:"de",pl:"vorken",c:"t"},{nl:"pan",en:"pan",g:"de",pl:"pannen",c:"t"},
+ {nl:"koelkast",en:"fridge",g:"de",pl:"koelkasten",c:"t"},{nl:"dokter",en:"doctor",g:"de",pl:"dokters",c:"p"},
+ {nl:"leraar",en:"teacher",g:"de",pl:"leraren",c:"p"},{nl:"student",en:"student",g:"de",pl:"studenten",c:"p"},
+ {nl:"vriend",en:"friend (m)",g:"de",pl:"vrienden",c:"p"},{nl:"vriendin",en:"friend (f)",g:"de",pl:"vriendinnen",c:"p"},
+ {nl:"moeder",en:"mother",g:"de",pl:"moeders",c:"p"},{nl:"vader",en:"father",g:"de",pl:"vaders",c:"p"},
+ {nl:"zus",en:"sister",g:"de",pl:"zussen",c:"p"},{nl:"broer",en:"brother",g:"de",pl:"broers",c:"p"},
+ {nl:"naam",en:"name",g:"de",pl:"namen",c:"t"},{nl:"vraag",en:"question",g:"de",pl:"vragen",c:"t"},
+ {nl:"taal",en:"language",g:"de",pl:"talen",c:"t"},{nl:"les",en:"lesson",g:"de",pl:"lessen",c:"t"},
+ {nl:"film",en:"film",g:"de",pl:"films",c:"t"},{nl:"foto",en:"photo",g:"de",pl:"foto's",c:"t"},
+ {nl:"reis",en:"journey",g:"de",pl:"reizen",c:"t"},{nl:"vakantie",en:"holiday",g:"de",pl:"vakanties",c:"t"},
+ {nl:"kleur",en:"colour",g:"de",pl:"kleuren",c:"t"},{nl:"prijs",en:"price",g:"de",pl:"prijzen",c:"t"},
+ {nl:"rekening",en:"bill",g:"de",pl:"rekeningen",c:"t"},{nl:"baan",en:"job",g:"de",pl:"banen",c:"t"},
+ {nl:"buurman",en:"neighbour (m)",g:"de",pl:"buurmannen",c:"p"},{nl:"baby",en:"baby",g:"de",pl:"baby's",c:"p"},
+ // het-words
+ {nl:"huis",en:"house",g:"het",pl:"huizen",c:"l"},{nl:"boek",en:"book",g:"het",pl:"boeken",c:"t"},
+ {nl:"kind",en:"child",g:"het",pl:"kinderen",c:"p"},{nl:"meisje",en:"girl",g:"het",pl:"meisjes",c:"p"},
+ {nl:"water",en:"water",g:"het",pl:null,c:"f"},{nl:"brood",en:"bread",g:"het",pl:"broden",c:"f"},
+ {nl:"glas",en:"glass",g:"het",pl:"glazen",c:"t"},{nl:"raam",en:"window",g:"het",pl:"ramen",c:"t"},
+ {nl:"paard",en:"horse",g:"het",pl:"paarden",c:"a"},{nl:"ei",en:"egg",g:"het",pl:"eieren",c:"f"},
+ {nl:"bed",en:"bed",g:"het",pl:"bedden",c:"t"},{nl:"feest",en:"party",g:"het",pl:"feesten",c:"t"},
+ {nl:"land",en:"country",g:"het",pl:"landen",c:"l"},{nl:"jaar",en:"year",g:"het",pl:"jaren",c:"t"},
+ {nl:"uur",en:"hour",g:"het",pl:"uren",c:"t"},{nl:"geld",en:"money",g:"het",pl:null,c:"t"},
+ {nl:"oog",en:"eye",g:"het",pl:"ogen",c:"t"},{nl:"oor",en:"ear",g:"het",pl:"oren",c:"t"},
+ {nl:"been",en:"leg",g:"het",pl:"benen",c:"t"},{nl:"hoofd",en:"head",g:"het",pl:"hoofden",c:"t"},
+ {nl:"hart",en:"heart",g:"het",pl:"harten",c:"t"},{nl:"station",en:"station",g:"het",pl:"stations",c:"l"},
+ {nl:"hotel",en:"hotel",g:"het",pl:"hotels",c:"l"},{nl:"restaurant",en:"restaurant",g:"het",pl:"restaurants",c:"l"},
+ {nl:"museum",en:"museum",g:"het",pl:"musea",c:"l"},{nl:"ziekenhuis",en:"hospital",g:"het",pl:"ziekenhuizen",c:"l"},
+ {nl:"strand",en:"beach",g:"het",pl:"stranden",c:"l"},{nl:"bos",en:"forest",g:"het",pl:"bossen",c:"l"},
+ {nl:"dorp",en:"village",g:"het",pl:"dorpen",c:"l"},{nl:"plein",en:"square",g:"het",pl:"pleinen",c:"l"},
+ {nl:"gebouw",en:"building",g:"het",pl:"gebouwen",c:"l"},{nl:"kantoor",en:"office",g:"het",pl:"kantoren",c:"l"},
+ {nl:"idee",en:"idea",g:"het",pl:"ideeën",c:"t"},{nl:"probleem",en:"problem",g:"het",pl:"problemen",c:"t"},
+ {nl:"antwoord",en:"answer",g:"het",pl:"antwoorden",c:"t"},{nl:"verhaal",en:"story",g:"het",pl:"verhalen",c:"t"},
+ {nl:"woord",en:"word",g:"het",pl:"woorden",c:"t"},{nl:"nummer",en:"number",g:"het",pl:"nummers",c:"t"},
+ {nl:"adres",en:"address",g:"het",pl:"adressen",c:"t"},{nl:"cadeau",en:"present/gift",g:"het",pl:"cadeaus",c:"t"},
+ {nl:"dier",en:"animal",g:"het",pl:"dieren",c:"a"},{nl:"konijn",en:"rabbit",g:"het",pl:"konijnen",c:"a"},
+ {nl:"schaap",en:"sheep",g:"het",pl:"schapen",c:"a"},{nl:"varken",en:"pig",g:"het",pl:"varkens",c:"a"},
+ {nl:"bier",en:"beer",g:"het",pl:null,c:"f"},{nl:"ontbijt",en:"breakfast",g:"het",pl:null,c:"f"},
+ {nl:"mes",en:"knife",g:"het",pl:"messen",c:"t"},{nl:"bord",en:"plate",g:"het",pl:"borden",c:"t"},
+ {nl:"seizoen",en:"season",g:"het",pl:"seizoenen",c:"t"},{nl:"gezicht",en:"face",g:"het",pl:"gezichten",c:"t"},
+ {nl:"eiland",en:"island",g:"het",pl:"eilanden",c:"l"},{nl:"vliegtuig",en:"aeroplane",g:"het",pl:"vliegtuigen",c:"t"},
+ {nl:"schip",en:"ship",g:"het",pl:"schepen",c:"t"},{nl:"paspoort",en:"passport",g:"het",pl:"paspoorten",c:"t"},
+ {nl:"gesprek",en:"conversation",g:"het",pl:"gesprekken",c:"t"},{nl:"examen",en:"exam",g:"het",pl:"examens",c:"t"},
+ {nl:"potlood",en:"pencil",g:"het",pl:"potloden",c:"t"},{nl:"dak",en:"roof",g:"het",pl:"daken",c:"t"},
+ {nl:"toilet",en:"toilet",g:"het",pl:"toiletten",c:"t"},{nl:"zwembad",en:"swimming pool",g:"het",pl:"zwembaden",c:"l"},
+ {nl:"park",en:"park",g:"het",pl:"parken",c:"l"},{nl:"weekend",en:"weekend",g:"het",pl:"weekends",c:"t"},
+ {nl:"fruit",en:"fruit",g:"het",pl:null,c:"f"},{nl:"vlees",en:"meat",g:"het",pl:null,c:"f"},
+ {nl:"werk",en:"work",g:"het",pl:null,c:"t"},{nl:"weer",en:"weather",g:"het",pl:null,c:"t"},
+ {nl:"haar",en:"hair",g:"het",pl:null,c:"t"},{nl:"ijs",en:"ice cream",g:"het",pl:null,c:"f"}
+];
+
+/* adjectives: base, e-form, allowed noun categories */
+const ADJS = [
+ {b:"groot",e:"grote",en:"big",cats:"patlf"},{b:"klein",e:"kleine",en:"small",cats:"patlf"},
+ {b:"nieuw",e:"nieuwe",en:"new",cats:"tl"},{b:"oud",e:"oude",en:"old",cats:"patl"},
+ {b:"mooi",e:"mooie",en:"beautiful",cats:"patl"},{b:"lelijk",e:"lelijke",en:"ugly",cats:"tl"},
+ {b:"duur",e:"dure",en:"expensive",cats:"tlf"},{b:"goedkoop",e:"goedkope",en:"cheap",cats:"tlf"},
+ {b:"snel",e:"snelle",en:"fast",cats:"pat"},{b:"langzaam",e:"langzame",en:"slow",cats:"pat"},
+ {b:"warm",e:"warme",en:"warm",cats:"tlf"},{b:"koud",e:"koude",en:"cold",cats:"tlf"},
+ {b:"jong",e:"jonge",en:"young",cats:"pa"},{b:"lekker",e:"lekkere",en:"tasty",cats:"f"},
+ {b:"vies",e:"vieze",en:"dirty/gross",cats:"tlf"},{b:"schoon",e:"schone",en:"clean",cats:"tl"},
+ {b:"leuk",e:"leuke",en:"nice/fun",cats:"ptl"},{b:"druk",e:"drukke",en:"busy",cats:"pl"},
+ {b:"rustig",e:"rustige",en:"quiet/calm",cats:"pal"},{b:"vrolijk",e:"vrolijke",en:"cheerful",cats:"pa"},
+ {b:"boos",e:"boze",en:"angry",cats:"pa"},{b:"aardig",e:"aardige",en:"kind",cats:"p"},
+ {b:"dik",e:"dikke",en:"thick/fat",cats:"patf"},{b:"dun",e:"dunne",en:"thin",cats:"pat"},
+ {b:"zwaar",e:"zware",en:"heavy",cats:"t"},{b:"licht",e:"lichte",en:"light",cats:"t"},
+ {b:"rood",e:"rode",en:"red",cats:"tf"},{b:"groen",e:"groene",en:"green",cats:"tf"},
+ {b:"geel",e:"gele",en:"yellow",cats:"tf"},{b:"blauw",e:"blauwe",en:"blue",cats:"t"},
+ {b:"zwart",e:"zwarte",en:"black",cats:"ta"},{b:"wit",e:"witte",en:"white",cats:"taf"}
+];
+
+/* present-tense verbs: infinitive, stem (ik-form), t-form (jij/hij/u), complement for natural sentences */
+const VERBS = [
+ {inf:"werken",stem:"werk",t:"werkt",en:"to work",compl:"in een winkel"},
+ {inf:"maken",stem:"maak",t:"maakt",en:"to make",compl:"het eten"},
+ {inf:"wonen",stem:"woon",t:"woont",en:"to live",compl:"in Amsterdam"},
+ {inf:"spelen",stem:"speel",t:"speelt",en:"to play",compl:"in het park"},
+ {inf:"koken",stem:"kook",t:"kookt",en:"to cook",compl:"vanavond"},
+ {inf:"luisteren",stem:"luister",t:"luistert",en:"to listen",compl:"naar muziek"},
+ {inf:"praten",stem:"praat",t:"praat",en:"to talk",compl:"met de buurman"},
+ {inf:"wachten",stem:"wacht",t:"wacht",en:"to wait",compl:"op de bus"},
+ {inf:"kopen",stem:"koop",t:"koopt",en:"to buy",compl:"een nieuwe jas"},
+ {inf:"leren",stem:"leer",t:"leert",en:"to learn",compl:"Nederlands"},
+ {inf:"betalen",stem:"betaal",t:"betaalt",en:"to pay",compl:"de rekening"},
+ {inf:"bellen",stem:"bel",t:"belt",en:"to call",compl:"de dokter"},
+ {inf:"halen",stem:"haal",t:"haalt",en:"to fetch",compl:"brood bij de bakker"},
+ {inf:"horen",stem:"hoor",t:"hoort",en:"to hear",compl:"de muziek"},
+ {inf:"kijken",stem:"kijk",t:"kijkt",en:"to watch",compl:"naar de film"},
+ {inf:"vragen",stem:"vraag",t:"vraagt",en:"to ask",compl:"de weg"},
+ {inf:"zwemmen",stem:"zwem",t:"zwemt",en:"to swim",compl:"in het zwembad"},
+ {inf:"rennen",stem:"ren",t:"rent",en:"to run",compl:"door het park"},
+ {inf:"dansen",stem:"dans",t:"danst",en:"to dance",compl:"op het feest"},
+ {inf:"zingen",stem:"zing",t:"zingt",en:"to sing",compl:"een liedje"},
+ {inf:"slapen",stem:"slaap",t:"slaapt",en:"to sleep",compl:"tot negen uur"},
+ {inf:"drinken",stem:"drink",t:"drinkt",en:"to drink",compl:"koffie"},
+ {inf:"eten",stem:"eet",t:"eet",en:"to eat",compl:"een boterham"},
+ {inf:"lezen",stem:"lees",t:"leest",en:"to read",compl:"de krant"},
+ {inf:"schrijven",stem:"schrijf",t:"schrijft",en:"to write",compl:"een brief"},
+ {inf:"lopen",stem:"loop",t:"loopt",en:"to walk",compl:"naar het station"},
+ {inf:"fietsen",stem:"fiets",t:"fietst",en:"to cycle",compl:"naar school"},
+ {inf:"geven",stem:"geef",t:"geeft",en:"to give",compl:"een cadeau"},
+ {inf:"reizen",stem:"reis",t:"reist",en:"to travel",compl:"door Europa"},
+ {inf:"geloven",stem:"geloof",t:"gelooft",en:"to believe",compl:"het verhaal"},
+ {inf:"gaan",stem:"ga",t:"gaat",en:"to go",compl:"naar de markt"},
+ {inf:"staan",stem:"sta",t:"staat",en:"to stand",compl:"in de keuken"},
+ {inf:"doen",stem:"doe",t:"doet",en:"to do",compl:"de afwas"},
+ {inf:"zien",stem:"zie",t:"ziet",en:"to see",compl:"de zee"},
+ {inf:"komen",stem:"kom",t:"komt",en:"to come",compl:"naar het feest"}
+];
+
+/* perfect tense: infinitive, participle, auxiliary, complement, weak-regular flag for 't kofschip drill */
+const PERF = [
+ {inf:"werken",part:"gewerkt",aux:"hebben",compl:"de hele dag",kof:true},
+ {inf:"maken",part:"gemaakt",aux:"hebben",compl:"het eten",kof:true},
+ {inf:"wonen",part:"gewoond",aux:"hebben",compl:"in Amsterdam",kof:true},
+ {inf:"spelen",part:"gespeeld",aux:"hebben",compl:"in het park",kof:true},
+ {inf:"koken",part:"gekookt",aux:"hebben",compl:"gisteren",kof:true},
+ {inf:"luisteren",part:"geluisterd",aux:"hebben",compl:"naar de radio",kof:true},
+ {inf:"praten",part:"gepraat",aux:"hebben",compl:"met de buren",kof:true},
+ {inf:"wachten",part:"gewacht",aux:"hebben",compl:"op de trein",kof:true},
+ {inf:"leren",part:"geleerd",aux:"hebben",compl:"Nederlands",kof:true},
+ {inf:"betalen",part:"betaald",aux:"hebben",compl:"de rekening",kof:false},
+ {inf:"bellen",part:"gebeld",aux:"hebben",compl:"de dokter",kof:true},
+ {inf:"horen",part:"gehoord",aux:"hebben",compl:"het nieuws",kof:true},
+ {inf:"dansen",part:"gedanst",aux:"hebben",compl:"op het feest",kof:true},
+ {inf:"fietsen",part:"gefietst",aux:"hebben",compl:"een uur",kof:true},
+ {inf:"reizen",part:"gereisd",aux:"hebben",compl:"door Europa",kof:true},
+ {inf:"geloven",part:"geloofd",aux:"hebben",compl:"het verhaal",kof:false},
+ {inf:"kopen",part:"gekocht",aux:"hebben",compl:"een jas",kof:false},
+ {inf:"kijken",part:"gekeken",aux:"hebben",compl:"naar een film",kof:false},
+ {inf:"vragen",part:"gevraagd",aux:"hebben",compl:"de weg",kof:false},
+ {inf:"zeggen",part:"gezegd",aux:"hebben",compl:"niets",kof:false},
+ {inf:"zwemmen",part:"gezwommen",aux:"hebben",compl:"in het zwembad",kof:false},
+ {inf:"zingen",part:"gezongen",aux:"hebben",compl:"een liedje",kof:false},
+ {inf:"slapen",part:"geslapen",aux:"hebben",compl:"tot tien uur",kof:false},
+ {inf:"drinken",part:"gedronken",aux:"hebben",compl:"thee",kof:false},
+ {inf:"eten",part:"gegeten",aux:"hebben",compl:"pizza",kof:false},
+ {inf:"lezen",part:"gelezen",aux:"hebben",compl:"het boek",kof:false},
+ {inf:"schrijven",part:"geschreven",aux:"hebben",compl:"een brief",kof:false},
+ {inf:"lopen",part:"gelopen",aux:"hebben",compl:"een uur",kof:false},
+ {inf:"geven",part:"gegeven",aux:"hebben",compl:"een cadeau",kof:false},
+ {inf:"zien",part:"gezien",aux:"hebben",compl:"de film",kof:false},
+ {inf:"doen",part:"gedaan",aux:"hebben",compl:"de afwas",kof:false},
+ {inf:"gebruiken",part:"gebruikt",aux:"hebben",compl:"de computer",kof:false},
+ {inf:"bestellen",part:"besteld",aux:"hebben",compl:"soep",kof:false},
+ {inf:"proberen",part:"geprobeerd",aux:"hebben",compl:"het",kof:false},
+ // zijn-verbs (movement / change of state)
+ {inf:"gaan",part:"gegaan",aux:"zijn",compl:"naar huis",kof:false},
+ {inf:"komen",part:"gekomen",aux:"zijn",compl:"te laat",kof:false},
+ {inf:"blijven",part:"gebleven",aux:"zijn",compl:"thuis",kof:false},
+ {inf:"beginnen",part:"begonnen",aux:"zijn",compl:"om negen uur",kof:false},
+ {inf:"worden",part:"geworden",aux:"zijn",compl:"ziek",kof:false},
+ {inf:"vertrekken",part:"vertrokken",aux:"zijn",compl:"om acht uur",kof:false},
+ {inf:"verhuizen",part:"verhuisd",aux:"zijn",compl:"naar Utrecht",kof:false},
+ {inf:"vallen",part:"gevallen",aux:"zijn",compl:"van de fiets",kof:false},
+ {inf:"zijn",part:"geweest",aux:"zijn",compl:"in Parijs",kof:false}
+];
+
+/* subjects with conjugation slots */
+const SUBJ = [
+ {p:"ik",slot:"ik"},{p:"jij",slot:"t"},{p:"hij",slot:"t"},{p:"zij (she)",pron:"zij",slot:"t"},
+ {p:"u",slot:"t"},{p:"wij",slot:"pl"},{p:"jullie",slot:"pl"},{p:"zij (they)",pron:"zij",slot:"pl"}
+];
+const AUXF = {hebben:{ik:"heb",t:"heeft",jij:"hebt",pl:"hebben"},zijn:{ik:"ben",t:"is",jij:"bent",pl:"zijn"}};
+
+/* modals: person forms (jij-forms use the standard textbook form) */
+const MODALS = [
+ {inf:"kunnen",en:"can / to be able to",ik:"kan",jij:"kunt",hij:"kan",pl:"kunnen"},
+ {inf:"moeten",en:"must / to have to",ik:"moet",jij:"moet",hij:"moet",pl:"moeten"},
+ {inf:"mogen",en:"may / to be allowed to",ik:"mag",jij:"mag",hij:"mag",pl:"mogen"},
+ {inf:"willen",en:"to want",ik:"wil",jij:"wilt",hij:"wil",pl:"willen"},
+ {inf:"zullen",en:"will / shall",ik:"zal",jij:"zult",hij:"zal",pl:"zullen"}
+];
+
+/* separable verbs */
+const SEP = [
+ {inf:"opstaan",part:"op",stem:"sta",t:"staat",pp:"opgestaan",aux:"zijn",en:"to get up",compl:"om zeven uur"},
+ {inf:"aankomen",part:"aan",stem:"kom",t:"komt",pp:"aangekomen",aux:"zijn",en:"to arrive",compl:"om drie uur"},
+ {inf:"meenemen",part:"mee",stem:"neem",t:"neemt",pp:"meegenomen",aux:"hebben",en:"to take along",compl:"een paraplu"},
+ {inf:"opbellen",part:"op",stem:"bel",t:"belt",pp:"opgebeld",aux:"hebben",en:"to phone",compl:"oma"},
+ {inf:"uitnodigen",part:"uit",stem:"nodig",t:"nodigt",pp:"uitgenodigd",aux:"hebben",en:"to invite",compl:"de buren"},
+ {inf:"aantrekken",part:"aan",stem:"trek",t:"trekt",pp:"aangetrokken",aux:"hebben",en:"to put on (clothes)",compl:"een warme trui"},
+ {inf:"terugkomen",part:"terug",stem:"kom",t:"komt",pp:"teruggekomen",aux:"zijn",en:"to come back",compl:"morgen"},
+ {inf:"weggaan",part:"weg",stem:"ga",t:"gaat",pp:"weggegaan",aux:"zijn",en:"to leave",compl:"vroeg"},
+ {inf:"opruimen",part:"op",stem:"ruim",t:"ruimt",pp:"opgeruimd",aux:"hebben",en:"to tidy up",compl:"de kamer"},
+ {inf:"afwassen",part:"af",stem:"was",t:"wast",pp:"afgewassen",aux:"hebben",en:"to do the dishes",compl:"na het eten"},
+ {inf:"uitgaan",part:"uit",stem:"ga",t:"gaat",pp:"uitgegaan",aux:"zijn",en:"to go out",compl:"in het weekend"},
+ {inf:"meedoen",part:"mee",stem:"doe",t:"doet",pp:"meegedaan",aux:"hebben",en:"to join in",compl:"met het spel"}
+];
+
+/* comparatives */
+const COMP = [
+ {b:"groot",c:"groter",s:"grootst",en:"big"},{b:"klein",c:"kleiner",s:"kleinst",en:"small"},
+ {b:"oud",c:"ouder",s:"oudst",en:"old"},{b:"jong",c:"jonger",s:"jongst",en:"young"},
+ {b:"duur",c:"duurder",s:"duurst",en:"expensive"},{b:"lekker",c:"lekkerder",s:"lekkerst",en:"tasty"},
+ {b:"ver",c:"verder",s:"verst",en:"far"},{b:"goed",c:"beter",s:"best",en:"good"},
+ {b:"veel",c:"meer",s:"meest",en:"much/many"},{b:"weinig",c:"minder",s:"minst",en:"little/few"},
+ {b:"graag",c:"liever",s:"liefst",en:"gladly"},{b:"mooi",c:"mooier",s:"mooist",en:"beautiful"},
+ {b:"snel",c:"sneller",s:"snelst",en:"fast"},{b:"warm",c:"warmer",s:"warmst",en:"warm"},
+ {b:"koud",c:"kouder",s:"koudst",en:"cold"},{b:"hoog",c:"hoger",s:"hoogst",en:"high"},
+ {b:"laag",c:"lager",s:"laagst",en:"low"},{b:"zwaar",c:"zwaarder",s:"zwaarst",en:"heavy"},
+ {b:"dik",c:"dikker",s:"dikst",en:"thick"},{b:"goedkoop",c:"goedkoper",s:"goedkoopst",en:"cheap"}
+];
+
+/* word-order building blocks */
+const WO_TIME = ["Morgen","Vandaag","Straks","Volgende week","Om acht uur","In de zomer"];
+const WO_CLAUSE = [
+ {s:"ik",v:"ga",rest:"naar school"},{s:"wij",v:"eten",rest:"pizza"},
+ {s:"hij",v:"werkt",rest:"thuis"},{s:"zij",v:"komt",rest:"naar het feest"},
+ {s:"jullie",v:"spelen",rest:"voetbal"},{s:"ik",v:"lees",rest:"de krant"},
+ {s:"wij",v:"gaan",rest:"naar de markt"},{s:"hij",v:"belt",rest:"zijn moeder"},
+ {s:"zij",v:"drinkt",rest:"koffie"},{s:"ik",v:"werk",rest:"in de tuin"}
+];
+const WO_TMP_T = ["morgen","vandaag","zondag","volgende week","om negen uur"];
+const WO_TMP_M = ["met de trein","met de auto","met de bus","met de fiets","te voet"];
+const WO_TMP_P = ["naar Amsterdam","naar Rotterdam","naar het strand","naar school","naar de markt"];
+const WO_SUB_MAIN = ["Ik blijf thuis","Hij gaat niet mee","Wij eten later","Zij belt morgen niet"];
+const WO_SUB_CONJ = ["omdat","als","terwijl"];
+const WO_SUB_PRED = [
+ {txt:"ziek",v:"zijn"},{txt:"moe",v:"zijn"},{txt:"geen tijd",v:"hebben"},
+ {txt:"geen geld",v:"hebben"},{txt:"honger",v:"hebben"},{txt:"druk",v:"zijn"}
+];
+const WO_SUB_SUBJ = [
+ {p:"ik",zijn:"ben",hebben:"heb"},{p:"hij",zijn:"is",hebben:"heeft"},
+ {p:"wij",zijn:"zijn",hebben:"hebben"},{p:"jij",zijn:"bent",hebben:"hebt"}
+];
+
+/* negation templates */
+const NEG_NIET_DAYS = ["maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag","zondag"];
+const NEG_NIET_SUBJ = [{p:"Ik",w:"werk",g:"ga",v:"vind"},{p:"Hij",w:"werkt",g:"gaat",v:"vindt"},{p:"Zij",w:"werkt",g:"gaat",v:"vindt"},{p:"Wij",w:"werken",g:"gaan",v:"vinden"}];
+
+/* possessives */
+const POSS = [
+ {p:"ik",de:"mijn",het:"mijn"},{p:"jij",de:"jouw",het:"jouw"},{p:"hij",de:"zijn",het:"zijn"},
+ {p:"zij (she)",de:"haar",het:"haar"},{p:"u",de:"uw",het:"uw"},{p:"wij",de:"onze",het:"ons"},
+ {p:"jullie",de:"jullie",het:"jullie"},{p:"zij (they)",de:"hun",het:"hun"}
+];
+const OBJPRON = [
+ {p:"ik",o:"mij"},{p:"jij",o:"jou"},{p:"hij",o:"hem"},{p:"zij (she)",o:"haar"},
+ {p:"u",o:"u"},{p:"wij",o:"ons"},{p:"jullie",o:"jullie"},{p:"zij (they)",o:"hen"}
+];
+const OBJ_TEMPL = ["Ik zie {} morgen.","Ken je {} al?","De leraar helpt {} met de les.","Wij bellen {} vanavond.","Zij wacht op {} bij het station."];
+
+/* =====================================================
+   HELPERS
+   ===================================================== */
+const rnd = a => a[Math.floor(Math.random()*a.length)];
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+const cap = s => s.charAt(0).toUpperCase()+s.slice(1);
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const countable = NOUNS.filter(n=>n.pl);
+function adjPairs(){const out=[];for(const n of NOUNS){if(!["p","a","t","l","f"].includes(n.c))continue;for(const a of ADJS){if(a.cats.includes(n.c))out.push([n,a]);}}return out;}
+const ADJ_PAIRS = adjPairs();
+
+/* =====================================================
+   QUESTION GENERATORS  — each returns {q, hint, options, answer, why}
+   ===================================================== */
+const GEN = {};
+
+GEN.dehet = () => {
+  const n = rnd(NOUNS);
+  const why = n.g==="het"
+    ? (n.nl.endsWith("je") ? `"${n.nl}" is a diminutive (ends in -je) — all diminutives are het-words.` : `"${n.nl}" (${n.en}) is a het-word. Het-words must simply be memorised — always learn the article with the noun.`)
+    : `"${n.nl}" (${n.en}) is a de-word. About 75% of Dutch nouns take "de".`;
+  return {q:`___ ${n.nl}`, hint:`(${n.en})`, options:["de","het"], answer:n.g, why};
+};
+
+GEN.plural = () => {
+  const n = rnd(countable);
+  const naiveEn = n.nl+"en", naiveS = n.nl+"s";
+  const opts = new Set([n.pl]);
+  if(naiveEn!==n.pl) opts.add(naiveEn);
+  if(naiveS!==n.pl) opts.add(naiveS);
+  const why = n.pl.endsWith("'s") ? `Nouns ending in a single a, o, u, i or y take -'s with an apostrophe: ${n.pl}.`
+    : n.pl.endsWith("s") ? `Nouns ending in unstressed -el, -er, -en, -em or -je usually take -s: ${n.pl}.`
+    : `The plural of "${n.nl}" is "${n.pl}". Note the spelling: long vowels lose a letter (boom → bomen), short vowels double the consonant (kat → katten), and s/f often become z/v (huis → huizen).`;
+  return {q:`één ${n.nl} → twee ___`, hint:`(${n.en})`, options:shuffle([...opts].slice(0,3)), answer:n.pl, why};
+};
+
+GEN.adj = () => {
+  const [n,a] = rnd(ADJ_PAIRS);
+  const ctx = rnd(n.pl?["def","indef","plur"]:["def","indef"]);
+  let sentence, answer, why;
+  if(ctx==="def"){
+    sentence = `${n.g} ___ ${n.nl}`;
+    answer = a.e;
+    why = `After "de" or "het" the adjective always gets -e: ${n.g} ${a.e} ${n.nl}.`;
+  } else if(ctx==="plur"){
+    sentence = `de ___ ${n.pl}`;
+    answer = a.e;
+    why = `Before a plural noun the adjective always gets -e: de ${a.e} ${n.pl}. (All plurals are de-words.)`;
+  } else {
+    sentence = `een ___ ${n.nl}`;
+    if(n.g==="het"){ answer = a.b; why = `THE exception: een + het-word + singular = no -e. So: een ${a.b} ${n.nl}, but HET ${a.e} ${n.nl}.`; }
+    else { answer = a.e; why = `"${n.nl}" is a de-word, so the adjective gets -e even after "een": een ${a.e} ${n.nl}. Only een + het-word drops the -e.`; }
+  }
+  return {q:sentence, hint:`(${a.en} ${n.en})`, options:shuffle([a.b,a.e]), answer, why};
+};
+
+GEN.present = () => {
+  const v = rnd(VERBS);
+  const type = Math.random()<0.15 ? "inv" : "norm";
+  if(type==="inv"){
+    const q = `___ jij morgen ${v.compl}? (${v.inf})`;
+    const correct = cap(v.stem);
+    const wrong = cap(v.t)===correct ? cap(v.inf) : cap(v.t);
+    return {q, hint:`${v.en} — question with jij`, options:shuffle([correct,wrong]),
+      answer:correct, why:`When "jij" comes AFTER the verb (questions, inversion), the -t is dropped: ${cap(v.stem)} jij? — but: Jij ${v.t}.`};
+  }
+  const s = rnd(SUBJ);
+  const forms = {ik:v.stem, t:v.t, pl:v.inf};
+  const correct = forms[s.slot];
+  const distr = new Set(Object.values(forms));
+  distr.delete(correct);
+  const pron = s.pron || s.p;
+  const why = s.slot==="ik" ? `"ik" takes the bare stem: ik ${v.stem}.`
+    : s.slot==="t" ? `"${s.p}" takes stem + t: ${pron} ${v.t}.${v.stem===v.t?" (The stem already ends in -t, so nothing is added.)":""}`
+    : `"${s.p}" takes the full infinitive: ${pron} ${v.inf}.`;
+  return {q:`${cap(pron)} ___ ${v.compl}. (${v.inf})`, hint:v.en, options:shuffle([correct,...[...distr].slice(0,2)]), answer:correct, why};
+};
+
+GEN.perfect = () => {
+  const roll = Math.random();
+  if(roll < 0.45){ // choose participle
+    const v = rnd(PERF);
+    const s = rnd(SUBJ);
+    const auxSet = AUXF[v.aux];
+    const aux = s.slot==="t" && s.p==="jij" ? auxSet.jij : (s.slot==="ik"?auxSet.ik : s.slot==="pl"?auxSet.pl : (s.p==="jij"?auxSet.jij:auxSet.t));
+    const pron = s.pron || s.p;
+    let wrong;
+    if(v.part.endsWith("t")) wrong = v.part.slice(0,-1)+"d";
+    else if(v.part.endsWith("d")) wrong = v.part.slice(0,-1)+"t";
+    else wrong = "ge"+v.inf;
+    if(wrong===v.part) wrong = v.inf;
+    return {q:`${cap(pron)} ${aux} ${v.compl} ___. (${v.inf})`, hint:"past participle",
+      options:shuffle([v.part,wrong]), answer:v.part,
+      why:`The past participle of "${v.inf}" is "${v.part}".`};
+  }
+  if(roll < 0.8){ // hebben vs zijn
+    const v = rnd(PERF);
+    const s = rnd(SUBJ);
+    const pron = s.pron || s.p;
+    const pick = f => s.p==="jij" ? f.jij : f[s.slot==="t"?"t":s.slot];
+    const correct = pick(AUXF[v.aux]);
+    const wrong = pick(AUXF[v.aux==="hebben"?"zijn":"hebben"]);
+    return {q:`${cap(pron)} ___ ${v.compl} ${v.part}.`, hint:`${v.inf} — hebben or zijn?`,
+      options:shuffle([correct,wrong]), answer:correct,
+      why: v.aux==="zijn" ? `"${v.inf}" describes movement or a change of state, so it takes ZIJN: ${pron} ${correct} ${v.part}.`
+        : `"${v.inf}" takes HEBBEN (like most verbs): ${pron} ${correct} ${v.part}. Zijn is only for movement/change-of-state verbs.`};
+  }
+  // 't kofschip drill
+  const regs = PERF.filter(p=>p.part.startsWith("ge")&&(p.part.endsWith("t")||p.part.endsWith("d"))&&!["gekocht","gezegd","gevraagd"].includes(p.part));
+  const v = rnd(regs);
+  const wrong = v.part.endsWith("t") ? v.part.slice(0,-1)+"d" : v.part.slice(0,-1)+"t";
+  return {q:`Past participle of "${v.inf}"?`, hint:"'t kofschip: -t or -d?",
+    options:shuffle([v.part,wrong]), answer:v.part,
+    why: v.part.endsWith("t") ? `The stem of "${v.inf}" ends in a 't kofschip sound (t, k, f, s, ch, p) → participle ends in -t: ${v.part}.`
+      : `The stem of "${v.inf}" does NOT end in a 't kofschip sound → participle ends in -d: ${v.part}.`};
+};
+
+GEN.modal = () => {
+  if(Math.random()<0.35){ // conjugation
+    const m = rnd(MODALS);
+    const s = rnd(SUBJ);
+    const correct = s.slot==="ik"?m.ik : s.slot==="pl"?m.pl : (s.p==="jij"?m.jij:m.hij);
+    const distr = new Set([m.ik,m.jij,m.hij,m.pl]); distr.delete(correct);
+    const pron = s.pron||s.p;
+    return {q:`${cap(pron)} ___ goed Nederlands spreken. (${m.inf})`, hint:m.en,
+      options:shuffle([correct,...[...distr].slice(0,2)]), answer:correct,
+      why:`${cap(pron)} ${correct}. Note: with kunnen, mogen, willen and zullen, the hij/zij-form has NO -t (hij kan, hij mag, hij wil, hij zal) — unlike regular verbs.`};
+  }
+  // structure: modal + infinitive at the end
+  const m = rnd(MODALS);
+  const v = rnd(VERBS);
+  const s = rnd(SUBJ.filter(x=>["ik","t","pl"].includes(x.slot)));
+  const mf = s.slot==="ik"?m.ik : s.slot==="pl"?m.pl : (s.p==="jij"?m.jij:m.hij);
+  const pron = s.pron||s.p;
+  const correct = `${mf} … ${v.inf}`;
+  const wrong1 = `${mf} ${v.inf} …`;
+  const wrong2 = `${v.inf} … ${mf}`;
+  return {q:`${cap(pron)} ___ vandaag ${v.compl} ___. (${m.inf} + ${v.inf})`,
+    hint:"where do the two verbs go?",
+    options:shuffle([correct,wrong1,wrong2]), answer:correct,
+    why:`The modal is conjugated in second position; the other verb goes to the END as an infinitive: ${cap(pron)} ${mf} vandaag ${v.compl} ${v.inf}.`};
+};
+
+GEN.wordorder = () => {
+  const roll = Math.random();
+  if(roll<0.35){ // inversion after fronted time
+    const t = rnd(WO_TIME), c = rnd(WO_CLAUSE);
+    const correct = `${c.v} ${c.s}`, wrong = `${c.s} ${c.v}`;
+    return {q:`${t} ___ ${c.rest}.`, hint:"verb + subject, or subject + verb?",
+      options:shuffle([correct,wrong]), answer:correct,
+      why:`Dutch is verb-second (V2). "${t}" fills position 1, so the verb must come next and the subject flips behind it: ${t} ${c.v} ${c.s} ${c.rest}.`};
+  }
+  if(roll<0.65){ // time–manner–place
+    const t=rnd(WO_TMP_T), m=rnd(WO_TMP_M), p=rnd(WO_TMP_P);
+    const correct=`${t} ${m} ${p}`;
+    const wrongs=[`${p} ${t} ${m}`,`${m} ${p} ${t}`];
+    return {q:`Ik ga ___.`, hint:"put time, manner and place in the right order",
+      options:shuffle([correct,rnd(wrongs)]), answer:correct,
+      why:`Dutch order is Time – Manner – Place: Ik ga ${t} ${m} ${p}. (English prefers Place before Time: "I'm going to Amsterdam tomorrow.")`};
+  }
+  // subordinate clause: verb to the end
+  const main=rnd(WO_SUB_MAIN), conj=rnd(WO_SUB_CONJ), pred=rnd(WO_SUB_PRED), s=rnd(WO_SUB_SUBJ);
+  const vf = s[pred.v];
+  const correct = `${s.p} ${pred.txt} ${vf}`;
+  const wrong = `${s.p} ${vf} ${pred.txt}`;
+  return {q:`${main} ${conj} ___.`, hint:"word order after "+conj,
+    options:shuffle([correct,wrong]), answer:correct,
+    why:`After a subordinating conjunction (omdat, als, terwijl, dat…) the verb moves to the very END: ${main.toLowerCase().startsWith("ik")?main:main} ${conj} ${correct}.`};
+};
+
+GEN.negation = () => {
+  if(Math.random()<0.5){ // geen
+    const n = rnd(NOUNS.filter(x=>x.c!=="p"||Math.random()<0.3));
+    const s = rnd([["Ik","heb"],["Hij","heeft"],["Zij","heeft"],["Wij","hebben"],["Jullie","hebben"]]);
+    return {q:`${s[0]} ${s[1]} ___ ${n.nl}.`, hint:`(${n.en})`,
+      options:shuffle(["geen","niet"]), answer:"geen",
+      why:`Use GEEN to negate an indefinite noun — it replaces "een" or no article: geen ${n.nl}. (Think: geen = "not a / no".)`};
+  }
+  const s = rnd(NEG_NIET_SUBJ);
+  const t = rnd([
+    ()=>({q:`${s.p} ${s.w} ___ op ${rnd(NEG_NIET_DAYS)}.`,why:`Use NIET to negate a verb, adjective, or a definite/prepositional phrase. Here you negate the working itself.`}),
+    ()=>{const p=rnd(NOUNS.filter(x=>x.c==="l"));return {q:`${s.p} ${s.g} ___ naar ${p.g==="de"?"de":"het"} ${p.nl}.`,why:`NIET negates prepositional phrases like "naar ${p.g} ${p.nl}". GEEN is only for indefinite nouns.`};},
+    ()=>{const a=rnd(ADJS);return {q:`${s.p} ${s.v} de film ___ ${a.b}.`,why:`NIET negates adjectives: niet ${a.b}. GEEN can only stand before an indefinite noun.`};},
+    ()=>({q:`Dat is ___ mijn tas.`,why:`"mijn tas" is definite (it has a possessive), so use NIET. GEEN is only for indefinite nouns (een tas / tassen without article).`})
+  ])();
+  return {q:t.q, hint:"niet or geen?", options:shuffle(["niet","geen"]), answer:"niet", why:t.why};
+};
+
+GEN.pronouns = () => {
+  if(Math.random()<0.6){ // possessives
+    const per = rnd(POSS);
+    const n = rnd(NOUNS);
+    const correct = n.g==="het" ? per.het : per.de;
+    let opts;
+    if(per.p==="wij"){ opts = ["ons","onze"]; }
+    else {
+      const others = POSS.filter(x=>x.p!==per.p).map(x=>n.g==="het"?x.het:x.de);
+      opts = [correct, rnd(others.filter(o=>o!==correct))];
+    }
+    const why = per.p==="wij"
+      ? (n.g==="het" ? `"${n.nl}" is a het-word → ONS: ons ${n.nl}. (De-words take onze.)`
+                     : `"${n.nl}" is a de-word → ONZE: onze ${n.nl}. (Het-words take ons.)`)
+      : `The possessive for "${per.p}" is "${correct}": ${correct} ${n.nl}.`;
+    return {q:`Dit is ___ ${n.nl}. (${per.p})`, hint:`(${n.en})`, options:shuffle(opts), answer:correct, why};
+  }
+  const per = rnd(OBJPRON);
+  const tmpl = rnd(OBJ_TEMPL);
+  const distr = OBJPRON.filter(x=>x.p!==per.p).map(x=>x.o).filter(o=>o!==per.o);
+  const subjForm = per.pron|| per.p.split(" ")[0];
+  return {q:tmpl.replace("{}","___")+` (${per.p})`, hint:"object pronoun",
+    options:shuffle([per.o,rnd(distr),subjForm!==per.o?subjForm:rnd(distr)].filter((v,i,a)=>a.indexOf(v)===i).slice(0,3)),
+    answer:per.o, why:`The object form of "${per.p}" is "${per.o}". Subject forms (ik, hij, zij…) can't be used as objects.`};
+};
+
+GEN.comparative = () => {
+  const a = rnd(COMP);
+  const roll = Math.random();
+  if(roll<0.4){ // comparative form
+    const frames = [
+      [`Een auto is ___ dan een fiets.`,"duur"],[`Deze zomer is ___ dan vorige zomer.`,"warm"],
+      [`Mijn broer is ___ dan ik.`,"oud"],[`De trein is ___ dan de bus.`,"snel"]
+    ];
+    const frame = `${rnd(["Deze","Die"])} ${rnd(["auto is","stad is","film is","kamer is"])} ___ dan de andere. (${a.b})`;
+    const wrong = a.c===a.b+"er" ? "meer "+a.b : a.b+"er";
+    return {q:frame, hint:a.en, options:shuffle([a.c,wrong===a.c?a.b:wrong]), answer:a.c,
+      why: a.c==="beter"||a.c==="meer"||a.c==="minder"||a.c==="liever" ? `"${a.b}" is irregular: ${a.b} – ${a.c} – ${a.s}. Learn these by heart.`
+        : a.b.endsWith("r") ? `Adjectives ending in -r add -der: ${a.b} → ${a.c}.`
+        : `Dutch almost always uses -er, even for long adjectives (no "more"): ${a.b} → ${a.c}.`};
+  }
+  if(roll<0.7){ // superlative attributive
+    const nouns = ["dag","stad","boek","huis","film"];
+    const pick = rnd(nouns);
+    const nObj = NOUNS.find(n=>n.nl===pick);
+    return {q:`Dit is ${nObj.g==="het"?"het":"de"} ___ ${nObj.nl} van allemaal. (${a.b})`, hint:a.en,
+      options:shuffle([a.s+"e",a.c,a.s]), answer:a.s+"e",
+      why:`Superlative before a noun: ${a.b} → ${a.s} + e: ${nObj.g} ${a.s}e ${nObj.nl}. (${a.c==="beter"?"Irregular: goed – beter – best.":""}The adjective -e rule still applies.)`};
+  }
+  // dan vs als
+  return {q:`Deze koffie is ${a.c} ___ die thee.`, hint:"than = ?",
+    options:shuffle(["dan","als"]), answer:"dan",
+    why:`After a comparative use DAN: ${a.c} dan. "Als" is used for equality: net zo ${a.b} als.`};
+};
+
+GEN.separable = () => {
+  const v = rnd(SEP);
+  const roll = Math.random();
+  const s = rnd(SUBJ.filter(x=>["ik","t","pl"].includes(x.slot)));
+  const pron = s.pron||s.p;
+  if(roll<0.4){ // present split
+    const vf = s.slot==="ik"?v.stem : s.slot==="pl"?null : v.t;
+    const conj = s.slot==="pl" ? v.inf.replace(v.part,"") : vf; // plural: full verb minus particle? no—use inf split
+    const verbForm = s.slot==="ik"?v.stem : s.slot==="t"?v.t : v.inf.slice(v.part.length);
+    const correct = `${verbForm} … ${v.part}`;
+    const wrong = `${v.part}${verbForm} …`;
+    return {q:`${cap(pron)} ___ ${v.compl} ___. (${v.inf})`, hint:v.en,
+      options:shuffle([correct,wrong]), answer:correct,
+      why:`In a main clause a separable verb SPLITS: the verb is conjugated in position 2, the particle goes to the end: ${cap(pron)} ${verbForm} ${v.compl} ${v.part}.`};
+  }
+  if(roll<0.7){ // participle
+    const wrong = "ge"+v.part+v.pp.slice(v.part.length+2); // ge + particle + rest → geopstaan style
+    const wrong2 = "ge" + v.pp.replace("ge","");
+    const aux = s.slot==="ik"?AUXF[v.aux].ik : s.slot==="t"?(s.p==="jij"?AUXF[v.aux].jij:AUXF[v.aux].t) : AUXF[v.aux].pl;
+    return {q:`${cap(pron)} ${aux} ${v.compl} ___. (${v.inf})`, hint:"past participle of a separable verb",
+      options:shuffle([v.pp, wrong2===v.pp?wrong:wrong2]), answer:v.pp,
+      why:`With separable verbs, GE goes BETWEEN the particle and the verb: ${v.part} + ge + …: ${v.pp}.`};
+  }
+  // subordinate clause: stays together
+  const verbForm = s.slot==="ik"?v.part+v.stem : s.slot==="t"?v.part+v.t : v.inf;
+  const wrong = s.slot==="pl" ? `${v.inf.slice(v.part.length)} … ${v.part}` : `${s.slot==="ik"?v.stem:v.t} … ${v.part}`;
+  return {q:`…omdat ${pron} elke dag ___. (${v.inf})`, hint:"subordinate clause",
+    options:shuffle([verbForm, s.slot==="ik"?v.stem+" "+v.part:v.t+" "+v.part]), answer:verbForm,
+    why:`In a subordinate clause the verb goes to the end and the separable verb REJOINS as one word: …omdat ${pron} elke dag ${verbForm}.`};
+};
+
+/* =====================================================
+   QUESTION COUNTS (real combination counts per generator)
+   ===================================================== */
+function counts(){
+  const c = {};
+  c.dehet = NOUNS.length;                                        // 1 per noun
+  c.plural = countable.length;
+  c.adj = ADJ_PAIRS.reduce((s,[n])=>s+(n.pl?3:2),0);             // 3 contexts per pair
+  c.present = VERBS.length*SUBJ.length + VERBS.length;           // + inversion type
+  const regs = PERF.filter(p=>p.part.startsWith("ge")&&(p.part.endsWith("t")||p.part.endsWith("d"))).length;
+  c.perfect = PERF.length*SUBJ.length*2 + regs;                  // participle + aux + kofschip
+  c.modal = MODALS.length*SUBJ.length + MODALS.length*VERBS.length*6;
+  c.wordorder = WO_TIME.length*WO_CLAUSE.length + WO_TMP_T.length*WO_TMP_M.length*WO_TMP_P.length
+              + WO_SUB_MAIN.length*WO_SUB_CONJ.length*WO_SUB_PRED.length*WO_SUB_SUBJ.length;
+  c.negation = NOUNS.length*5 + NEG_NIET_SUBJ.length*(NEG_NIET_DAYS.length + NOUNS.filter(x=>x.c==="l").length + ADJS.length + 1);
+  c.pronouns = POSS.length*NOUNS.length + OBJPRON.length*OBJ_TEMPL.length;
+  c.comparative = COMP.length*(8+5+1);
+  c.separable = SEP.length*6*3;
+  return c;
+}
+
+/* =====================================================
+   TOPIC DEFINITIONS (explanations in simple English)
+   ===================================================== */
+const TOPICS = [
+{id:"dehet",color:"var(--red)",title:"De & Het",blurb:"The two Dutch words for “the” — and why picking the right one matters for everything else.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>English has one word for “the”. Dutch has two: <span class="nl">de</span> and <span class="nl">het</span>. Every noun belongs to one of the two groups, and you simply have to learn which — there is no meaning difference, it's just the noun's “gender”.</p>
+<p><span class="nl">de man</span> (the man) · <span class="nl">de vrouw</span> (the woman) · <span class="nl">het huis</span> (the house) · <span class="nl">het boek</span> (the book)</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li>About <b>75% of nouns are de-words</b>. If you must guess, guess <span class="nl">de</span>.</li>
+<li><b>All plurals take de</b> — even plurals of het-words: <span class="nl">het huis → de huizen</span>.</li>
+<li><b>All diminutives (-je) take het</b>: <span class="nl">het meisje, het huisje, het biertje</span> — no exceptions.</li>
+<li>People and professions are usually de-words (<span class="nl">de dokter, de leraar</span>) — but <span class="nl">het kind, het meisje</span> are het.</li>
+<li>Words for languages, metals, sports and words starting with ge-, be-, ver- + no plural are often het-words: <span class="nl">het Nederlands, het goud, het gesprek</span>.</li>
+<li>The honest rule: <b>always learn a noun together with its article.</b> Learn “de tafel”, never just “tafel”.</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English “the”:</b> English never makes you choose; Dutch does, and the choice ripples outward — it decides adjective endings (<span class="nl">een groot huis</span> vs <span class="nl">een grote man</span>), which demonstrative you use (<span class="nl">dit/dat</span> for het-words, <span class="nl">deze/die</span> for de-words) and even “our” (<span class="nl">ons huis</span> vs <span class="nl">onze auto</span>).</p>
+<p><b>vs German:</b> German has three genders (der/die/das) and four cases. Dutch collapsed masculine and feminine into one “de” group and dropped the cases. If you know German: der + die → de, das → het (usually).</p></section>`},
+
+{id:"plural",color:"var(--blue)",title:"Plurals",blurb:"-en or -s? Plus the spelling changes that trip everyone up.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Dutch makes plurals with <b>-en</b> or <b>-s</b>. English almost always uses -s; Dutch mostly uses <b>-en</b>, and reserves -s for specific endings.</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>Default: add -en</b> → <span class="nl">boek → boeken, hond → honden</span>.</li>
+<li><b>Add -s</b> after unstressed <b>-el, -er, -en, -em, -je</b> and many loanwords → <span class="nl">tafel → tafels, computer → computers, meisje → meisjes</span>.</li>
+<li><b>Add -'s (apostrophe!)</b> after a single a, o, u, i, y → <span class="nl">auto → auto's, foto → foto's, baby → baby's</span>.</li>
+<li>Spelling changes with -en:
+ <ul>
+ <li>Long vowel loses one letter: <span class="nl">boom → bomen, uur → uren</span></li>
+ <li>Short vowel doubles the consonant: <span class="nl">kat → katten, bus → bussen</span></li>
+ <li>s → z and f → v: <span class="nl">huis → huizen, brief → brieven</span></li>
+ </ul></li>
+<li>Irregulars to memorise: <span class="nl">kind → kinderen, ei → eieren, stad → steden, schip → schepen, museum → musea</span>.</li>
+<li>All plurals are <b>de-words</b>.</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English plurals:</b> English defaults to -s; Dutch defaults to -en. English never respells the word (cat → cats); Dutch respells constantly (kat → katten) because Dutch spelling exists to protect vowel length. That same spelling system runs through verb conjugation too — master it here and you get verbs half for free.</p></section>`},
+
+{id:"adj",color:"var(--yellow)",title:"Adjective Endings",blurb:"One rule, one famous exception: when does the adjective get -e?",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>When an adjective stands before a noun, Dutch usually adds <b>-e</b>: <span class="nl">de grote man, een mooie stad</span>. There is exactly one situation where it doesn't.</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>Default: adjective + e</b> → <span class="nl">de grote tafel, het grote huis, de grote huizen, een grote man</span>.</li>
+<li><b>The one exception:</b> <span class="nl">een</span> (or geen / no article) + <b>het-word</b> + <b>singular</b> → NO -e: <span class="nl">een groot huis, een mooi boek</span>.</li>
+<li>Same word, both forms: <span class="nl">HET grote huis</span> but <span class="nl">EEN groot huis</span>.</li>
+<li>Spelling changes when adding -e (same system as plurals): <span class="nl">groot → grote, dik → dikke, boos → boze, lief → lieve, wit → witte</span>.</li>
+<li>After the noun (predicative), never an ending: <span class="nl">Het huis is groot.</span></li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English:</b> English adjectives never change (“a big house / the big house”). In Dutch the article system and the adjective system are welded together — you cannot get adjectives right without knowing de/het. That's the real reason to drill articles.</p>
+<p><b>vs German:</b> German has three full tables of adjective endings. Dutch boiled it down to “-e, except een + het-word singular”. Be grateful.</p></section>`},
+
+{id:"present",color:"var(--blue)",title:"Present Tense",blurb:"Stem, stem+t, infinitive — and the jij-flip that drops the t.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Dutch present tense has only three forms. Find the <b>stem</b> (roughly: infinitive minus -en, with spelling fixed) and build:</p>
+<table><tr><th>Who</th><th>Form</th><th>Example (werken)</th></tr>
+<tr><td>ik</td><td>stem</td><td>ik werk</td></tr>
+<tr><td>jij / hij / zij / u</td><td>stem + t</td><td>jij werkt</td></tr>
+<tr><td>wij / jullie / zij</td><td>infinitive</td><td>wij werken</td></tr></table></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li>Stem spelling follows the vowel-protection rules: <span class="nl">maken → ik maak</span>, <span class="nl">wonen → ik woon</span>, <span class="nl">bellen → ik bel</span>, <span class="nl">reizen → ik reis</span> (z→s), <span class="nl">schrijven → ik schrijf</span> (v→f).</li>
+<li>If the stem already ends in -t, add nothing: <span class="nl">hij praat, zij wacht</span>. Never -tt.</li>
+<li><b>The jij-flip:</b> when jij comes AFTER the verb (questions), drop the -t: <span class="nl">Jij werkt → Werk jij?</span> This only happens with jij, never with hij/zij/u.</li>
+<li><span class="nl">u</span> always takes stem + t, even in questions: <span class="nl">Werkt u?</span></li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English present:</b> English only marks he/she/it (-s). Dutch marks jij AND hij with -t, and uses the full infinitive for all plurals. And English never does anything like the jij-flip.</p>
+<p><b>vs Dutch modal verbs:</b> regular verbs give hij a -t (hij werkt); modals don't (hij kan, hij wil). Mixing these up is one of the most common learner errors — see the Modal Verbs topic.</p></section>`},
+
+{id:"perfect",color:"var(--red)",title:"Perfect Tense",blurb:"hebben/zijn + participle, the 't kofschip trick, and why Dutch uses it where English uses simple past.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>The perfect (<span class="nl">ik heb gewerkt</span> = I worked / I have worked) is <b>the</b> spoken past tense in Dutch. Structure: <b>hebben or zijn</b> in position 2 + <b>past participle at the end</b>.</p>
+<p><span class="nl">Ik heb gisteren de hele dag <b>gewerkt</b>.</span></p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>Regular participles: ge + stem + t or d.</b> Choose -t if the stem ends in a <b>'t kofschip</b> sound (t, k, f, s, ch, p): <span class="nl">werken → gewerkt, koken → gekookt</span>. Otherwise -d: <span class="nl">wonen → gewoond, bellen → gebeld</span>.</li>
+<li>Strong verbs change their vowel and end in -en — memorise them: <span class="nl">drinken → gedronken, eten → gegeten, schrijven → geschreven</span>.</li>
+<li>Verbs starting with be-, ge-, ver-, ont-, her- get <b>no ge-</b>: <span class="nl">betalen → betaald, vertrekken → vertrokken</span>.</li>
+<li><b>hebben or zijn?</b> Most verbs take hebben. Take <b>zijn</b> for movement to a destination and change of state: <span class="nl">gaan, komen, blijven, worden, beginnen, vertrekken, vallen, verhuizen</span> — and <span class="nl">zijn</span> itself (<span class="nl">ik ben geweest</span>).</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English present perfect:</b> the form looks identical (“have worked”) but the usage is different. English “I have worked yesterday” is wrong; Dutch <span class="nl">Ik heb gisteren gewerkt</span> is exactly what you say. Dutch uses the perfect for finished past events in conversation.</p>
+<p><b>vs Dutch simple past (ik werkte):</b> the simple past is mainly for written stories and descriptions of ongoing past situations. When in doubt while speaking: use the perfect.</p></section>`},
+
+{id:"modal",color:"var(--yellow)",title:"Modal Verbs",blurb:"kunnen, moeten, mogen, willen, zullen — irregular forms plus the infinitive-to-the-end rule.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Five helper verbs that express ability, obligation, permission, desire and future: <span class="nl">kunnen</span> (can), <span class="nl">moeten</span> (must), <span class="nl">mogen</span> (may), <span class="nl">willen</span> (want), <span class="nl">zullen</span> (will/shall).</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<table><tr><th></th><th>ik</th><th>jij</th><th>hij/zij</th><th>wij/jullie/zij</th></tr>
+<tr><td>kunnen</td><td>kan</td><td>kunt</td><td>kan</td><td>kunnen</td></tr>
+<tr><td>moeten</td><td>moet</td><td>moet</td><td>moet</td><td>moeten</td></tr>
+<tr><td>mogen</td><td>mag</td><td>mag</td><td>mag</td><td>mogen</td></tr>
+<tr><td>willen</td><td>wil</td><td>wilt</td><td>wil</td><td>willen</td></tr>
+<tr><td>zullen</td><td>zal</td><td>zult</td><td>zal</td><td>zullen</td></tr></table>
+<ul>
+<li><b>No -t for hij/zij</b> with kunnen, mogen, willen, zullen: <span class="nl">hij kan, zij wil</span> — this is where they break the normal pattern.</li>
+<li><b>The other verb goes to the END as an infinitive:</b> <span class="nl">Ik <b>kan</b> morgen niet <b>komen</b>. Hij <b>moet</b> vandaag de rekening <b>betalen</b>.</span></li>
+<li>Everything else (time, objects, negation) sits between the two verbs.</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs regular Dutch verbs:</b> regular verbs put -t on hij (hij werkt); most modals don't (hij kan). Regular verbs stand alone; modals send a second verb to the end of the sentence — a mini-preview of Dutch verb-final word order.</p>
+<p><b>vs English modals:</b> English modals sit next to their verb (“I can come tomorrow”). Dutch splits them across the whole sentence (“Ik kan morgen komen”). Resist the urge to keep the verbs together.</p></section>`},
+
+{id:"wordorder",color:"var(--red)",title:"Word Order",blurb:"Verb-second, inversion, Time–Manner–Place, and why 'omdat' throws the verb to the end.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Dutch word order runs on one iron law: in a main clause, <b>the conjugated verb is always the second element</b> (V2). Whatever fills position one — subject, time, place — the verb comes next.</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>V2 + inversion:</b> if anything other than the subject starts the sentence, subject and verb flip: <span class="nl">Ik ga morgen naar school → <b>Morgen ga ik</b> naar school.</span> Never <span class="bad">Morgen ik ga</span>.</li>
+<li><b>Time – Manner – Place:</b> <span class="nl">Ik ga <b>morgen</b> <b>met de trein</b> <b>naar Amsterdam</b>.</span> English does the reverse (Place before Time).</li>
+<li><b>Subordinate clauses are verb-final:</b> after <span class="nl">omdat, als, terwijl, dat, hoewel</span>… the verb moves to the very end: <span class="nl">Ik blijf thuis <b>omdat ik ziek ben</b>.</span> Never <span class="bad">omdat ik ben ziek</span>.</li>
+<li>Other verb forms (infinitives, participles) pile up at the end of the main clause too: <span class="nl">Ik heb gisteren een boek <b>gekocht</b>.</span></li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English SVO:</b> English keeps subject-verb-object no matter what starts the sentence (“Tomorrow I go…”). Dutch demands the flip (“Morgen ga ik…”). This inversion is the single most reliable marker of non-native Dutch — drill it until it's automatic.</p>
+<p><b>Main clause vs subordinate clause:</b> two different systems inside one language. Main clause: verb second. Subordinate clause: verb last. The conjunction decides which system you're in — <span class="nl">want</span> (coordinating) keeps V2, <span class="nl">omdat</span> (subordinating) forces verb-final, even though both mean “because”.</p></section>`},
+
+{id:"negation",color:"var(--blue)",title:"Niet vs Geen",blurb:"English has one 'not'. Dutch has two, and the noun decides.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Dutch negates with two different words. <span class="nl">geen</span> negates <b>indefinite nouns</b>; <span class="nl">niet</span> negates <b>everything else</b>.</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>geen</b> replaces <span class="nl">een</span> or a missing article: <span class="nl">Ik heb een auto → Ik heb <b>geen</b> auto. Wij drinken koffie → Wij drinken <b>geen</b> koffie.</span></li>
+<li><b>niet</b> negates verbs, adjectives, adverbs and definite things: <span class="nl">Ik werk <b>niet</b>. De film is <b>niet</b> leuk. Dat is <b>niet</b> mijn tas. Ik ga <b>niet</b> naar het feest.</span></li>
+<li>Quick test: could you put “a / any” in front of the noun in English? Then use geen. (“I don't have <i>a</i> car” → geen auto.)</li>
+<li>Position of niet: usually towards the end, but before adjectives, prepositions and the sentence-final verb parts: <span class="nl">Ik heb het boek <b>niet</b> gelezen.</span></li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English “not / no”:</b> English “no” + noun (“I have no money”) maps to geen; English “not” maps to niet — but English usually says “don't have a”, which hides the distinction. Dutch forces you to decide on every sentence.</p>
+<p><b>vs each other:</b> the trap is definite nouns: <span class="nl">geen</span> can never stand before <span class="nl">de/het/mijn/deze</span>. “Not my bag” = <span class="nl">niet mijn tas</span>, never <span class="bad">geen mijn tas</span>.</p></section>`},
+
+{id:"pronouns",color:"var(--yellow)",title:"Pronouns & Possessives",blurb:"mij vs ik, ons vs onze — the forms English merges and Dutch keeps apart.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Dutch pronouns come in sets: subject (<span class="nl">ik, jij, hij…</span>), object (<span class="nl">mij, jou, hem…</span>) and possessive (<span class="nl">mijn, jouw, zijn…</span>).</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<table><tr><th>Subject</th><th>Object</th><th>Possessive</th></tr>
+<tr><td>ik</td><td>mij (me)</td><td>mijn</td></tr>
+<tr><td>jij</td><td>jou (je)</td><td>jouw (je)</td></tr>
+<tr><td>hij</td><td>hem</td><td>zijn</td></tr>
+<tr><td>zij (she)</td><td>haar</td><td>haar</td></tr>
+<tr><td>u</td><td>u</td><td>uw</td></tr>
+<tr><td>wij</td><td>ons</td><td>ons / onze</td></tr>
+<tr><td>jullie</td><td>jullie</td><td>jullie</td></tr>
+<tr><td>zij (they)</td><td>hen / hun / ze</td><td>hun</td></tr></table>
+<ul>
+<li><b>ons vs onze:</b> the only possessive that changes with the noun. Het-words take <span class="nl">ons</span> (<span class="nl">ons huis</span>), de-words take <span class="nl">onze</span> (<span class="nl">onze auto</span>). All plurals: onze.</li>
+<li><span class="nl">jouw</span> (possessive, “your”) vs <span class="nl">jou</span> (object, “you”) — one letter, different job.</li>
+<li>Stressed vs unstressed: <span class="nl">jij/je, zij/ze, wij/we, mijn/m'n</span>. Use the full form for emphasis or contrast.</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English:</b> English “you/your” covers singular, plural and formal. Dutch splits it three ways: <span class="nl">jij/jou/jouw</span>, <span class="nl">jullie</span>, and formal <span class="nl">u/uw</span>. And English “our” never changes — Dutch <span class="nl">ons/onze</span> depends on de/het, which is yet another reason to learn articles properly.</p></section>`},
+
+{id:"comparative",color:"var(--red)",title:"Comparatives & Superlatives",blurb:"-er and -st for everything (yes, even long words), plus dan vs als.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Comparing things: <span class="nl">groot → groter → grootst</span> (big → bigger → biggest). Dutch uses endings for nearly all adjectives, long or short.</p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>Comparative: + er</b> → <span class="nl">kleiner, mooier, interessanter</span>. Dutch does NOT use “more” the way English does.</li>
+<li>Adjectives ending in <b>-r</b> add <b>-der</b>: <span class="nl">duur → duurder, lekker → lekkerder, ver → verder</span>.</li>
+<li><b>Superlative: + st</b> → <span class="nl">kleinst, mooist</span>. Before a noun it also gets the adjective -e: <span class="nl">de kleinste stad, het mooiste huis</span>.</li>
+<li><b>Irregulars:</b> <span class="nl">goed – beter – best</span>, <span class="nl">veel – meer – meest</span>, <span class="nl">weinig – minder – minst</span>, <span class="nl">graag – liever – liefst</span>.</li>
+<li><b>dan vs als:</b> comparison of difference uses <span class="nl">dan</span> (<span class="nl">groter dan</span>); equality uses <span class="nl">als</span> (<span class="nl">net zo groot als</span>).</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English:</b> English switches to “more/most” for long adjectives (“more interesting”). Dutch keeps the ending: <span class="nl">interessanter</span>. Saying <span class="bad">meer interessant</span> is a classic English-speaker error.</p>
+<p><b>vs ordinary adjectives:</b> comparatives and superlatives still follow the normal adjective -e rules before a noun: <span class="nl">een grotere stad, de grootste stad</span>. Two systems stacked on top of each other.</p></section>`},
+
+{id:"separable",color:"var(--blue)",title:"Separable Verbs",blurb:"opstaan, meenemen, uitnodigen — verbs that split in two and reunite.",
+learn:`
+<section class="s-what"><h4>What it is</h4>
+<p>Many Dutch verbs are built from a particle + verb: <span class="nl">op + staan = opstaan</span> (to get up). In a main clause they <b>split</b>: the verb is conjugated normally, the particle flies to the end of the sentence.</p>
+<p><span class="nl">Ik <b>sta</b> elke dag om zeven uur <b>op</b>.</span></p></section>
+<section class="s-rules"><h4>The rules</h4>
+<ul>
+<li><b>Main clause: split.</b> Verb in position 2, particle at the end: <span class="nl">Zij <b>nodigt</b> de buren <b>uit</b>.</span></li>
+<li><b>Subordinate clause: rejoin.</b> The whole verb goes to the end in one piece: <span class="nl">…omdat ik om zeven uur <b>opsta</b>.</span></li>
+<li><b>Past participle: ge- goes in the middle.</b> Particle + ge + participle: <span class="nl">opgestaan, uitgenodigd, meegenomen</span>. Never <span class="bad">geopstaan</span>.</li>
+<li><b>With a modal: rejoin as infinitive at the end:</b> <span class="nl">Ik moet vroeg <b>opstaan</b>.</span></li>
+<li>How to spot one: the stress is on the particle (ÓPstaan). Inseparable prefixes (be-, ver-, ont-…) are unstressed and never split.</li>
+</ul></section>
+<section class="s-diff"><h4>How it differs from similar grammar</h4>
+<p><b>vs English phrasal verbs:</b> English “pick up” can split too (“pick it up”), but English never glues the parts back together or inserts anything inside the verb. Dutch does both: <span class="nl">opsta</span> (subordinate clause), <span class="nl">opgestaan</span> (ge- inside).</p>
+<p><b>vs inseparable prefix verbs:</b> <span class="nl">betalen, vertrekken, ontmoeten</span> look similar but never split and take no ge- in the participle (<span class="nl">betaald</span>, not <span class="bad">gebetaald</span>). The stress tells them apart.</p></section>`}
+];
+
+/* =====================================================
+   STATE & STORAGE
+   ===================================================== */
+let stats = {answered:0, correct:0, byTopic:{}};
+async function loadStats(){
+  try{ const r = await window.storage.get("dutch-stats"); if(r&&r.value){stats = JSON.parse(r.value);} }catch(e){/* first run */}
+  paintHeader();
+}
+async function saveStats(){
+  try{ await window.storage.set("dutch-stats", JSON.stringify(stats)); }catch(e){/* offline ok */}
+}
+function paintHeader(){
+  document.getElementById("hdrAnswered").textContent = stats.answered;
+  document.getElementById("hdrAcc").textContent = stats.answered ? Math.round(stats.correct/stats.answered*100)+"%" : "–";
+}
+
+let view = {page:"home"};
+let session = {n:0, ok:0};
+let current = null;
+let lastQ = "";
+
+const CNT = counts();
+const TOTAL = Object.values(CNT).reduce((a,b)=>a+b,0);
+document.getElementById("totalCount").textContent = TOTAL.toLocaleString("en-US")+"+";
+document.getElementById("footTotals").textContent = "Question pool: "+TOTAL.toLocaleString("en-US")+" unique combinations across 11 topics.";
+
+/* =====================================================
+   RENDERING
+   ===================================================== */
+const app = document.getElementById("app");
+
+function renderHome(){
+  session = {n:0,ok:0};
+  let html = `<div class="home-intro"><h2>Pick a topic</h2>
+  <p>Read the rules first (Learn), then drill (Practice). Or hit Mixed Practice to be tested on everything at once — that's where real retention happens.</p></div><div class="grid">`;
+  for(const t of TOPICS){
+    const bt = stats.byTopic[t.id]||{a:0,c:0};
+    html += `<div class="tcard"><span class="tab" style="background:${t.color}"></span>
+      <h3>${t.title}</h3><p>${t.blurb}</p>
+      <div class="meta"><b>${CNT[t.id].toLocaleString("en-US")}</b> questions${bt.a?` · you: ${bt.c}/${bt.a} correct`:""}</div>
+      <div class="acts"><button data-learn="${t.id}">Learn</button><button class="go" data-quiz="${t.id}">Practice</button></div></div>`;
+  }
+  const mixBt = stats.byTopic["mix"]||{a:0,c:0};
+  html += `<div class="tcard mixcard"><span class="tab" style="background:var(--yellow)"></span>
+    <h3>Mixed Practice</h3><p>Random questions from every topic. Harder, because you don't know which rule is being tested — exactly like real Dutch.</p>
+    <div class="meta"><b>${TOTAL.toLocaleString("en-US")}</b> questions${mixBt.a?` · you: ${mixBt.c}/${mixBt.a} correct`:""}</div>
+    <div class="acts"><button class="go" data-quiz="mix" style="flex:1">Practice everything</button></div></div>`;
+  html += `</div>`;
+  app.innerHTML = html;
+}
+
+function renderTopic(){
+  const t = TOPICS.find(x=>x.id===view.topic);
+  const isMix = view.topic==="mix";
+  const title = isMix ? "Mixed Practice" : t.title;
+  let html = `<div class="topbar"><button class="backbtn" data-home>&larr; Topics</button>
+    <span class="topic-title">${title}</span></div>`;
+  if(!isMix){
+    html += `<div class="tabs">
+      <button data-tab="learn" class="${view.tab==="learn"?"on":""}">Learn</button>
+      <button data-tab="quiz" class="${view.tab==="quiz"?"on":""}">Practice</button></div>`;
+  }
+  html += `<div class="pane">`;
+  if(!isMix && view.tab==="learn"){
+    html += `<div class="learn">${t.learn}<div class="startrow"><button class="bigbtn" data-tab="quiz">Start practising &rarr;</button></div></div>`;
+  } else {
+    html += `<div class="quiz" id="quizBox"></div>`;
+  }
+  html += `</div>`;
+  app.innerHTML = html;
+  if(isMix || view.tab==="quiz") nextQuestion();
+}
+
+function makeQuestion(){
+  const gen = view.topic==="mix" ? GEN[rnd(Object.keys(GEN))] : GEN[view.topic];
+  let q, tries=0;
+  do { q = gen(); tries++; } while(q.q===lastQ && tries<5);
+  lastQ = q.q;
+  return q;
+}
+
+function topicLabel(){
+  if(view.topic!=="mix") return TOPICS.find(x=>x.id===view.topic).title;
+  return "Mixed";
+}
+
+function nextQuestion(){
+  current = makeQuestion();
+  const box = document.getElementById("quizBox");
+  const qHtml = esc(current.q).replace(/___/g,'<span class="blank">&nbsp;</span>');
+  box.innerHTML = `
+    <div class="qmeta"><span>${topicLabel()}</span><span>Session: ${session.ok}/${session.n} correct</span></div>
+    <div class="qcard">
+      <div class="qtype">Choose the correct answer</div>
+      <div class="qtext">${qHtml}</div>
+      ${current.hint?`<div class="qhint">${esc(current.hint)}</div>`:""}
+      <div class="opts">${current.options.map((o,i)=>`<button data-opt="${i}">${esc(o)}</button>`).join("")}</div>
+      <div id="fb"></div>
+    </div>
+    <div class="scorebar" id="sbar"></div>
+    <div class="session">Answered this session: ${session.n}</div>`;
+  paintScorebar();
+}
+
+function paintScorebar(){
+  const bar = document.getElementById("sbar");
+  if(!bar) return;
+  if(session.n===0){ bar.innerHTML=""; return; }
+  const okPct = session.ok/session.n*100;
+  bar.innerHTML = `<div class="ok" style="width:${okPct}%"></div><div class="no" style="width:${100-okPct}%"></div>`;
+}
+
+function answer(idx){
+  const chosen = current.options[idx];
+  const isOk = chosen===current.answer;
+  session.n++; if(isOk) session.ok++;
+  stats.answered++; if(isOk) stats.correct++;
+  const key = view.topic;
+  stats.byTopic[key] = stats.byTopic[key]||{a:0,c:0};
+  stats.byTopic[key].a++; if(isOk) stats.byTopic[key].c++;
+  saveStats(); paintHeader(); paintScorebar();
+
+  const box = document.getElementById("quizBox");
+  box.querySelectorAll(".opts button").forEach((b,i)=>{
+    b.disabled = true;
+    const val = current.options[i];
+    if(val===current.answer) b.classList.add("correct");
+    else if(i===idx) b.classList.add("wrong");
+    else b.classList.add("dim");
+  });
+  const fb = document.getElementById("fb");
+  fb.innerHTML = `<div class="feedback ${isOk?"ok":"no"}">
+    <span class="verdict">${isOk?"Correct":"Wrong — the answer is: "+esc(current.answer)}</span>
+    ${esc(current.why)}</div>
+    <div class="nextrow"><button class="bigbtn" data-next>Next question &rarr;</button></div>`;
+  fb.querySelector("[data-next]").focus();
+}
+
+/* event delegation */
+app.addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if(!b) return;
+  if(b.dataset.home!==undefined){ view={page:"home"}; renderHome(); return; }
+  if(b.dataset.learn){ view={page:"topic",topic:b.dataset.learn,tab:"learn"}; renderTopic(); return; }
+  if(b.dataset.quiz){ view={page:"topic",topic:b.dataset.quiz,tab:"quiz"}; session={n:0,ok:0}; renderTopic(); return; }
+  if(b.dataset.tab){ view.tab=b.dataset.tab; renderTopic(); return; }
+  if(b.dataset.opt!==undefined){ answer(+b.dataset.opt); return; }
+  if(b.dataset.next!==undefined){ nextQuestion(); return; }
+});
+document.addEventListener("keydown", e => {
+  if(view.page!=="topic") return;
+  if(e.key>="1"&&e.key<="4"){
+    const btns = app.querySelectorAll(".opts button:not(:disabled)");
+    const i = +e.key-1;
+    if(btns[i]) btns[i].click();
+  }
+  if(e.key==="Enter"){
+    const nx = app.querySelector("[data-next]");
+    if(nx) nx.click();
+  }
+});
+
+loadStats();
+renderHome();
+</script>
+</body>
+</html>
