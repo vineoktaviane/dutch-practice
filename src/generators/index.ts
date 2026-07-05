@@ -3,6 +3,8 @@ import {
   ADJ_PAIRS,
   ADJS,
   COMP,
+  ER,
+  IMPERF,
   MODALS,
   NEG,
   NOUNS,
@@ -17,6 +19,8 @@ import {
 import { adj } from './adj';
 import { ATTR_NOUNS, COMP_SUBJECTS, SUP_NOUNS, comparative } from './comparative';
 import { dehet } from './dehet';
+import { er } from './er';
+import { imperfectum } from './imperfectum';
 import { MODAL_COMPLS, MODAL_TIMES, modal, modalTimeFree } from './modal';
 import { GEEN_SUBJECTS, NIET_POSSESSIONS, negation } from './negation';
 import { perfect } from './perfect';
@@ -35,7 +39,9 @@ export const GEN: Record<string, Generator> = {
   wordorder,
   negation,
   comparative,
-  separable
+  separable,
+  imperfectum,
+  er
 };
 
 /** Real combination counts per generator, mirroring the reference app. */
@@ -74,6 +80,19 @@ export function counts(): Record<string, number> {
   c.separable =
     SEP.length * 8 * (2 + MODALS.length) +
     8 * SEP.reduce((s, v) => s + (sepTimeFree(v.compl) ? SUB_ADVS.length : 1), 0);
+  c.imperfectum =
+    IMPERF.length * 5 * WB.common.imperf_fronts.length + IMPERF.filter((v) => v.weak).length;
+  const erTemplateCombos = ER.existential_templates.reduce(
+    (s, t) => s + countable.filter((n) => t.cats.includes(n.c)).length,
+    0
+  );
+  c.er =
+    ER.existential.length +
+    erTemplateCombos +
+    ER.quantity.length +
+    countable.filter((x) => 'taf'.includes(x.c)).length * WB.common.numerals.length * 2 +
+    ER.locative.length +
+    ER.prepositional.length;
   return c;
 }
 
