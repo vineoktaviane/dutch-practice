@@ -3,11 +3,14 @@ import {
   ADJ_PAIRS,
   ADJS,
   COMP,
+  CONJREL,
+  DIM,
   ER,
   IMPERF,
   MODALS,
   NEG,
   NOUNS,
+  OMTE,
   PERF,
   SEP,
   SUBJ,
@@ -18,11 +21,14 @@ import {
 } from '../data';
 import { adj } from './adj';
 import { ATTR_NOUNS, COMP_SUBJECTS, SUP_NOUNS, comparative } from './comparative';
+import { conjrel } from './conjrel';
 import { dehet } from './dehet';
+import { diminutive } from './diminutive';
 import { er } from './er';
 import { imperfectum } from './imperfectum';
 import { MODAL_COMPLS, MODAL_TIMES, modal, modalTimeFree } from './modal';
 import { GEEN_SUBJECTS, NIET_POSSESSIONS, negation } from './negation';
+import { OMTE_SUBJECTS, omte } from './omte';
 import { perfect } from './perfect';
 import { plural } from './plural';
 import { present } from './present';
@@ -41,7 +47,10 @@ export const GEN: Record<string, Generator> = {
   comparative,
   separable,
   imperfectum,
-  er
+  er,
+  conjrel,
+  omte,
+  diminutive
 };
 
 /** Real combination counts per generator, mirroring the reference app. */
@@ -93,6 +102,20 @@ export function counts(): Record<string, number> {
     countable.filter((x) => 'taf'.includes(x.c)).length * WB.common.numerals.length * 2 +
     ER.locative.length +
     ER.prepositional.length;
+  c.conjrel =
+    NOUNS.filter((n) => n.c === 't' || n.c === 'f').length * CONJREL.relative_thing_frames.length +
+    NOUNS.filter((n) => n.c === 'p' || n.c === 'a').length * CONJREL.relative_person_frames.length +
+    countable.length * CONJREL.relative_plural_frames.length +
+    CONJREL.wat.length +
+    CONJREL.want_omdat.length * 2 +
+    CONJREL.toen_als.length;
+  c.omte =
+    OMTE.purpose_mains.length * OMTE.purpose_pairs.length +
+    OMTE.te_verbs.length * OMTE_SUBJECTS.length * VERBS.length +
+    OMTE.te_verbs.filter((t) => !t.neg).length * OMTE_SUBJECTS.length * SEP.length;
+  c.diminutive =
+    DIM.length *
+    (WB.diminutive_frames.form.length + WB.diminutive_frames.article.length + WB.common.numerals.length);
   return c;
 }
 
