@@ -11,7 +11,9 @@ import {
   NEG,
   NOUNS,
   OMTE,
+  PASSIVE,
   PERF,
+  PREP,
   SEP,
   SUBJ,
   VERBS,
@@ -29,8 +31,10 @@ import { imperfectum } from './imperfectum';
 import { MODAL_COMPLS, MODAL_TIMES, modal, modalTimeFree } from './modal';
 import { GEEN_SUBJECTS, NIET_POSSESSIONS, negation } from './negation';
 import { OMTE_SUBJECTS, omte } from './omte';
+import { passive } from './passive';
 import { perfect } from './perfect';
 import { plural } from './plural';
+import { prepositions } from './prepositions';
 import { present } from './present';
 import { SUB_ADVS, separable, sepTimeFree } from './separable';
 import { wordorder } from './wordorder';
@@ -50,12 +54,17 @@ export const GEN: Record<string, Generator> = {
   er,
   conjrel,
   omte,
-  diminutive
+  diminutive,
+  prepositions,
+  passive
 };
 
 /** Real combination counts per generator, mirroring the reference app. */
 export function counts(): Record<string, number> {
   const c: Record<string, number> = {};
+  const woX = WB.prepositions_x;
+  const relPlaces = (rs: { places: string[] }[]) => rs.reduce((s, r) => s + r.places.length, 0);
+
   // frames x nouns, plus demonstrative frames x nouns
   c.dehet = NOUNS.length * (WB.dehet_frames.article.length + WB.dehet_frames.demonstrative.length);
   c.plural = countable.length * WB.common.numerals.length;
@@ -116,6 +125,20 @@ export function counts(): Record<string, number> {
   c.diminutive =
     DIM.length *
     (WB.diminutive_frames.form.length + WB.diminutive_frames.article.length + WB.common.numerals.length);
+  c.prepositions =
+    PREP.length +
+    woX.lying.objects.length * relPlaces(woX.lying.relations) +
+    woX.hanging.objects.length * relPlaces(woX.hanging.relations) +
+    woX.begint.events.length * (woX.begint.om.length + woX.begint.op.length + woX.begint.in.length) +
+    woX.fronted.activities.length * (woX.fronted.om.length + woX.fronted.op.length + woX.fronted.in.length) +
+    woX.living.subjects.length * relPlaces(woX.living.relations);
+  const pairs = PASSIVE.pairs_sg.length + PASSIVE.pairs_pl.length;
+  c.passive =
+    pairs * (PASSIVE.advs_present.length + PASSIVE.advs_past.length) * 2 +
+    PASSIVE.worden_form.length +
+    PASSIVE.tense.length +
+    PASSIVE.door.length +
+    pairs * PASSIVE.agents.length;
   return c;
 }
 
