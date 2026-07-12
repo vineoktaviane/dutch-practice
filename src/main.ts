@@ -3,8 +3,10 @@ import { registerSW } from 'virtual:pwa-register';
 import type { Question, Stats } from './types';
 import { GLOSSARY, TOPICS } from './data';
 import { CNT, GEN, TOTAL } from './generators';
-import { loadStats, saveStats } from './storage';
+import { loadFactStates, loadStats, saveFactState, saveStats } from './storage';
 import { rnd } from './rng';
+import { newFactState, reviewFact, type FactState } from './srs/sm2';
+import { topicForFact } from './srs/facts';
 import { ICONS } from './icons';
 
 /* per-topic card icon + accent colour */
@@ -37,7 +39,7 @@ const ticon = (icon: string, color: string, soft: string) =>
    ===================================================== */
 let stats: Stats = { answered: 0, correct: 0, byTopic: {} };
 interface View {
-  page: 'home' | 'topic';
+  page: 'home' | 'topic' | 'review';
   topic?: string;
   tab?: 'learn' | 'quiz';
 }
@@ -50,9 +52,30 @@ let round = { n: 0, ok: 0 };
 let current: Question | null = null;
 let lastQ = '';
 
+/* SRS: fact ID → scheduling state, mirrored to IndexedDB */
+const factStates = new Map<string, FactState>();
+let reviewQueue: string[] = [];
+
 /** stats context for the current quiz screen */
 function ctxKey(): string {
-  return view.topic!;
+  return view.page === 'review' ? 'review' : view.topic!;
+}
+
+function dueFactIds(now: number): string[] {
+  return [...factStates.values()]
+    .filter((s) => s.due <= now)
+    .sort((a, b) => a.due - b.due)
+    .map((s) => s.id);
+}
+
+function nextDueText(now: number): string {
+  let min = Infinity;
+  for (const s of factStates.values()) if (s.due < min) min = s.due;
+  if (min === Infinity) return '';
+  const h = Math.ceil((min - now) / 3_600_000);
+  if (h <= 1) return 'next review within the hour';
+  if (h < 24) return `next review in ${h}h`;
+  return `next review in ${Math.ceil(h / 24)}d`;
 }
 
 const esc = (s: string) =>
@@ -76,6 +99,20 @@ function renderHome(): void {
   round = { n: 0, ok: 0 };
   let html = `<div class="home-intro"><h2>Pick a topic</h2>
   <p>First read the rules (Learn), then practise them (Practice). Mixed Practice tests everything at once: that is the best way to remember.</p></div><div class="grid">`;
+  const now = Date.now();
+  const due = dueFactIds(now).length;
+  const tracked = factStates.size;
+  const revMeta = tracked
+    ? `<b>${due}</b> due now · <b>${tracked}</b> facts tracked${due === 0 ? ` · ${nextDueText(now)}` : ''}`
+    : `Nothing tracked yet`;
+  html += `<div class="tcard revcard">${ticon('refresh', 'var(--brand)', '#FFE3D0')}
+    <h3>Review</h3><p>${
+      tracked
+        ? 'Spaced repetition: the app brings back what you practised, just before you would forget it. Wrong answers come back sooner.'
+        : 'Answer questions in any Practice mode. The app then plans smart reviews for you here.'
+    }</p>
+    <div class="meta">${revMeta}</div>
+    <div class="acts"><button class="go" data-review style="flex:1" ${due === 0 ? 'disabled' : ''}>Review now</button></div></div>`;
   for (const t of TOPICS) {
     const bt = stats.byTopic[t.id] || { a: 0, c: 0 };
     const m = TOPIC_META[t.id] ?? { icon: 'tag', color: 'var(--blue)', soft: 'var(--blue-soft)' };
@@ -162,6 +199,34 @@ function nextQuestion(): void {
   paintQuestion(topicLabel());
 }
 
+/* ---------- review mode ---------- */
+function renderReview(): void {
+  const html = `<div class="topbar"><button class="backbtn" data-home>&larr; Topics</button>
+    <span class="topic-title">Review</span></div>
+    <div class="pane"><div class="quiz" id="quizBox"></div></div>`;
+  app.innerHTML = html;
+  nextReviewQuestion();
+}
+
+function nextReviewQuestion(): void {
+  if (round.n >= ROUND_SIZE) round = { n: 0, ok: 0 };
+  // skip facts we can no longer render (e.g. removed vocabulary)
+  while (reviewQueue.length && !topicForFact(reviewQueue[0])) reviewQueue.shift();
+  if (!reviewQueue.length) {
+    $('quizBox').innerHTML = `
+      <div class="qcard">
+        <div class="qtype">Review</div>
+        <div class="qtext">All caught up! Nothing due right now.</div>
+        <div class="qhint">Practice any topic to add new facts, or come back when the next review is due.</div>
+        <div class="nextrow"><button class="bigbtn" data-home>&larr; Back to topics</button></div>
+      </div>`;
+    return;
+  }
+  const fact = reviewQueue[0];
+  current = GEN[topicForFact(fact)!](fact);
+  paintQuestion(`Review · ${reviewQueue.length} due`);
+}
+
 function paintScorebar(): void {
   const bar = document.getElementById('sbar');
   if (!bar) return;
@@ -190,7 +255,7 @@ function paintRing(): void {
     : `Answered this session: ${session.n}`;
 }
 
-/** stats bookkeeping for an answered question */
+/** stats + SRS bookkeeping for an answered question */
 function recordAnswer(isOk: boolean): void {
   session.n++;
   if (isOk) session.ok++;
@@ -206,6 +271,26 @@ function recordAnswer(isOk: boolean): void {
   paintHeader();
   paintScorebar();
   paintRing();
+
+  // SRS: every answered question (any mode) grades the facts it exercises
+  const now = Date.now();
+  for (const f of current!.facts) {
+    const next = reviewFact(factStates.get(f) ?? newFactState(f, now), isOk, now);
+    factStates.set(f, next);
+    void saveFactState(next);
+  }
+  if (view.page === 'review') {
+    const primary = reviewQueue[0];
+    reviewQueue = reviewQueue.filter((f) => {
+      const st = factStates.get(f);
+      return st !== undefined && st.due <= now;
+    });
+    // a missed fact stays in the session but goes to the back of the queue
+    if (!isOk && reviewQueue.includes(primary)) {
+      reviewQueue = reviewQueue.filter((f) => f !== primary);
+      reviewQueue.push(primary);
+    }
+  }
 }
 
 function showFeedback(isOk: boolean, extraHtml = ''): void {
@@ -284,12 +369,21 @@ app.addEventListener('click', (e) => {
     renderTopic();
     return;
   }
+  if (b.dataset.review !== undefined) {
+    view = { page: 'review' };
+    session = { n: 0, ok: 0 };
+    round = { n: 0, ok: 0 };
+    reviewQueue = dueFactIds(Date.now());
+    renderReview();
+    return;
+  }
   if (b.dataset.opt !== undefined) {
     answer(+b.dataset.opt);
     return;
   }
   if (b.dataset.next !== undefined) {
-    nextQuestion();
+    if (view.page === 'review') nextReviewQuestion();
+    else nextQuestion();
     return;
   }
 });
@@ -312,6 +406,10 @@ loadStats().then((s) => {
   stats = s;
   paintHeader();
   if (view.page === 'home') renderHome();
+});
+loadFactStates().then((list) => {
+  for (const st of list) factStates.set(st.id, st);
+  if (view.page === 'home') renderHome(); // review card needs the due count
 });
 
 renderHome();
