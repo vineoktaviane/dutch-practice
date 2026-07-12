@@ -1,9 +1,317 @@
-/* Entry point. For now this only wires up the static shell in index.html;
-   the topic grid and quiz loop land once the generators exist. */
+import './styles.css';
+import { registerSW } from 'virtual:pwa-register';
+import type { Question, Stats } from './types';
+import { GLOSSARY, TOPICS } from './data';
+import { CNT, GEN, TOTAL } from './generators';
+import { loadStats, saveStats } from './storage';
+import { rnd } from './rng';
+import { ICONS } from './icons';
+
+/* per-topic card icon + accent colour */
+const TOPIC_META: Record<string, { icon: string; color: string; soft: string }> = {
+  dehet: { icon: 'tag', color: 'var(--brand)', soft: 'var(--brand-soft)' },
+  plural: { icon: 'copies', color: 'var(--blue)', soft: 'var(--blue-soft)' },
+  adj: { icon: 'sparkles', color: 'var(--teal)', soft: 'var(--teal-soft)' },
+  present: { icon: 'clock', color: 'var(--violet)', soft: 'var(--violet-soft)' },
+  perfect: { icon: 'history', color: 'var(--brand)', soft: 'var(--brand-soft)' },
+  modal: { icon: 'key', color: 'var(--blue)', soft: 'var(--blue-soft)' },
+  wordorder: { icon: 'updown', color: 'var(--teal)', soft: 'var(--teal-soft)' },
+  negation: { icon: 'ban', color: 'var(--violet)', soft: 'var(--violet-soft)' },
+  pronouns: { icon: 'users', color: 'var(--brand)', soft: 'var(--brand-soft)' },
+  comparative: { icon: 'chart', color: 'var(--blue)', soft: 'var(--blue-soft)' },
+  separable: { icon: 'scissors', color: 'var(--teal)', soft: 'var(--teal-soft)' },
+  imperfectum: { icon: 'calendar', color: 'var(--violet)', soft: 'var(--violet-soft)' },
+  er: { icon: 'mappin', color: 'var(--brand)', soft: 'var(--brand-soft)' },
+  conjrel: { icon: 'link', color: 'var(--blue)', soft: 'var(--blue-soft)' },
+  omte: { icon: 'target', color: 'var(--teal)', soft: 'var(--teal-soft)' },
+  diminutive: { icon: 'shrink', color: 'var(--violet)', soft: 'var(--violet-soft)' },
+  prepositions: { icon: 'box', color: 'var(--brand)', soft: 'var(--brand-soft)' },
+  passive: { icon: 'swap', color: 'var(--blue)', soft: 'var(--blue-soft)' }
+};
+
+const ticon = (icon: string, color: string, soft: string) =>
+  `<span class="ticon" style="color:${color};background:${soft}">${ICONS[icon]}</span>`;
+
+/* =====================================================
+   STATE
+   ===================================================== */
+let stats: Stats = { answered: 0, correct: 0, byTopic: {} };
+interface View {
+  page: 'home' | 'topic';
+  topic?: string;
+  tab?: 'learn' | 'quiz';
+}
+let view: View = { page: 'home' };
+let session = { n: 0, ok: 0 };
+/* the session is chunked into small rounds so there is always a
+   near-term goal; the ring in the quiz footer fills as a round fills */
+const ROUND_SIZE = 10;
+let round = { n: 0, ok: 0 };
+let current: Question | null = null;
+let lastQ = '';
+
+/** stats context for the current quiz screen */
+function ctxKey(): string {
+  return view.topic!;
+}
+
+const esc = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 const $ = (id: string) => document.getElementById(id)!;
+const app = $('app');
 
-$('hdrAnswered').textContent = '0';
-$('hdrAcc').textContent = '-';
-$('app').innerHTML = `<div class="home-intro"><h2>Coming soon</h2>
-  <p>Grammar topics and practice questions are on the way.</p></div>`;
+function paintHeader(): void {
+  $('hdrAnswered').textContent = String(stats.answered);
+  $('hdrAcc').textContent = stats.answered
+    ? Math.round((stats.correct / stats.answered) * 100) + '%'
+    : '-';
+}
+
+/* =====================================================
+   RENDERING
+   ===================================================== */
+function renderHome(): void {
+  session = { n: 0, ok: 0 };
+  round = { n: 0, ok: 0 };
+  let html = `<div class="home-intro"><h2>Pick a topic</h2>
+  <p>First read the rules (Learn), then practise them (Practice). Mixed Practice tests everything at once: that is the best way to remember.</p></div><div class="grid">`;
+  for (const t of TOPICS) {
+    const bt = stats.byTopic[t.id] || { a: 0, c: 0 };
+    const m = TOPIC_META[t.id] ?? { icon: 'tag', color: 'var(--blue)', soft: 'var(--blue-soft)' };
+    html += `<div class="tcard">${ticon(m.icon, m.color, m.soft)}
+      <h3>${t.title}</h3><p>${t.blurb}</p>
+      <div class="meta"><b>${CNT[t.id].toLocaleString('en-US')}</b> questions${bt.a ? ` · you: ${bt.c}/${bt.a} correct` : ''}</div>
+      <div class="acts"><button data-learn="${t.id}">Learn</button><button class="go" data-quiz="${t.id}">Practice</button></div></div>`;
+  }
+  const mixBt = stats.byTopic['mix'] || { a: 0, c: 0 };
+  html += `<div class="tcard mixcard">${ticon('shuffle', '#FFC9A8', 'rgba(255,255,255,.12)')}
+    <h3>Mixed Practice</h3><p>Random questions from all topics. Harder, because you do not know which rule is tested. Just like real Dutch.</p>
+    <div class="meta"><b>${TOTAL.toLocaleString('en-US')}</b> questions${mixBt.a ? ` · you: ${mixBt.c}/${mixBt.a} correct` : ''}</div>
+    <div class="acts"><button class="go" data-quiz="mix" style="flex:1">Practice everything</button></div></div>`;
+  html += `</div>`;
+  app.innerHTML = html;
+}
+
+function renderTopic(): void {
+  const t = TOPICS.find((x) => x.id === view.topic);
+  const isMix = view.topic === 'mix';
+  const title = isMix ? 'Mixed Practice' : t!.title;
+  let html = `<div class="topbar"><button class="backbtn" data-home>&larr; Topics</button>
+    <span class="topic-title">${title}</span></div>`;
+  if (!isMix) {
+    html += `<div class="tabs">
+      <button data-tab="learn" class="${view.tab === 'learn' ? 'on' : ''}">Learn</button>
+      <button data-tab="quiz" class="${view.tab === 'quiz' ? 'on' : ''}">Practice</button></div>`;
+  }
+  html += `<div class="pane">`;
+  if (!isMix && view.tab === 'learn') {
+    html += `<div class="learn">${t!.learn_html}<div class="startrow"><button class="bigbtn" data-tab="quiz">Start practising &rarr;</button></div></div>`;
+  } else {
+    html += `<div class="quiz" id="quizBox"></div>`;
+  }
+  html += `</div>`;
+  app.innerHTML = html;
+  if (isMix || view.tab === 'quiz') nextQuestion();
+}
+
+function makeQuestion(): Question {
+  const gen = view.topic === 'mix' ? GEN[rnd(Object.keys(GEN))] : GEN[view.topic!];
+  let q: Question;
+  let tries = 0;
+  do {
+    q = gen();
+    tries++;
+  } while (q.q === lastQ && tries < 5);
+  lastQ = q.q;
+  return q;
+}
+
+function topicLabel(): string {
+  if (view.topic !== 'mix') return TOPICS.find((x) => x.id === view.topic)!.title;
+  return 'Mixed';
+}
+
+function paintQuestion(metaLeft: string): void {
+  const box = $('quizBox');
+  const qHtml = esc(current!.q).replace(/___/g, '<span class="blank">&nbsp;</span>');
+  box.innerHTML = `
+    <div class="qmeta"><span>${metaLeft}</span><span>Session: ${session.ok}/${session.n} correct</span></div>
+    <div class="qcard">
+      <div class="qtype">Choose the correct answer</div>
+      <div class="qtext">${qHtml}</div>
+      ${current!.hint ? `<div class="qhint">${esc(current!.hint)}</div>` : ''}
+      <div class="opts">${current!.options.map((o, i) => `<button data-opt="${i}">${esc(o)}</button>`).join('')}</div>
+      <div id="fb"></div>
+    </div>
+    <div class="scorebar" id="sbar"></div>
+    <div class="roundrow" id="roundrow">
+      <div class="ringwrap">
+        <svg class="ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="ring-bg" cx="32" cy="32" r="26"/><circle class="ring-fg" cx="32" cy="32" r="26"/></svg>
+        <div class="ring-num" id="ringNum"></div>
+      </div>
+      <div class="round-txt"><div class="round-lbl" id="roundLbl"></div><div class="round-sub" id="roundSub"></div></div>
+    </div>`;
+  paintScorebar();
+  paintRing();
+}
+
+function nextQuestion(): void {
+  if (round.n >= ROUND_SIZE) round = { n: 0, ok: 0 };
+  current = makeQuestion();
+  paintQuestion(topicLabel());
+}
+
+function paintScorebar(): void {
+  const bar = document.getElementById('sbar');
+  if (!bar) return;
+  if (session.n === 0) {
+    bar.innerHTML = '';
+    return;
+  }
+  const okPct = (session.ok / session.n) * 100;
+  bar.innerHTML = `<div class="ok" style="width:${okPct}%"></div><div class="no" style="width:${100 - okPct}%"></div>`;
+}
+
+const RING_LEN = 2 * Math.PI * 26; // matches r="26" in the ring SVG
+
+function paintRing(): void {
+  const row = document.getElementById('roundrow');
+  if (!row) return;
+  const done = round.n >= ROUND_SIZE;
+  row.classList.toggle('celebrate', done);
+  const fg = row.querySelector<SVGCircleElement>('.ring-fg')!;
+  fg.style.strokeDasharray = String(RING_LEN);
+  fg.style.strokeDashoffset = String(RING_LEN * (1 - round.n / ROUND_SIZE));
+  $('ringNum').innerHTML = `${round.n}<span class="of">/${ROUND_SIZE}</span>`;
+  $('roundLbl').textContent = done ? `Round complete: ${round.ok}/${ROUND_SIZE} correct!` : 'This round';
+  $('roundSub').textContent = done
+    ? (round.ok === ROUND_SIZE ? 'Perfect round!' : 'Next question starts a fresh round.')
+    : `Answered this session: ${session.n}`;
+}
+
+/** stats bookkeeping for an answered question */
+function recordAnswer(isOk: boolean): void {
+  session.n++;
+  if (isOk) session.ok++;
+  round.n++;
+  if (isOk) round.ok++;
+  stats.answered++;
+  if (isOk) stats.correct++;
+  const key = ctxKey();
+  stats.byTopic[key] = stats.byTopic[key] || { a: 0, c: 0 };
+  stats.byTopic[key].a++;
+  if (isOk) stats.byTopic[key].c++;
+  void saveStats(stats);
+  paintHeader();
+  paintScorebar();
+  paintRing();
+}
+
+function showFeedback(isOk: boolean, extraHtml = ''): void {
+  const fb = $('fb');
+  fb.innerHTML = `<div class="feedback ${isOk ? 'ok' : 'no'}">
+    <span class="verdict">${isOk ? 'Correct' : 'Wrong. The answer is: ' + esc(current!.answer)}</span>
+    ${esc(current!.why)}${extraHtml}</div>
+    <div class="nextrow"><button class="bigbtn" data-next>Next question &rarr;</button></div>`;
+  fb.querySelector<HTMLButtonElement>('[data-next]')!.focus();
+}
+
+function answer(idx: number): void {
+  if (!current || $('fb').innerHTML) return;
+  const chosen = current.options[idx];
+  const isOk = chosen === current.answer;
+  recordAnswer(isOk);
+
+  const box = $('quizBox');
+  box.querySelectorAll<HTMLButtonElement>('.opts button').forEach((b, i) => {
+    b.disabled = true;
+    const val = current!.options[i];
+    if (val === current!.answer) b.classList.add('correct');
+    else if (i === idx) b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  if (!isOk) box.querySelector('.qcard')?.classList.add('shake');
+  showFeedback(isOk);
+}
+
+/** glossary info button: toggle the simple explanation under the term */
+function toggleGloss(b: HTMLButtonElement): void {
+  const next = b.nextElementSibling;
+  if (next && next.classList.contains('gloss')) {
+    next.remove();
+    b.setAttribute('aria-expanded', 'false');
+    return;
+  }
+  const def = GLOSSARY[b.dataset.g!];
+  if (!def) return;
+  const s = document.createElement('span');
+  s.className = 'gloss';
+  s.textContent = def;
+  b.after(s);
+  b.setAttribute('aria-expanded', 'true');
+}
+
+/* =====================================================
+   EVENTS
+   ===================================================== */
+app.addEventListener('click', (e) => {
+  const b = (e.target as HTMLElement).closest('button');
+  if (!b) return;
+  if (b.dataset.g) {
+    toggleGloss(b);
+    return;
+  }
+  if (b.dataset.home !== undefined) {
+    view = { page: 'home' };
+    renderHome();
+    return;
+  }
+  if (b.dataset.learn) {
+    view = { page: 'topic', topic: b.dataset.learn, tab: 'learn' };
+    renderTopic();
+    return;
+  }
+  if (b.dataset.quiz) {
+    view = { page: 'topic', topic: b.dataset.quiz, tab: 'quiz' };
+    session = { n: 0, ok: 0 };
+    round = { n: 0, ok: 0 };
+    renderTopic();
+    return;
+  }
+  if (b.dataset.tab) {
+    view.tab = b.dataset.tab as 'learn' | 'quiz';
+    renderTopic();
+    return;
+  }
+  if (b.dataset.opt !== undefined) {
+    answer(+b.dataset.opt);
+    return;
+  }
+  if (b.dataset.next !== undefined) {
+    nextQuestion();
+    return;
+  }
+});
+
+/* =====================================================
+   PWA: service worker
+   ===================================================== */
+registerSW({ immediate: true });
+
+/* =====================================================
+   BOOT
+   ===================================================== */
+$('totalCount').textContent = TOTAL.toLocaleString('en-US') + '+';
+const tc = document.getElementById('topicCount');
+if (tc) tc.textContent = String(TOPICS.length);
+$('footTotals').textContent =
+  `Question pool: ${TOTAL.toLocaleString('en-US')} unique combinations across ${TOPICS.length} topics.`;
+
+loadStats().then((s) => {
+  stats = s;
+  paintHeader();
+  if (view.page === 'home') renderHome();
+});
+
+renderHome();
