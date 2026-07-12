@@ -14,6 +14,7 @@ import {
   PASSIVE,
   PERF,
   PREP,
+  PRON,
   SEP,
   SUBJ,
   VERBS,
@@ -36,6 +37,7 @@ import { perfect } from './perfect';
 import { plural } from './plural';
 import { prepositions } from './prepositions';
 import { present } from './present';
+import { POSS_FRAMES, pronouns } from './pronouns';
 import { SUB_ADVS, separable, sepTimeFree } from './separable';
 import { wordorder } from './wordorder';
 
@@ -48,6 +50,7 @@ export const GEN: Record<string, Generator> = {
   modal,
   wordorder,
   negation,
+  pronouns,
   comparative,
   separable,
   imperfectum,
@@ -88,6 +91,9 @@ export function counts(): Record<string, number> {
     NOUNS.length * GEEN_SUBJECTS.length +
     NEG.subjects.length * (NEG.days.length + NOUNS.filter((x) => x.c === 'l').length + ADJS.length) +
     NIET_POSSESSIONS.length;
+  c.pronouns =
+    PRON.possessives.length * NOUNS.length * POSS_FRAMES.length +
+    PRON.object_pronouns.length * PRON.object_templates.length;
   const ceCount = COMP.filter((x) => x.ce).length;
   c.comparative =
     COMP.length * (2 * COMP_SUBJECTS.length) +
