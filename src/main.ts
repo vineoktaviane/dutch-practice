@@ -9,6 +9,8 @@ import { newFactState, reviewFact, type FactState } from './srs/sm2';
 import { topicForFact } from './srs/facts';
 import { charDiff, gradeTyped, isTypeable, normalizeAnswer } from './typed';
 import { ICONS } from './icons';
+import { canSpeakDutch, initSpeech, speakDutch, spokenText } from './speech';
+import { playCorrect, playRoundComplete, playWrong, setSoundEnabled } from './sound';
 
 /* per-topic card icon + accent colour */
 const TOPIC_META: Record<string, { icon: string; color: string; soft: string }> = {
@@ -186,6 +188,7 @@ function paintQuestion(metaLeft: string): void {
     : `<div class="opts">${current!.options.map((o, i) => `<button data-opt="${i}">${esc(o)}</button>`).join('')}</div>`;
   box.innerHTML = `
     <div class="quizbar">
+      <label class="switch"><input type="checkbox" id="soundToggle" ${settings.sound !== false ? 'checked' : ''}> Sound</label>
       <label class="switch"><input type="checkbox" id="typedToggle" ${typedModeOn() ? 'checked' : ''}> Type answers</label>
     </div>
     <div class="qmeta"><span>${metaLeft}</span><span>Session: ${session.ok}/${session.n} correct</span></div>
@@ -287,6 +290,9 @@ function recordAnswer(isOk: boolean): void {
   paintHeader();
   paintScorebar();
   paintRing();
+  if (!isOk) playWrong();
+  else if (round.n >= ROUND_SIZE) playRoundComplete();
+  else playCorrect();
 
   // SRS: every answered question (any mode) grades the facts it exercises
   const now = Date.now();
@@ -311,10 +317,15 @@ function recordAnswer(isOk: boolean): void {
 
 function showFeedback(isOk: boolean, extraHtml = ''): void {
   const fb = $('fb');
+  const sayText = canSpeakDutch() ? spokenText(current!) : null;
+  const listen = sayText
+    ? `<button class="listenbtn" data-say aria-label="Listen to the Dutch sentence">${ICONS.volume} Listen</button>`
+    : '';
   fb.innerHTML = `<div class="feedback ${isOk ? 'ok' : 'no'}">
     <span class="verdict">${isOk ? 'Correct' : 'Wrong. The answer is: ' + esc(current!.answer)}</span>
     ${esc(current!.why)}${extraHtml}</div>
-    <div class="nextrow"><button class="bigbtn" data-next>Next question &rarr;</button></div>`;
+    <div class="nextrow">${listen}<button class="bigbtn" data-next>Next question &rarr;</button></div>
+    ${sayText ? '<div class="voicenote">Audio uses your device\'s Dutch voice; quality varies by device.</div>' : ''}`;
   fb.querySelector<HTMLButtonElement>('[data-next]')!.focus();
 }
 
@@ -430,6 +441,11 @@ app.addEventListener('click', (e) => {
     checkTyped();
     return;
   }
+  if (b.dataset.say !== undefined) {
+    const text = current && spokenText(current);
+    if (text) speakDutch(text);
+    return;
+  }
   if (b.dataset.next !== undefined) {
     if (view.page === 'review') nextReviewQuestion();
     else nextQuestion();
@@ -437,9 +453,15 @@ app.addEventListener('click', (e) => {
   }
 });
 
-/* typed mode persists per context */
+/* quizbar toggles: sound is global, typed mode persists per context */
 app.addEventListener('change', (e) => {
   const t = e.target as HTMLInputElement;
+  if (t.id === 'soundToggle') {
+    settings.sound = t.checked;
+    setSoundEnabled(t.checked);
+    void saveSettings(settings);
+    return;
+  }
   if (t.id !== 'typedToggle') return;
   settings.typed[ctxKey()] = t.checked;
   void saveSettings(settings);
@@ -450,10 +472,55 @@ app.addEventListener('change', (e) => {
   }
 });
 
+document.addEventListener('keydown', (e) => {
+  if (view.page !== 'topic' && view.page !== 'review') return;
+  const inInput = (e.target as HTMLElement).tagName === 'INPUT' && (e.target as HTMLInputElement).type === 'text';
+  if (!inInput && e.key >= '1' && e.key <= '4') {
+    const btns = app.querySelectorAll<HTMLButtonElement>('.opts button:not(:disabled)');
+    const i = +e.key - 1;
+    if (btns[i]) btns[i].click();
+  }
+  if (e.key === 'Enter') {
+    // in typed mode Enter first submits the answer, then advances. This works
+    // whether or not the input still holds focus, so Enter always checks a
+    // pending typed answer before it advances to the next question.
+    const typedIn = document.getElementById('typedIn') as HTMLInputElement | null;
+    if (typedIn && !typedIn.disabled) {
+      checkTyped();
+      return;
+    }
+    const nx = app.querySelector<HTMLButtonElement>('[data-next]');
+    if (nx) nx.click();
+  }
+});
+
 /* =====================================================
-   PWA: service worker
+   PWA: service worker + install prompt
    ===================================================== */
 registerSW({ immediate: true });
+
+interface BeforeInstallPromptEvent extends Event {
+  prompt(): Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+}
+
+let installEvt: BeforeInstallPromptEvent | null = null;
+const installBtn = $('installBtn') as HTMLButtonElement;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  installEvt = e as BeforeInstallPromptEvent;
+  installBtn.hidden = false;
+});
+installBtn.addEventListener('click', async () => {
+  if (!installEvt) return;
+  await installEvt.prompt();
+  await installEvt.userChoice;
+  installEvt = null;
+  installBtn.hidden = true;
+});
+window.addEventListener('appinstalled', () => {
+  installBtn.hidden = true;
+});
 
 /* =====================================================
    BOOT
@@ -475,6 +542,15 @@ loadFactStates().then((list) => {
 });
 loadSettings().then((s) => {
   settings = s;
+  setSoundEnabled(s.sound !== false);
 });
+initSpeech();
 
-renderHome();
+/* boot-time deep link, e.g. #/quiz/dehet or #/learn/perfect */
+const deepLink = location.hash.match(/^#\/(learn|quiz)\/([a-z]+)$/);
+if (deepLink && (GEN[deepLink[2]] || deepLink[2] === 'mix')) {
+  view = { page: 'topic', topic: deepLink[2], tab: deepLink[1] as 'learn' | 'quiz' };
+  renderTopic();
+} else {
+  renderHome();
+}
