@@ -3,10 +3,11 @@ import { registerSW } from 'virtual:pwa-register';
 import type { Question, Stats } from './types';
 import { GLOSSARY, TOPICS } from './data';
 import { CNT, GEN, TOTAL } from './generators';
-import { loadFactStates, loadStats, saveFactState, saveStats } from './storage';
+import { loadFactStates, loadSettings, loadStats, saveFactState, saveSettings, saveStats, type Settings } from './storage';
 import { rnd } from './rng';
 import { newFactState, reviewFact, type FactState } from './srs/sm2';
 import { topicForFact } from './srs/facts';
+import { charDiff, gradeTyped, isTypeable, normalizeAnswer } from './typed';
 import { ICONS } from './icons';
 
 /* per-topic card icon + accent colour */
@@ -56,9 +57,16 @@ let lastQ = '';
 const factStates = new Map<string, FactState>();
 let reviewQueue: string[] = [];
 
-/** stats context for the current quiz screen */
+/* user settings (typed-answer mode per context) */
+let settings: Settings = { typed: {} };
+
+/** settings/stats context for the current quiz screen */
 function ctxKey(): string {
   return view.page === 'review' ? 'review' : view.topic!;
+}
+
+function typedModeOn(): boolean {
+  return !!settings.typed[ctxKey()];
 }
 
 function dueFactIds(now: number): string[] {
@@ -172,13 +180,20 @@ function topicLabel(): string {
 function paintQuestion(metaLeft: string): void {
   const box = $('quizBox');
   const qHtml = esc(current!.q).replace(/___/g, '<span class="blank">&nbsp;</span>');
+  const typed = typedModeOn() && isTypeable(current!);
+  const body = typed
+    ? `<div class="typedrow"><input id="typedIn" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Type your answer" aria-label="Your answer"><button class="bigbtn" data-check>Check</button></div>`
+    : `<div class="opts">${current!.options.map((o, i) => `<button data-opt="${i}">${esc(o)}</button>`).join('')}</div>`;
   box.innerHTML = `
+    <div class="quizbar">
+      <label class="switch"><input type="checkbox" id="typedToggle" ${typedModeOn() ? 'checked' : ''}> Type answers</label>
+    </div>
     <div class="qmeta"><span>${metaLeft}</span><span>Session: ${session.ok}/${session.n} correct</span></div>
     <div class="qcard">
-      <div class="qtype">Choose the correct answer</div>
+      <div class="qtype">${typed ? 'Type the answer' : 'Choose the correct answer'}</div>
       <div class="qtext">${qHtml}</div>
       ${current!.hint ? `<div class="qhint">${esc(current!.hint)}</div>` : ''}
-      <div class="opts">${current!.options.map((o, i) => `<button data-opt="${i}">${esc(o)}</button>`).join('')}</div>
+      ${body}
       <div id="fb"></div>
     </div>
     <div class="scorebar" id="sbar"></div>
@@ -191,6 +206,7 @@ function paintQuestion(metaLeft: string): void {
     </div>`;
   paintScorebar();
   paintRing();
+  if (typed) $('typedIn').focus();
 }
 
 function nextQuestion(): void {
@@ -255,7 +271,7 @@ function paintRing(): void {
     : `Answered this session: ${session.n}`;
 }
 
-/** stats + SRS bookkeeping for an answered question */
+/** stats + SRS bookkeeping shared by both answer modes */
 function recordAnswer(isOk: boolean): void {
   session.n++;
   if (isOk) session.ok++;
@@ -320,6 +336,35 @@ function answer(idx: number): void {
   showFeedback(isOk);
 }
 
+function checkTyped(): void {
+  if (!current || $('fb').innerHTML) return;
+  const input = $('typedIn') as HTMLInputElement;
+  if (!normalizeAnswer(input.value)) {
+    input.focus();
+    return;
+  }
+  const { ok, nearMiss } = gradeTyped(current, input.value);
+  recordAnswer(ok);
+  input.disabled = true;
+  $('quizBox').querySelector('.qcard')?.classList.add(ok ? 'pop' : 'shake');
+
+  let extra = '';
+  if (!ok && nearMiss) {
+    const typedMarks = charDiff(normalizeAnswer(input.value), normalizeAnswer(current.answer))
+      .map((p) => (p.same ? esc(p.ch) : `<span class="diffc">${esc(p.ch)}</span>`))
+      .join('');
+    const answerMarks = charDiff(normalizeAnswer(current.answer), normalizeAnswer(input.value))
+      .map((p) => (p.same ? esc(p.ch) : `<span class="diffok">${esc(p.ch)}</span>`))
+      .join('');
+    extra = `<div class="diffbox">
+      <div class="row"><span class="lbl">You typed</span><span>${typedMarks}</span></div>
+      <div class="row"><span class="lbl">Answer</span><span>${answerMarks}</span></div>
+      <div class="row" style="margin-top:6px">So close! Check the highlighted letters.</div>
+    </div>`;
+  }
+  showFeedback(ok, extra);
+}
+
 /** glossary info button: toggle the simple explanation under the term */
 function toggleGloss(b: HTMLButtonElement): void {
   const next = b.nextElementSibling;
@@ -381,10 +426,27 @@ app.addEventListener('click', (e) => {
     answer(+b.dataset.opt);
     return;
   }
+  if (b.dataset.check !== undefined) {
+    checkTyped();
+    return;
+  }
   if (b.dataset.next !== undefined) {
     if (view.page === 'review') nextReviewQuestion();
     else nextQuestion();
     return;
+  }
+});
+
+/* typed mode persists per context */
+app.addEventListener('change', (e) => {
+  const t = e.target as HTMLInputElement;
+  if (t.id !== 'typedToggle') return;
+  settings.typed[ctxKey()] = t.checked;
+  void saveSettings(settings);
+  if (view.page === 'review') {
+    if (reviewQueue.length) paintQuestion(`Review · ${reviewQueue.length} due`);
+  } else {
+    paintQuestion(topicLabel());
   }
 });
 
@@ -410,6 +472,9 @@ loadStats().then((s) => {
 loadFactStates().then((list) => {
   for (const st of list) factStates.set(st.id, st);
   if (view.page === 'home') renderHome(); // review card needs the due count
+});
+loadSettings().then((s) => {
+  settings = s;
 });
 
 renderHome();
