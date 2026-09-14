@@ -82,7 +82,7 @@ export function counts(): Record<string, number> {
   // conjugation x complement frames, plus structure x subjects x time adverbs
   c.modal =
     MODALS.length * SUBJ.length * MODAL_COMPLS.length +
-    MODALS.length * 6 * VERBS.reduce((s, v) => s + (modalTimeFree(v.compl) ? MODAL_TIMES.length : 1), 0);
+    MODALS.length * SUBJ.length * VERBS.reduce((s, v) => s + (modalTimeFree(v.compl) ? MODAL_TIMES.length : 1), 0);
   c.wordorder =
     WO.time_fronts.length * WO.clauses.length +
     WO.tmp.time.length * WO.tmp.manner.length * WO.tmp.place.length +
@@ -102,8 +102,8 @@ export function counts(): Record<string, number> {
     ceCount * ATTR_NOUNS.length;
   // split + participle branches, subclause x adverbs, modal branch x modals
   c.separable =
-    SEP.length * 8 * (2 + MODALS.length) +
-    8 * SEP.reduce((s, v) => s + (sepTimeFree(v.compl) ? SUB_ADVS.length : 1), 0);
+    SEP.length * SUBJ.length * (2 + MODALS.length) +
+    SUBJ.length * SEP.reduce((s, v) => s + (sepTimeFree(v.compl) ? SUB_ADVS.length : 1), 0);
   c.imperfectum =
     IMPERF.length * 5 * WB.common.imperf_fronts.length + IMPERF.filter((v) => v.weak).length;
   const erTemplateCombos = ER.existential_templates.reduce(
