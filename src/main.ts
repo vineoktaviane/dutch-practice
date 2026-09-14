@@ -6,7 +6,7 @@ import { CNT, GEN, TOTAL } from './generators';
 import { loadFactStates, loadSettings, loadStats, saveFactState, saveSettings, saveStats, type Settings } from './storage';
 import { rnd } from './rng';
 import { newFactState, reviewFact, type FactState } from './srs/sm2';
-import { topicForFact } from './srs/facts';
+import { allFacts, topicForFact } from './srs/facts';
 import { charDiff, gradeTyped, isTypeable, normalizeAnswer } from './typed';
 import { ICONS } from './icons';
 import { canSpeakDutch, initSpeech, speakDutch, spokenText } from './speech';
@@ -303,6 +303,10 @@ function recordAnswer(isOk: boolean): void {
   }
   if (view.page === 'review') {
     const primary = reviewQueue[0];
+    // the generator substitutes a random question when it cannot render the
+    // queued fact (stale vocabulary from an older wordbank). That fact is then
+    // never graded, so its due date never moves: drop it or the queue sticks.
+    if (!current!.facts.includes(primary)) reviewQueue.shift();
     reviewQueue = reviewQueue.filter((f) => {
       const st = factStates.get(f);
       return st !== undefined && st.due <= now;
@@ -539,8 +543,12 @@ loadStats().then((s) => {
   paintHeader();
   if (view.page === 'home') renderHome();
 });
+/* Facts whose vocabulary has since been removed from the word banks would sit
+   in the queue forever: no generator can render them, so they never get graded
+   and their due date never moves. Drop them as they load. */
+const liveFacts = new Set(Object.values(allFacts()).flat());
 loadFactStates().then((list) => {
-  for (const st of list) factStates.set(st.id, st);
+  for (const st of list) if (liveFacts.has(st.id) && !factStates.has(st.id)) factStates.set(st.id, st);
   if (view.page === 'home') renderHome(); // review card needs the due count
 });
 loadSettings().then((s) => {
