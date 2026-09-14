@@ -9,7 +9,7 @@ export default defineConfig({
         name: 'Dutch Grammar Trainer',
         short_name: 'Dutch Grammar',
         description:
-          'Learn Dutch grammar (A1-B1): 11 topics, plain-English rules, thousands of generated practice questions. Works fully offline.',
+          'Learn Dutch grammar (A1-B1): 18 topics, plain-English rules, thousands of generated practice questions. Works fully offline.',
         lang: 'en',
         start_url: '/',
         scope: '/',
