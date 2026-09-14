@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { speechSupported, spokenText } from '../src/speech';
+import { speechSupported, spokenText } from '../src/platform/speech';
 import { GEN } from '../src/generators';
 import type { Question } from '../src/types';
 

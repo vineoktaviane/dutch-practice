@@ -1,4 +1,4 @@
-import type { Question } from './types';
+import type { Question } from '../types';
 
 /**
  * Phase 4: audio playback of prompts/answers via the Web Speech API.

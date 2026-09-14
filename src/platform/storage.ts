@@ -1,6 +1,6 @@
 import { openDB, type IDBPDatabase } from 'idb';
-import type { Stats } from './types';
-import type { FactState } from './srs/sm2';
+import type { Stats } from '../types';
+import type { FactState } from '../srs/sm2';
 
 // v1 used a key-value window.storage API that only existed in its original
 // environment; this replaces it with IndexedDB so progress survives offline.

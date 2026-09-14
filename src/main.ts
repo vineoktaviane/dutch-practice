@@ -3,14 +3,14 @@ import { registerSW } from 'virtual:pwa-register';
 import type { Question, Stats } from './types';
 import { GLOSSARY, TOPICS } from './data';
 import { CNT, GEN, TOTAL } from './generators';
-import { loadFactStates, loadSettings, loadStats, saveFactState, saveSettings, saveStats, type Settings } from './storage';
+import { loadFactStates, loadSettings, loadStats, saveFactState, saveSettings, saveStats, type Settings } from './platform/storage';
 import { rnd } from './rng';
 import { newFactState, reviewFact, type FactState } from './srs/sm2';
 import { allFacts, topicForFact } from './srs/facts';
 import { charDiff, gradeTyped, isTypeable, normalizeAnswer } from './typed';
 import { ICONS } from './icons';
-import { canSpeakDutch, initSpeech, speakDutch, spokenText } from './speech';
-import { playCorrect, playRoundComplete, playWrong, setSoundEnabled } from './sound';
+import { canSpeakDutch, initSpeech, speakDutch, spokenText } from './platform/speech';
+import { playCorrect, playRoundComplete, playWrong, setSoundEnabled } from './platform/sound';
 
 /* per-topic card icon + accent colour */
 const TOPIC_META: Record<string, { icon: string; color: string; soft: string }> = {
