@@ -465,6 +465,9 @@ app.addEventListener('change', (e) => {
   if (t.id !== 'typedToggle') return;
   settings.typed[ctxKey()] = t.checked;
   void saveSettings(settings);
+  // the card is already answered: repainting would clear the feedback and
+  // re-enable the options, letting the same question be graded twice
+  if ($('fb').innerHTML) return;
   if (view.page === 'review') {
     if (reviewQueue.length) paintQuestion(`Review · ${reviewQueue.length} due`);
   } else {
