@@ -40,10 +40,25 @@ describe('typed grading', () => {
     expect(acceptedAnswers(q('mij', ['me']))).toContain('me');
   });
 
-  it('flags near misses (edit distance ≤ 2) as wrong but close', () => {
+  it('flags a genuine typo as wrong but close', () => {
     expect(gradeTyped(q('huizen'), 'huisen')).toEqual({ ok: false, nearMiss: true });
     expect(gradeTyped(q('huizen'), 'katten')).toEqual({ ok: false, nearMiss: false });
     expect(gradeTyped(q('huizen'), '')).toEqual({ ok: false, nearMiss: false });
+  });
+
+  it('never flatters an offered distractor as a near miss', () => {
+    // "gehoort" is the -t/-d error the perfect-tense question exists to teach,
+    // so it must read as wrong, not as "so close, check the highlighted letters"
+    const perf: Question = { ...q('gehoord'), options: ['gehoord', 'gehoort'] };
+    expect(gradeTyped(perf, 'gehoort')).toEqual({ ok: false, nearMiss: false });
+    // the same edit distance on a word that is not an offered option still counts
+    expect(gradeTyped(q('gehoord'), 'gehoorf')).toEqual({ ok: false, nearMiss: true });
+  });
+
+  it('scales the near-miss threshold to answer length', () => {
+    // two edits on a three-letter answer is a different word, not a slip
+    expect(gradeTyped(q('dat'), 'die')).toEqual({ ok: false, nearMiss: false });
+    expect(gradeTyped(q('gewerkt'), 'gewerkd')).toEqual({ ok: false, nearMiss: true });
   });
 });
 

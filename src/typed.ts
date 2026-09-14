@@ -34,8 +34,13 @@ export function gradeTyped(q: Question, input: string): { ok: boolean; nearMiss:
   const norm = normalizeAnswer(input);
   const accepts = acceptedAnswers(q);
   if (accepts.includes(norm)) return { ok: true, nearMiss: false };
+  // typing one of the offered distractors is the grammar mistake the question
+  // exists to test ("het" for "de"), not a slip of the finger
+  if (q.options.some((o) => normalizeAnswer(o) === norm)) return { ok: false, nearMiss: false };
   const dist = Math.min(...accepts.map((a) => levenshtein(norm, a)));
-  return { ok: false, nearMiss: norm.length > 0 && dist <= 2 };
+  // scale with length: two edits is a typo in "huizen" but a different word in "de"
+  const len = Math.max(norm.length, ...accepts.map((a) => a.length));
+  return { ok: false, nearMiss: norm.length > 0 && dist * 4 <= len };
 }
 
 export function levenshtein(a: string, b: string): number {
