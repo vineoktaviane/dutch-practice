@@ -1,7 +1,7 @@
-import type { Noun, Topic, WordBanks } from './types';
-import wordbanksJson from '../data/wordbanks.json';
-import topicsJson from '../data/topics.json';
-import glossaryJson from '../data/glossary.json';
+import type { Noun, Topic, WordBanks } from '../types';
+import wordbanksJson from './wordbanks.json';
+import topicsJson from './topics.json';
+import glossaryJson from './glossary.json';
 
 export const WB = wordbanksJson as WordBanks;
 export const TOPICS = topicsJson as Topic[];
