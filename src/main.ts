@@ -538,8 +538,10 @@ if (tc) tc.textContent = String(TOPICS.length);
 $('footTotals').textContent =
   `Question pool: ${TOTAL.toLocaleString('en-US')} unique combinations across ${TOPICS.length} topics.`;
 
+/* A deep link renders a live quiz before these resolve, so anything already
+   answered must survive the load rather than be replaced by the stored copy. */
 loadStats().then((s) => {
-  stats = s;
+  if (!stats.answered) stats = s;
   paintHeader();
   if (view.page === 'home') renderHome();
 });
