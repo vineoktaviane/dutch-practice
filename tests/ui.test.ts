@@ -39,6 +39,29 @@ describe('app UI smoke', () => {
     expect($('#app .topic-title')!.textContent).toBe(TOPICS[0].title);
   });
 
+  it('filters topic cards without affecting lesson content or practice state', () => {
+    click($('#app .topbar [data-home]'));
+    click($('#app button[data-category="Verbs"]'));
+    const visibleCards = () => [...document.querySelectorAll<HTMLElement>('[data-topic-card]')].filter(card => !card.hidden);
+    expect(visibleCards().length).toBeGreaterThan(0);
+    expect(visibleCards().every(card => card.dataset.category === 'Verbs')).toBe(true);
+    expect(document.querySelector('[data-topic-card][aria-pressed]')).toBeNull();
+
+    const search = $('#topic-search') as HTMLInputElement;
+    search.value = 'perfect';
+    search.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(visibleCards().map(card => card.dataset.topicCard)).toEqual(['perfect', 'imperfectum']);
+    search.value = 'unmatched search';
+    search.dispatchEvent(new Event('input', { bubbles: true }));
+    expect(visibleCards()).toHaveLength(0);
+    expect(($('#topic-empty') as HTMLElement).hidden).toBe(false);
+    click($('#app [data-clear-filters]'));
+    expect(visibleCards()).toHaveLength(TOPICS.length);
+    expect(search.value).toBe('');
+    click($('#app button[data-learn="dehet"]'));
+    expect($('#app .s-diff')!.textContent).toContain('Dutch vs English');
+  });
+
   it('explains grammar jargon when a term button is clicked', () => {
     const term = $('#app .learn .term') as HTMLButtonElement;
     expect(term, 'expected at least one glossary term in the Learn page').toBeTruthy();

@@ -6,7 +6,7 @@ import { $, app } from './dom';
 import { dueFactIds } from './due';
 import { S, ctxKey, resetSession } from './state';
 import { advance, answer, checkTyped, repaintQuestion } from './quiz';
-import { renderHome, renderReview, renderTopic } from './screens';
+import { filterTopics, renderHome, renderReview, renderTopic } from './screens';
 
 /** glossary info button: toggle the simple explanation under the term */
 function toggleGloss(b: HTMLButtonElement): void {
@@ -28,6 +28,17 @@ function toggleGloss(b: HTMLButtonElement): void {
 app.addEventListener('click', (e) => {
   const b = (e.target as HTMLElement).closest('button');
   if (!b) return;
+  if (b.disabled) return;
+  if (b.dataset.category) {
+    filterTopics(b.dataset.category);
+    return;
+  }
+  if (b.dataset.clearFilters !== undefined) {
+    const search = document.getElementById('topic-search') as HTMLInputElement | null;
+    if (search) search.value = '';
+    filterTopics('All topics', '');
+    return;
+  }
   if (b.dataset.g) {
     toggleGloss(b);
     return;
@@ -77,6 +88,11 @@ app.addEventListener('click', (e) => {
     advance();
     return;
   }
+});
+
+app.addEventListener('input', (e) => {
+  const input = e.target as HTMLInputElement;
+  if (input.id === 'topic-search') filterTopics(undefined, input.value);
 });
 
 /* quizbar toggles: sound is global, typed mode persists per context */
